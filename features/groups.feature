@@ -17,6 +17,24 @@ Feature:  groups
       | Number | Den_Temp        | Den temperature         | 30    | GroundFloor, Temperatures |
 
 
+  Scenario: Group has standard properties
+    Given groups:
+      | name      | group       | label            |
+      | TestGroup | GroundFloor | Test Group Label |
+    And code in a rules file
+      """
+      logger.info("TestGroup Name: #{TestGroup.name}")
+      logger.info("TestGroup Label: #{TestGroup.label}")
+      logger.info("TestGroup State: #{TestGroup}")
+      logger.info("TestGroup's Groups: #{TestGroup.groups.map(&:name).join(",")}")
+      logger.info("GroundFloor's Members: #{GroundFloor.members.map(&:name).join(",")}")
+      """
+    When I deploy the rules file
+    Then It should log 'TestGroup Name: TestGroup' within 5 seconds
+    And It should log 'TestGroup Label: Test Group Label' within 5 seconds
+    And It should log "TestGroup's Groups: GroundFloor" within 5 seconds
+    And It should log "GroundFloor's Members: Livingroom,Bedroom_Temp,Den_Temp,TestGroup" within 5 seconds
+
   Scenario: Ability to operate on the items in a group using enumerable methods
     Given code in a rules file
       """
@@ -80,7 +98,7 @@ Feature:  groups
     Given code in a rules file
       """
       rule 'group member updated' do
-        updated Temperatures.items
+        updated Temperatures.members
         run do |event|
           logger.info("event.item is #{event.item.name}")
         end
@@ -97,7 +115,7 @@ Feature:  groups
   Scenario Outline: Commands sent to a group are propagated to the group items
     Given code in a rules file
       """
-        GroundFloor.<method> <value>
+      GroundFloor.<method> <value>
       """
     When I deploy the rules file
     Then "Bedroom_Temp" should be in state "<value>" within 5 seconds

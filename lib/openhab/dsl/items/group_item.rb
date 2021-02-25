@@ -10,6 +10,20 @@ module OpenHAB
   module DSL
     module Items
       #
+      # A derived class of Array for GroupItem.members
+      # so that rule triggers know that we want to create
+      # a group state trigger, i.e. 'member of' trigger
+      #
+      class MembersOfGroup < Array
+        attr_reader :group
+
+        def initialize(group:, members:)
+          super(members)
+          @group = group
+        end
+      end
+
+      #
       # Delegator to OpenHAB Group Item
       #
       class GroupItem
@@ -20,11 +34,6 @@ module OpenHAB
         def_item_delegator :@group_item
 
         #
-        # Indicator struct interpreted by rules to trigger based on items contained in a group
-        #
-        GroupItems = Struct.new(:group, keyword_init: true)
-
-        #
         # Create a new GroupItem
         #
         # @param [Java::Org::openhab::core::items::GroupItem] group_item OpenHAB GroupItem to delegate to
@@ -33,15 +42,9 @@ module OpenHAB
           @group_item = group_item
 
           item_missing_delegate { @group_item }
+          item_missing_delegate { members }
           add_state_methods
           add_command_methods
-        end
-
-        #
-        # Iterates through the direct members of the Group
-        #
-        def each(&block)
-          OpenHAB::Core::EntityLookup.decorate_items(@group_item.members.to_a).each(&block)
         end
 
         #
@@ -53,14 +56,16 @@ module OpenHAB
         end
 
         #
-        # Wraps the group in a struct, this method is intended to be called
-        # as an indicator to the rule method that the user wishes to trigger
-        # based on changes to group items
+        # Get the direct members of the group
         #
-        # @return [GroupItems] Indicator struct used by rules engine to trigger based on item changes
+        # Wraps the members in a MembersOfGroup class, as an indicator to the rule method
+        # that the user wishes to trigger based on changes to group items.
         #
-        def items
-          GroupItems.new(group: self)
+        # @return [Array] An Array containing all the direct descendants of the Group
+        #
+        def members
+          MembersOfGroup.new(group: @group_item,
+                             members: OpenHAB::Core::EntityLookup.decorate_items(@group_item.members.to_a))
         end
 
         private

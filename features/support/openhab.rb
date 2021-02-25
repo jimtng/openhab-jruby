@@ -64,8 +64,8 @@ def check_log(entry)
   File.foreach(openhab_log).grep(/#{Regexp.escape(entry)}/).any?
 end
 
-def add_group(name:, group_type: nil, groups: nil, function: nil, params: nil)
-  item = Item.new(type: 'Group', name: name, groups: groups, group_type: group_type, function: function, params: params)
+def add_group(name:, label: nil, group_type: nil, groups: nil, function: nil, params: nil)
+  item = Item.new(type: 'Group', name: name, label: label, groups: groups, group_type: group_type, function: function, params: params)
   Rest.add_item(item: item)
 end
 

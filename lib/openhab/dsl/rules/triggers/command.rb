@@ -43,8 +43,8 @@ module OpenHAB
         #
         def create_received_trigger(commands, item)
           commands.each do |command|
-            if item.is_a? OpenHAB::DSL::Items::GroupItem::GroupItems
-              config, trigger = create_group_command_trigger(item)
+            if item.is_a? OpenHAB::DSL::Items::GroupItem::MembersOfGroup
+              config, trigger = create_group_command_trigger(item.group)
             else
               config, trigger = create_item_command_trigger(item)
             end
@@ -76,7 +76,7 @@ module OpenHAB
         #   second element is trigger type
         #
         def create_group_command_trigger(group)
-          config = { 'groupName' => group.group.name }
+          config = { 'groupName' => group.name }
           trigger = Trigger::GROUP_COMMAND
           [config, trigger]
         end

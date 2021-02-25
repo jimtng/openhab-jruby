@@ -73,8 +73,8 @@ module OpenHAB
         #
         def create_changed_trigger(item, from, to)
           trigger, config = case item
-                            when OpenHAB::DSL::Items::GroupItem::GroupItems
-                              create_group_changed_trigger(item, from, to)
+                            when OpenHAB::DSL::Items::GroupItem::MembersOfGroup
+                              create_group_changed_trigger(item.group, from, to)
                             when Thing then create_thing_changed_trigger(item, from, to)
                             else create_item_changed_trigger(item, from, to)
                             end
@@ -124,7 +124,7 @@ module OpenHAB
         #  second element is a Hash configuring trigger
         #
         def create_group_changed_trigger(group, from, to)
-          config = { 'groupName' => group.group.name }
+          config = { 'groupName' => group.name }
           config['state'] = to.to_s if to
           config['previousState'] = from.to_s if from
           trigger = Trigger::GROUP_STATE_CHANGE

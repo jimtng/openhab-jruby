@@ -42,7 +42,7 @@ module OpenHAB
         #
         def create_update_trigger(item, to_state)
           case item
-          when OpenHAB::DSL::Items::GroupItem::GroupItems then group_update(item, to_state)
+          when OpenHAB::DSL::Items::GroupItem::MembersOfGroup then group_update(item.group, to_state)
           when Thing then thing_update(item, to_state)
           else item_update(item, to_state)
           end
@@ -74,7 +74,7 @@ module OpenHAB
         #  second element is a Hash configuring trigger
         #
         def group_update(item, to_state)
-          config = { 'groupName' => item.group.name }
+          config = { 'groupName' => item.name }
           config['state'] = to_state.to_s unless to_state.nil?
           trigger = Trigger::GROUP_STATE_UPDATE
           [trigger, config]
