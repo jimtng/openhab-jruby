@@ -16,6 +16,7 @@ on:
 
 env:
   RUBY_VERSION: 3.1.3
+  CHANGELOG_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 permissions:
   contents: write
@@ -35,11 +36,22 @@ jobs:
         with:
           ruby-version: ${{ env.RUBY_VERSION }}
           bundler-cache: true
-      - name: Bump version and release
+      - name: Bump version
         run: |
              bundle config unset deployment
+             echo 'OLD_VERSION='$(ruby -Ilib/openhab/dsl -r version -e "puts OpenHAB::DSL::VERSION") >> $GITHUB_ENV
              bundle exec gem bump -v ${{ inputs.version }} -m "v%{version}" --file lib/openhab/dsl/version.rb
-             bundle check
+             echo 'NEW_VERSION='$(ruby -Ilib/openhab/dsl -r version -e "puts OpenHAB::DSL::VERSION") >> $GITHUB_ENV
              git add Gemfile.lock
+
+      - name: Generate CHANGELOG
+        run: |
+             bin/rake changelog[${{ env.OLD_VERSION }},${{ env.NEW_VERSION }},tmp/new_changes.md]
+             git add CHANGELOG.md
+
+      - name: Create Release
+        run: |
              git commit --amend --no-edit
-             GEM_HOST_API_KEY=${{ secrets.GEM_HOST_API_KEY }} bin/rake release
+             git push
+            #  GEM_HOST_API_KEY=${{ secrets.GEM_HOST_API_KEY }} bin/rake release
+             gh release create v${{ env.NEW_VERSION }} --notes-file tmp/new_changes.md 
