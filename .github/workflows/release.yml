@@ -43,4 +43,5 @@ jobs:
              bin/rake changelog
              git add Gemfile.lock CHANGELOG.md
              git commit --amend --no-edit
+             git push
             #  GEM_HOST_API_KEY=${{ secrets.GEM_HOST_API_KEY }} bin/rake release
