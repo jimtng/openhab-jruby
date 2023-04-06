@@ -39,7 +39,7 @@ jobs:
         run: |
              bundle config unset deployment
              bundle exec gem bump -v ${{ inputs.version }} -m "v%{version}" --file lib/openhab/dsl/version.rb
-             bundle check
-             git add Gemfile.lock
+             bin/rake changelog
+             git add Gemfile.lock CHANGELOG.md
              git commit --amend --no-edit
              GEM_HOST_API_KEY=${{ secrets.GEM_HOST_API_KEY }} bin/rake release
