@@ -17,3 +17,8 @@ end
 def strip_links(text)
   text.gsub(/\{(.+?)\}/) { $1.split(" ", 2).last }.gsub(/\[(.*?)\]\(.*?\)/, "\\1")
 end
+
+# TODO: Deal with a change in major version
+def stable_version
+  OpenHAB::DSL::VERSION.split(".")[0..1].join(".")
+end

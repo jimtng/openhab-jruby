@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script type="text/javascript">
+      indexpath = '<%= url_for_search_index %>';
+      base_url = '<%= base_url %>';
+      stable_version = "<%= stable_version %>";
+    </script>
     <%= erb(:headers) %>
     <meta property="og:description" name="description" content="<%= meta_description %>">
     <meta property="og:image" content="https://raw.githubusercontent.com/jruby/collateral/master/logos/PNGs/circle-fill/full-color/jruby-logo-circle-logo-fill-outline-medium.png">
     <meta property="og:image:alt" content="The JRuby logo">
-    <script type="text/javascript">
-      indexpath = '<%= url_for_search_index %>';
-      base_url = '<%= base_url %>';
-    </script>
   </head>
   <body>
     <div id="app">
