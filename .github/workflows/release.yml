@@ -53,6 +53,7 @@ jobs:
           GEM_HOST_API_KEY: ${{ secrets.GEM_HOST_API_KEY }} 
         run: |
           git commit --amend --no-edit
+          git status
           bin/rake release
       - name: Create Github Release
         env:
