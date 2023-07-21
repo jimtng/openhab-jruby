@@ -83,7 +83,7 @@
         </nav>
         <div class="page-versions">
   <ul class="version-switcher">
-    <li><a href="/openhab-jruby/5.2" class="version-button stable">Stable <small>(5.2)</small></a></li>
+    <li><a href="/openhab-jruby/5.4" class="version-button stable">Stable <small>(5.4)</small></a></li>
     <li><a href="/openhab-jruby/main" class="version-button main">Latest <small>(main)</small></a></li>
   </ul>
   
@@ -1172,6 +1172,19 @@
   
   
   
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="OpenHAB/Core/Rules/TaggedArray.html" title="OpenHAB::Core::Rules::TaggedArray (class)">TaggedArray</a></span>
+      
+        &lt; Object
+      
+      
+    </span>
+    
+    
+  </li>
+
   
   
 
@@ -2323,6 +2336,7 @@
   
   
   
+  
 
         
       </ul>
@@ -2813,7 +2827,7 @@ In openHAB 4.0+ the defaults are set so the next step can be skipped.</p>
 <li>
 <p>Configure JRuby openHAB services</p>
 <p>Create a file called <code>jruby.cfg</code> in <code>&lt;OPENHAB_CONF&gt;/services/</code> with the following content:</p>
-<pre class="code ini"><code class="ini">org.openhab.automation.jrubyscripting:gems=openhab-scripting=~&gt;5.0.0
+<pre class="code ini"><code class="ini">org.openhab.automation.jrubyscripting:gems=openhab-scripting=~&gt;5.0
 org.openhab.automation.jrubyscripting:require=openhab/dsl
 </code></pre>
 </li>
@@ -2839,7 +2853,7 @@ Simply change the <code>gems</code> and <code>require</code> configuration setti
 </tr>
 <tr>
 <td><code>gems</code></td>
-<td>A list of gems to install. <!-- raw HTML omitted --><!-- raw HTML omitted -->Default: <code>openhab-scripting=~&gt;5.0.0</code></td>
+<td>A list of gems to install. <!-- raw HTML omitted --><!-- raw HTML omitted -->Default: <code>openhab-scripting=~&gt;5.0</code></td>
 </tr>
 <tr>
 <td><code>check_update</code></td>
@@ -3269,6 +3283,12 @@ Note that by default items are not persisted to storage, and will be removed whe
   group_item <span class="constant">Equipment</span>, <span class="key">tags</span>: <span class="constant">Semantics</span>::<span class="constant">HVAC</span>, <span class="key">thing</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">binding:thing</span><span class="delimiter">&quot;</span></span>
     string_item <span class="constant">Mode</span>, <span class="key">tags</span>: <span class="constant">Semantics</span>::<span class="constant">Control</span>, <span class="key">channel</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">mode</span><span class="delimiter">&quot;</span></span>
   <span class="keyword">end</span>
+
+  <span class="comment"># dimension Temperature inferred</span>
+  number_item <span class="constant">OutdoorTemp</span>, <span class="key">format</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">%.1f %unit%</span><span class="delimiter">&quot;</span></span>, <span class="key">unit</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">°F</span><span class="delimiter">&quot;</span></span>
+    
+  <span class="comment"># unit lx, dimension Illuminance, format &quot;%s %unit%&quot; inferred</span>
+  number_item <span class="constant">OutdoorBrightness</span>, <span class="key">state</span>: <span class="integer">10_000</span> | <span class="string"><span class="delimiter">&quot;</span><span class="content">lx</span><span class="delimiter">&quot;</span></span>
 <span class="keyword">end</span>
 </code></pre>
 <h3 id="things"><a href="#things" class="header-anchor">#</a>Things</h3>
@@ -4012,7 +4032,7 @@ formatter = java.time.format.DateTimeFormatter.of_pattern(<span class="string"><
 </div></div>
 
         <footer>
-  Generated on Tue May  2 04:08:51 2023 by
+  Generated on Fri Jul 21 15:27:35 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.3).
 </footer>

@@ -85,7 +85,7 @@ or even later based on a rule executing. - Documentation for openhab-scripting J
         </nav>
         <div class="page-versions">
   <ul class="version-switcher">
-    <li><a href="/openhab-jruby/5.2" class="version-button stable">Stable <small>(5.2)</small></a></li>
+    <li><a href="/openhab-jruby/5.4" class="version-button stable">Stable <small>(5.4)</small></a></li>
     <li><a href="/openhab-jruby/main" class="version-button main">Latest <small>(main)</small></a></li>
   </ul>
   
@@ -1174,6 +1174,19 @@ or even later based on a rule executing. - Documentation for openhab-scripting J
   
   
   
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Rules/TaggedArray.html" title="OpenHAB::Core::Rules::TaggedArray (class)">TaggedArray</a></span>
+      
+        &lt; Object
+      
+      
+    </span>
+    
+    
+  </li>
+
   
   
 
@@ -2325,6 +2338,7 @@ or even later based on a rule executing. - Documentation for openhab-scripting J
   
   
   
+  
 
         
       </ul>
@@ -2735,6 +2749,12 @@ or even later based on a rule executing.</p>
   group_item <span class="constant">Equipment</span>, <span class="key">tags</span>: <span class="constant">Semantics</span>::<span class="constant">HVAC</span>, <span class="key">thing</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">binding:thing</span><span class="delimiter">&quot;</span></span>
     string_item <span class="constant">Mode</span>, <span class="key">tags</span>: <span class="constant">Semantics</span>::<span class="constant">Control</span>, <span class="key">channel</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">mode</span><span class="delimiter">&quot;</span></span>
   <span class="keyword">end</span>
+
+  <span class="comment"># dimension Temperature inferred</span>
+  number_item <span class="constant">OutdoorTemp</span>, <span class="key">format</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">%.1f %unit%</span><span class="delimiter">&quot;</span></span>, <span class="key">unit</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">°F</span><span class="delimiter">&quot;</span></span>
+
+  <span class="comment"># unit lx, dimension Illuminance, format &quot;%s %unit%&quot; inferred</span>
+  number_item <span class="constant">OutdoorBrightness</span>, <span class="key">state</span>: <span class="integer">10_000</span> | <span class="string"><span class="delimiter">&quot;</span><span class="content">lx</span><span class="delimiter">&quot;</span></span>
 <span class="keyword">end</span></code></pre>
     
   </div>
@@ -3053,7 +3073,7 @@ or even later based on a rule executing.</p>
   
   
   <h3 class="inherited">Methods included from <span class='object_link'><a href="../../DSL.html" title="OpenHAB::DSL (module)">OpenHAB::DSL</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="../../DSL.html#after-class_method" title="OpenHAB::DSL.after (method)">after</a></span>, <span class='object_link'><a href="../../DSL.html#between-class_method" title="OpenHAB::DSL.between (method)">between</a></span>, <span class='object_link'><a href="../../DSL.html#debounce_for-class_method" title="OpenHAB::DSL.debounce_for (method)">debounce_for</a></span>, <span class='object_link'><a href="../../DSL.html#ensure_states-class_method" title="OpenHAB::DSL.ensure_states (method)">ensure_states</a></span>, <span class='object_link'><a href="../../DSL.html#holiday_file-class_method" title="OpenHAB::DSL.holiday_file (method)">holiday_file</a></span>, <span class='object_link'><a href="../../DSL.html#holiday_file!-class_method" title="OpenHAB::DSL.holiday_file! (method)">holiday_file!</a></span>, <span class='object_link'><a href="../../DSL.html#items-class_method" title="OpenHAB::DSL.items (method)">items</a></span>, <span class='object_link'><a href="../../DSL.html#only_every-class_method" title="OpenHAB::DSL.only_every (method)">only_every</a></span>, <span class='object_link'><a href="../../DSL.html#persistence-class_method" title="OpenHAB::DSL.persistence (method)">persistence</a></span>, <span class='object_link'><a href="../../DSL.html#persistence!-class_method" title="OpenHAB::DSL.persistence! (method)">persistence!</a></span>, <span class='object_link'><a href="../../DSL.html#profile-class_method" title="OpenHAB::DSL.profile (method)">profile</a></span>, <span class='object_link'><a href="../../DSL.html#provider-class_method" title="OpenHAB::DSL.provider (method)">provider</a></span>, <span class='object_link'><a href="../../DSL.html#provider!-class_method" title="OpenHAB::DSL.provider! (method)">provider!</a></span>, <span class='object_link'><a href="../../DSL.html#rule-class_method" title="OpenHAB::DSL.rule (method)">rule</a></span>, <span class='object_link'><a href="../../DSL.html#rules-class_method" title="OpenHAB::DSL.rules (method)">rules</a></span>, <span class='object_link'><a href="../../DSL.html#script-class_method" title="OpenHAB::DSL.script (method)">script</a></span>, <span class='object_link'><a href="../../DSL.html#shared_cache-class_method" title="OpenHAB::DSL.shared_cache (method)">shared_cache</a></span>, <span class='object_link'><a href="../../DSL.html#store_states-class_method" title="OpenHAB::DSL.store_states (method)">store_states</a></span>, <span class='object_link'><a href="../../DSL.html#things-class_method" title="OpenHAB::DSL.things (method)">things</a></span>, <span class='object_link'><a href="../../DSL.html#throttle_for-class_method" title="OpenHAB::DSL.throttle_for (method)">throttle_for</a></span>, <span class='object_link'><a href="../../DSL.html#timers-class_method" title="OpenHAB::DSL.timers (method)">timers</a></span>, <span class='object_link'><a href="../../DSL.html#transform-class_method" title="OpenHAB::DSL.transform (method)">transform</a></span>, <span class='object_link'><a href="../../DSL.html#unit-class_method" title="OpenHAB::DSL.unit (method)">unit</a></span>, <span class='object_link'><a href="../../DSL.html#unit!-class_method" title="OpenHAB::DSL.unit! (method)">unit!</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="../../DSL.html#after-class_method" title="OpenHAB::DSL.after (method)">after</a></span>, <span class='object_link'><a href="../../DSL.html#between-class_method" title="OpenHAB::DSL.between (method)">between</a></span>, <span class='object_link'><a href="../../DSL.html#debounce_for-class_method" title="OpenHAB::DSL.debounce_for (method)">debounce_for</a></span>, <span class='object_link'><a href="../../DSL.html#ensure_states-class_method" title="OpenHAB::DSL.ensure_states (method)">ensure_states</a></span>, <span class='object_link'><a href="../../DSL.html#holiday_file-class_method" title="OpenHAB::DSL.holiday_file (method)">holiday_file</a></span>, <span class='object_link'><a href="../../DSL.html#holiday_file!-class_method" title="OpenHAB::DSL.holiday_file! (method)">holiday_file!</a></span>, <span class='object_link'><a href="../../DSL.html#items-class_method" title="OpenHAB::DSL.items (method)">items</a></span>, <span class='object_link'><a href="../../DSL.html#only_every-class_method" title="OpenHAB::DSL.only_every (method)">only_every</a></span>, <span class='object_link'><a href="../../DSL.html#persistence-class_method" title="OpenHAB::DSL.persistence (method)">persistence</a></span>, <span class='object_link'><a href="../../DSL.html#persistence!-class_method" title="OpenHAB::DSL.persistence! (method)">persistence!</a></span>, <span class='object_link'><a href="../../DSL.html#profile-class_method" title="OpenHAB::DSL.profile (method)">profile</a></span>, <span class='object_link'><a href="../../DSL.html#provider-class_method" title="OpenHAB::DSL.provider (method)">provider</a></span>, <span class='object_link'><a href="../../DSL.html#provider!-class_method" title="OpenHAB::DSL.provider! (method)">provider!</a></span>, <span class='object_link'><a href="../../DSL.html#rule-class_method" title="OpenHAB::DSL.rule (method)">rule</a></span>, <span class='object_link'><a href="../../DSL.html#rules-class_method" title="OpenHAB::DSL.rules (method)">rules</a></span>, <span class='object_link'><a href="../../DSL.html#scene-class_method" title="OpenHAB::DSL.scene (method)">scene</a></span>, <span class='object_link'><a href="../../DSL.html#script-class_method" title="OpenHAB::DSL.script (method)">script</a></span>, <span class='object_link'><a href="../../DSL.html#shared_cache-class_method" title="OpenHAB::DSL.shared_cache (method)">shared_cache</a></span>, <span class='object_link'><a href="../../DSL.html#store_states-class_method" title="OpenHAB::DSL.store_states (method)">store_states</a></span>, <span class='object_link'><a href="../../DSL.html#things-class_method" title="OpenHAB::DSL.things (method)">things</a></span>, <span class='object_link'><a href="../../DSL.html#throttle_for-class_method" title="OpenHAB::DSL.throttle_for (method)">throttle_for</a></span>, <span class='object_link'><a href="../../DSL.html#timers-class_method" title="OpenHAB::DSL.timers (method)">timers</a></span>, <span class='object_link'><a href="../../DSL.html#transform-class_method" title="OpenHAB::DSL.transform (method)">transform</a></span>, <span class='object_link'><a href="../../DSL.html#unit-class_method" title="OpenHAB::DSL.unit (method)">unit</a></span>, <span class='object_link'><a href="../../DSL.html#unit!-class_method" title="OpenHAB::DSL.unit! (method)">unit!</a></span></p>
 
   
   
@@ -3215,10 +3235,10 @@ Note that you can use a string, a symbol, or even a literal constant name</p>
       <pre class="lines">
 
 
-53</pre>
+59</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/builder.rb', line 53</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/builder.rb', line 59</span>
 
 def_item_method(<span class="symbol">:color</span>)</pre>
     </td>
@@ -3327,10 +3347,10 @@ Note that you can use a string, a symbol, or even a literal constant name</p>
       <pre class="lines">
 
 
-55</pre>
+61</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/builder.rb', line 55</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/builder.rb', line 61</span>
 
 def_item_method(<span class="symbol">:contact</span>)</pre>
     </td>
@@ -3439,10 +3459,10 @@ Note that you can use a string, a symbol, or even a literal constant name</p>
       <pre class="lines">
 
 
-57</pre>
+63</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/builder.rb', line 57</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/builder.rb', line 63</span>
 
 def_item_method(<span class="symbol">:date_time</span>)</pre>
     </td>
@@ -3551,10 +3571,10 @@ Note that you can use a string, a symbol, or even a literal constant name</p>
       <pre class="lines">
 
 
-59</pre>
+65</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/builder.rb', line 59</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/builder.rb', line 65</span>
 
 def_item_method(<span class="symbol">:dimmer</span>)</pre>
     </td>
@@ -3670,6 +3690,21 @@ def_item_method(<span class="symbol">:dimmer</span>)</pre>
       
         &mdash;
         <div class='inline'><p>The unit dimension for a <span class='object_link'><a href="../../Core/Items/NumberItem.html" title="OpenHAB::Core::Items::NumberItem (class)">NumberItem</a></span> (see <span class='object_link'><a href="ItemBuilder.html#dimension-instance_method" title="OpenHAB::DSL::Items::ItemBuilder#dimension (method)">ItemBuilder#dimension</a></span>)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>unit</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../../Symbol.html" title="Symbol (class)">Symbol</a></span></tt>, <tt>String</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The unit for a <span class='object_link'><a href="../../Core/Items/NumberItem.html" title="OpenHAB::Core::Items::NumberItem (class)">NumberItem</a></span> (see <span class='object_link'><a href="ItemBuilder.html#unit-instance_method" title="OpenHAB::DSL::Items::ItemBuilder#unit (method)">ItemBuilder#unit</a></span>)</p>
 </div>
       
     </li>
@@ -3925,18 +3960,18 @@ def_item_method(<span class="symbol">:dimmer</span>)</pre>
       <pre class="lines">
 
 
-83
-84
-85
-86
-87
-88
 89
 90
-91</pre>
+91
+92
+93
+94
+95
+96
+97</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/builder.rb', line 83</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/builder.rb', line 89</span>
 
 <span class="keyword">def</span> <span class="function">group_item</span>(*args, **kwargs, &amp;block)
   item = <span class="constant">GroupItemBuilder</span>.new(*args, <span class="key">provider</span>: provider, **kwargs)
@@ -4053,10 +4088,10 @@ Note that you can use a string, a symbol, or even a literal constant name</p>
       <pre class="lines">
 
 
-61</pre>
+67</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/builder.rb', line 61</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/builder.rb', line 67</span>
 
 def_item_method(<span class="symbol">:image</span>)</pre>
     </td>
@@ -4165,10 +4200,10 @@ Note that you can use a string, a symbol, or even a literal constant name</p>
       <pre class="lines">
 
 
-63</pre>
+69</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/builder.rb', line 63</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/builder.rb', line 69</span>
 
 def_item_method(<span class="symbol">:location</span>)</pre>
     </td>
@@ -4277,10 +4312,10 @@ Note that you can use a string, a symbol, or even a literal constant name</p>
       <pre class="lines">
 
 
-65</pre>
+71</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/builder.rb', line 65</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/builder.rb', line 71</span>
 
 def_item_method(<span class="symbol">:number</span>)</pre>
     </td>
@@ -4389,10 +4424,10 @@ Note that you can use a string, a symbol, or even a literal constant name</p>
       <pre class="lines">
 
 
-67</pre>
+73</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/builder.rb', line 67</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/builder.rb', line 73</span>
 
 def_item_method(<span class="symbol">:player</span>)</pre>
     </td>
@@ -4501,10 +4536,10 @@ Note that you can use a string, a symbol, or even a literal constant name</p>
       <pre class="lines">
 
 
-69</pre>
+75</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/builder.rb', line 69</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/builder.rb', line 75</span>
 
 def_item_method(<span class="symbol">:rollershutter</span>)</pre>
     </td>
@@ -4613,10 +4648,10 @@ Note that you can use a string, a symbol, or even a literal constant name</p>
       <pre class="lines">
 
 
-71</pre>
+77</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/builder.rb', line 71</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/builder.rb', line 77</span>
 
 def_item_method(<span class="symbol">:string</span>)</pre>
     </td>
@@ -4725,10 +4760,10 @@ Note that you can use a string, a symbol, or even a literal constant name</p>
       <pre class="lines">
 
 
-73</pre>
+79</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/builder.rb', line 73</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/builder.rb', line 79</span>
 
 def_item_method(<span class="symbol">:switch</span>)</pre>
     </td>
@@ -4741,7 +4776,7 @@ def_item_method(<span class="symbol">:switch</span>)</pre>
 </div>
 
         <footer>
-  Generated on Tue May  2 04:08:54 2023 by
+  Generated on Fri Jul 21 15:27:39 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.3).
 </footer>
