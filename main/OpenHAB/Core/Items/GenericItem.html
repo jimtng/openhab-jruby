@@ -83,7 +83,7 @@
         </nav>
         <div class="page-versions">
   <ul class="version-switcher">
-    <li><a href="/openhab-jruby/5.9" class="version-button stable">Stable <small>(5.9)</small></a></li>
+    <li><a href="/openhab-jruby/5.11" class="version-button stable">Stable <small>(5.11)</small></a></li>
     <li><a href="/openhab-jruby/main" class="version-button main">Latest <small>(main)</small></a></li>
   </ul>
   
@@ -467,6 +467,19 @@
   
   <li class="">
     <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Events/ChannelTriggeredEvent.html" title="OpenHAB::Core::Events::ChannelTriggeredEvent (class)">ChannelTriggeredEvent</a></span>
+      
+        &lt; AbstractEvent
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Events/ItemAddedEvent.html" title="OpenHAB::Core::Events::ItemAddedEvent (class)">ItemAddedEvent</a></span>
       
         &lt; AbstractItemRegistryEvent
@@ -544,6 +557,19 @@
   <li class="">
     <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Events/ItemStateEvent.html" title="OpenHAB::Core::Events::ItemStateEvent (class)">ItemStateEvent</a></span>
+      
+        &lt; ItemEvent
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Events/ItemStateUpdatedEvent.html" title="OpenHAB::Core::Events::ItemStateUpdatedEvent (class)">ItemStateUpdatedEvent</a></span>
       
         &lt; ItemEvent
       
@@ -800,6 +826,19 @@
   <li class="">
     <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="Item.html" title="OpenHAB::Core::Items::Item (module)">Item</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="ItemChannelLinks.html" title="OpenHAB::Core::Items::ItemChannelLinks (class)">ItemChannelLinks</a></span>
+      
+        &lt; SimpleDelegator
       
       
     </span>
@@ -1137,6 +1176,10 @@
     
   </li>
 
+  
+  
+  
+  
   
   
   
@@ -2097,6 +2140,40 @@
         
   
   
+  <li class="collapsed">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-2" href="../../DSL/ConfigDescription.html" title="OpenHAB::DSL::ConfigDescription (module)">ConfigDescription</a></span>
+      
+      
+        <a class="arrow toggle right"></a>
+      
+    </span>
+    
+    
+      
+      <ul>
+        
+        
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../DSL/ConfigDescription/Builder.html" title="OpenHAB::DSL::ConfigDescription::Builder (class)">Builder</a></span>
+      
+        &lt; Object
+      
+      
+    </span>
+    
+    
+  </li>
+
+
+        
+      </ul>
+    
+  </li>
+
+  
   <li class="">
     <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-2" href="../../DSL/Debouncer.html" title="OpenHAB::DSL::Debouncer (class)">Debouncer</a></span>
@@ -2722,6 +2799,8 @@
   
   
   
+  
+  
 
         
       </ul>
@@ -3064,7 +3143,6 @@
   
   
   
-  
 
               </ul>
             </section>
@@ -3354,7 +3432,7 @@
   
   
   <h3 class="inherited">Attributes included from <span class='object_link'><a href="Item.html" title="OpenHAB::Core::Items::Item (module)">Item</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="Item.html#accepted_command_types-instance_method" title="OpenHAB::Core::Items::Item#accepted_command_types (method)">#accepted_command_types</a></span>, <span class='object_link'><a href="Item.html#accepted_data_types-instance_method" title="OpenHAB::Core::Items::Item#accepted_data_types (method)">#accepted_data_types</a></span>, <span class='object_link'><a href="Item.html#all_groups-instance_method" title="OpenHAB::Core::Items::Item#all_groups (method)">#all_groups</a></span>, <span class='object_link'><a href="Item.html#groups-instance_method" title="OpenHAB::Core::Items::Item#groups (method)">#groups</a></span>, <span class='object_link'><a href="Item.html#metadata-instance_method" title="OpenHAB::Core::Items::Item#metadata (method)">#metadata</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="Item.html#accepted_command_types-instance_method" title="OpenHAB::Core::Items::Item#accepted_command_types (method)">#accepted_command_types</a></span>, <span class='object_link'><a href="Item.html#accepted_data_types-instance_method" title="OpenHAB::Core::Items::Item#accepted_data_types (method)">#accepted_data_types</a></span>, <span class='object_link'><a href="Item.html#all_groups-instance_method" title="OpenHAB::Core::Items::Item#all_groups (method)">#all_groups</a></span>, <span class='object_link'><a href="Item.html#groups-instance_method" title="OpenHAB::Core::Items::Item#groups (method)">#groups</a></span>, <span class='object_link'><a href="Item.html#links-instance_method" title="OpenHAB::Core::Items::Item#links (method)">#links</a></span>, <span class='object_link'><a href="Item.html#metadata-instance_method" title="OpenHAB::Core::Items::Item#metadata (method)">#metadata</a></span>, <span class='object_link'><a href="Item.html#provider-instance_method" title="OpenHAB::Core::Items::Item#provider (method)">#provider</a></span>, <span class='object_link'><a href="Item.html#thing-instance_method" title="OpenHAB::Core::Items::Item#thing (method)">#thing</a></span>, <span class='object_link'><a href="Item.html#things-instance_method" title="OpenHAB::Core::Items::Item#things (method)">#things</a></span></p>
 
 
   
@@ -3374,7 +3452,7 @@
     
 
     
-      (also: #&lt;&lt;)
+      (also: #command!, #&lt;&lt;)
     
   </span>
   
@@ -3514,6 +3592,8 @@
     
 
     
+      (also: #update!)
+    
   </span>
   
   
@@ -3555,7 +3635,7 @@
   
   
   <h3 class="inherited">Methods included from <span class='object_link'><a href="Item.html" title="OpenHAB::Core::Items::Item (module)">Item</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="Item.html#color_item%3F-instance_method" title="OpenHAB::Core::Items::Item#color_item? (method)">#color_item?</a></span>, <span class='object_link'><a href="Item.html#contact_item%3F-instance_method" title="OpenHAB::Core::Items::Item#contact_item? (method)">#contact_item?</a></span>, <span class='object_link'><a href="Item.html#date_time_item%3F-instance_method" title="OpenHAB::Core::Items::Item#date_time_item? (method)">#date_time_item?</a></span>, <span class='object_link'><a href="Item.html#dimmer_item%3F-instance_method" title="OpenHAB::Core::Items::Item#dimmer_item? (method)">#dimmer_item?</a></span>, <span class='object_link'><a href="Item.html#group_item%3F-instance_method" title="OpenHAB::Core::Items::Item#group_item? (method)">#group_item?</a></span>, <span class='object_link'><a href="Item.html#image_item%3F-instance_method" title="OpenHAB::Core::Items::Item#image_item? (method)">#image_item?</a></span>, <span class='object_link'><a href="Item.html#inspect-instance_method" title="OpenHAB::Core::Items::Item#inspect (method)">#inspect</a></span>, <span class='object_link'><a href="Item.html#links-instance_method" title="OpenHAB::Core::Items::Item#links (method)">#links</a></span>, <span class='object_link'><a href="Item.html#location_item%3F-instance_method" title="OpenHAB::Core::Items::Item#location_item? (method)">#location_item?</a></span>, <span class='object_link'><a href="Item.html#member_of%3F-instance_method" title="OpenHAB::Core::Items::Item#member_of? (method)">#member_of?</a></span>, <span class='object_link'><a href="Item.html#number_item%3F-instance_method" title="OpenHAB::Core::Items::Item#number_item? (method)">#number_item?</a></span>, <span class='object_link'><a href="Item.html#player_item%3F-instance_method" title="OpenHAB::Core::Items::Item#player_item? (method)">#player_item?</a></span>, <span class='object_link'><a href="Item.html#provider-instance_method" title="OpenHAB::Core::Items::Item#provider (method)">#provider</a></span>, <span class='object_link'><a href="Item.html#rollershutter_item%3F-instance_method" title="OpenHAB::Core::Items::Item#rollershutter_item? (method)">#rollershutter_item?</a></span>, <span class='object_link'><a href="Item.html#string_item%3F-instance_method" title="OpenHAB::Core::Items::Item#string_item? (method)">#string_item?</a></span>, <span class='object_link'><a href="Item.html#switch_item%3F-instance_method" title="OpenHAB::Core::Items::Item#switch_item? (method)">#switch_item?</a></span>, <span class='object_link'><a href="Item.html#tagged%3F-instance_method" title="OpenHAB::Core::Items::Item#tagged? (method)">#tagged?</a></span>, <span class='object_link'><a href="Item.html#thing-instance_method" title="OpenHAB::Core::Items::Item#thing (method)">#thing</a></span>, <span class='object_link'><a href="Item.html#things-instance_method" title="OpenHAB::Core::Items::Item#things (method)">#things</a></span>, <span class='object_link'><a href="Item.html#to_s-instance_method" title="OpenHAB::Core::Items::Item#to_s (method)">#to_s</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="Item.html#color_item%3F-instance_method" title="OpenHAB::Core::Items::Item#color_item? (method)">#color_item?</a></span>, <span class='object_link'><a href="Item.html#contact_item%3F-instance_method" title="OpenHAB::Core::Items::Item#contact_item? (method)">#contact_item?</a></span>, <span class='object_link'><a href="Item.html#date_time_item%3F-instance_method" title="OpenHAB::Core::Items::Item#date_time_item? (method)">#date_time_item?</a></span>, <span class='object_link'><a href="Item.html#dimmer_item%3F-instance_method" title="OpenHAB::Core::Items::Item#dimmer_item? (method)">#dimmer_item?</a></span>, <span class='object_link'><a href="Item.html#group_item%3F-instance_method" title="OpenHAB::Core::Items::Item#group_item? (method)">#group_item?</a></span>, <span class='object_link'><a href="Item.html#image_item%3F-instance_method" title="OpenHAB::Core::Items::Item#image_item? (method)">#image_item?</a></span>, <span class='object_link'><a href="Item.html#inspect-instance_method" title="OpenHAB::Core::Items::Item#inspect (method)">#inspect</a></span>, <span class='object_link'><a href="Item.html#link-instance_method" title="OpenHAB::Core::Items::Item#link (method)">#link</a></span>, <span class='object_link'><a href="Item.html#location_item%3F-instance_method" title="OpenHAB::Core::Items::Item#location_item? (method)">#location_item?</a></span>, <span class='object_link'><a href="Item.html#member_of%3F-instance_method" title="OpenHAB::Core::Items::Item#member_of? (method)">#member_of?</a></span>, <span class='object_link'><a href="Item.html#number_item%3F-instance_method" title="OpenHAB::Core::Items::Item#number_item? (method)">#number_item?</a></span>, <span class='object_link'><a href="Item.html#player_item%3F-instance_method" title="OpenHAB::Core::Items::Item#player_item? (method)">#player_item?</a></span>, <span class='object_link'><a href="Item.html#rollershutter_item%3F-instance_method" title="OpenHAB::Core::Items::Item#rollershutter_item? (method)">#rollershutter_item?</a></span>, <span class='object_link'><a href="Item.html#string_item%3F-instance_method" title="OpenHAB::Core::Items::Item#string_item? (method)">#string_item?</a></span>, <span class='object_link'><a href="Item.html#switch_item%3F-instance_method" title="OpenHAB::Core::Items::Item#switch_item? (method)">#switch_item?</a></span>, <span class='object_link'><a href="Item.html#tagged%3F-instance_method" title="OpenHAB::Core::Items::Item#tagged? (method)">#tagged?</a></span>, <span class='object_link'><a href="Item.html#to_s-instance_method" title="OpenHAB::Core::Items::Item#to_s (method)">#to_s</a></span>, <span class='object_link'><a href="Item.html#unlink-instance_method" title="OpenHAB::Core::Items::Item#unlink (method)">#unlink</a></span></p>
 
   
   
@@ -3634,18 +3714,18 @@
       <pre class="lines">
 
 
-260
-261
-262
-263
-264
-265
 266
 267
-268</pre>
+268
+269
+270
+271
+272
+273
+274</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core/items/generic_item.rb', line 260</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core/items/generic_item.rb', line 266</span>
 
 <span class="keyword">def</span> <span class="function">category=</span>(value)
   modify <span class="keyword">do</span>
@@ -4062,19 +4142,19 @@ Use <span class='object_link'><a href="#undef%3F-instance_method" title="OpenHAB
       <pre class="lines">
 
 
-282
-283
-284
-285
-286
-287
 288
 289
 290
-291</pre>
+291
+292
+293
+294
+295
+296
+297</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core/items/generic_item.rb', line 282</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core/items/generic_item.rb', line 288</span>
 
 <span class="keyword">def</span> <span class="function">tags=</span>(values)
   modify <span class="keyword">do</span>
@@ -4106,7 +4186,7 @@ Use <span class='object_link'><a href="#undef%3F-instance_method" title="OpenHAB
 
   
     <span class="aliases">Also known as:
-    <span class="names"><span id='<<-instance_method'>&lt;&lt;</span></span>
+    <span class="names"><span id='command!-instance_method'>command!</span>, <span id='<<-instance_method'>&lt;&lt;</span></span>
     </span>
   
 
@@ -4115,8 +4195,10 @@ Use <span class='object_link'><a href="#undef%3F-instance_method" title="OpenHAB
   <div class="discussion">
     <p>Send a command to this item</p>
 <p>When this method is chained after the <span class='object_link'><a href="../../DSL/Items/Ensure/Ensurable.html#ensure-instance_method" title="OpenHAB::DSL::Items::Ensure::Ensurable#ensure (method)">ensure</a></span>
-method, or issued inside an <span class='object_link'><a href="../../DSL.html#ensure_states-class_method" title="OpenHAB::DSL.ensure_states (method)">ensure_states</a></span> block,
+method, or issued inside an <span class='object_link'><a href="../../DSL.html#ensure_states-class_method" title="OpenHAB::DSL.ensure_states (method)">ensure_states</a></span> block, or after
+<span class='object_link'><a href="../../DSL.html#ensure_states!-class_method" title="OpenHAB::DSL.ensure_states! (method)">ensure_states!</a></span> have been called,
 the command will only be sent if the item is not already in the same state.</p>
+<p>The similar method <code>command!</code>, however, will always send the command regardless of the item's state.</p>
 
 
   </div>
@@ -4168,6 +4250,8 @@ otherwise the item.</p>
     
       <li><span class='object_link'><a href="../../DSL.html#ensure_states-class_method" title="OpenHAB::DSL.ensure_states (method)">ensure_states</a></span></li>
     
+      <li><span class='object_link'><a href="../../DSL.html#ensure_states!-class_method" title="OpenHAB::DSL.ensure_states! (method)">ensure_states!</a></span></li>
+    
       <li><span class='object_link'><a href="../../DSL/Items/Ensure/Ensurable.html#ensure-instance_method" title="OpenHAB::DSL::Items::Ensure::Ensurable#ensure (method)">ensure</a></span></li>
     
   </ul>
@@ -4178,15 +4262,15 @@ otherwise the item.</p>
       <pre class="lines">
 
 
-142
-143
-144
-145
 146
-147</pre>
+147
+148
+149
+150
+151</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core/items/generic_item.rb', line 142</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core/items/generic_item.rb', line 146</span>
 
 <span class="keyword">def</span> <span class="function">command</span>(command)
   command = format_command(command)
@@ -4306,12 +4390,6 @@ modifications.</p>
       <pre class="lines">
 
 
-221
-222
-223
-224
-225
-226
 227
 228
 229
@@ -4328,10 +4406,16 @@ modifications.</p>
 240
 241
 242
-243</pre>
+243
+244
+245
+246
+247
+248
+249</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core/items/generic_item.rb', line 221</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core/items/generic_item.rb', line 227</span>
 
 <span class="keyword">def</span> <span class="function">modify</span>(<span class="key">force</span>: <span class="predefined-constant">false</span>)
   raise <span class="constant">ArgumentError</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">you must pass a block to modify</span><span class="delimiter">&quot;</span></span> <span class="keyword">unless</span> block_given?
@@ -4455,7 +4539,7 @@ modifications.</p>
 </pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core/items/generic_item.rb', line 156</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core/items/generic_item.rb', line 161</span>
 
 </pre>
     </td>
@@ -4572,6 +4656,10 @@ modifications.</p>
   
 
   
+    <span class="aliases">Also known as:
+    <span class="names"><span id='update!-instance_method'>update!</span></span>
+    </span>
+  
 
   
 </h3><div class="docstring">
@@ -4623,15 +4711,15 @@ otherwise the item.</p>
       <pre class="lines">
 
 
-167
-168
-169
-170
-171
-172</pre>
+172
+173
+174
+175
+176
+177</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core/items/generic_item.rb', line 167</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core/items/generic_item.rb', line 172</span>
 
 <span class="keyword">def</span> <span class="function">update</span>(state)
   state = format_update(state)
@@ -4649,7 +4737,7 @@ otherwise the item.</p>
 </div>
 
         <footer>
-  Generated on Thu Oct 19 05:03:06 2023 by
+  Generated on Sat Dec 16 23:12:54 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.3).
 </footer>

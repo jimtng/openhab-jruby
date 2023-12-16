@@ -84,7 +84,7 @@ See https://www.openhab.org/docs/ui/sitemaps.html#element-type-chart - Documenta
         </nav>
         <div class="page-versions">
   <ul class="version-switcher">
-    <li><a href="/openhab-jruby/5.9" class="version-button stable">Stable <small>(5.9)</small></a></li>
+    <li><a href="/openhab-jruby/5.11" class="version-button stable">Stable <small>(5.11)</small></a></li>
     <li><a href="/openhab-jruby/main" class="version-button main">Latest <small>(main)</small></a></li>
   </ul>
   
@@ -468,6 +468,19 @@ See https://www.openhab.org/docs/ui/sitemaps.html#element-type-chart - Documenta
   
   <li class="">
     <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Events/ChannelTriggeredEvent.html" title="OpenHAB::Core::Events::ChannelTriggeredEvent (class)">ChannelTriggeredEvent</a></span>
+      
+        &lt; AbstractEvent
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Events/ItemAddedEvent.html" title="OpenHAB::Core::Events::ItemAddedEvent (class)">ItemAddedEvent</a></span>
       
         &lt; AbstractItemRegistryEvent
@@ -545,6 +558,19 @@ See https://www.openhab.org/docs/ui/sitemaps.html#element-type-chart - Documenta
   <li class="">
     <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Events/ItemStateEvent.html" title="OpenHAB::Core::Events::ItemStateEvent (class)">ItemStateEvent</a></span>
+      
+        &lt; ItemEvent
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Events/ItemStateUpdatedEvent.html" title="OpenHAB::Core::Events::ItemStateUpdatedEvent (class)">ItemStateUpdatedEvent</a></span>
       
         &lt; ItemEvent
       
@@ -801,6 +827,19 @@ See https://www.openhab.org/docs/ui/sitemaps.html#element-type-chart - Documenta
   <li class="">
     <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Items/Item.html" title="OpenHAB::Core::Items::Item (module)">Item</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Items/ItemChannelLinks.html" title="OpenHAB::Core::Items::ItemChannelLinks (class)">ItemChannelLinks</a></span>
+      
+        &lt; SimpleDelegator
       
       
     </span>
@@ -1138,6 +1177,10 @@ See https://www.openhab.org/docs/ui/sitemaps.html#element-type-chart - Documenta
     
   </li>
 
+  
+  
+  
+  
   
   
   
@@ -2098,6 +2141,40 @@ See https://www.openhab.org/docs/ui/sitemaps.html#element-type-chart - Documenta
         
   
   
+  <li class="collapsed">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-2" href="../ConfigDescription.html" title="OpenHAB::DSL::ConfigDescription (module)">ConfigDescription</a></span>
+      
+      
+        <a class="arrow toggle right"></a>
+      
+    </span>
+    
+    
+      
+      <ul>
+        
+        
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../ConfigDescription/Builder.html" title="OpenHAB::DSL::ConfigDescription::Builder (class)">Builder</a></span>
+      
+        &lt; Object
+      
+      
+    </span>
+    
+    
+  </li>
+
+
+        
+      </ul>
+    
+  </li>
+
+  
   <li class="">
     <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-2" href="../Debouncer.html" title="OpenHAB::DSL::Debouncer (class)">Debouncer</a></span>
@@ -2723,6 +2800,8 @@ See https://www.openhab.org/docs/ui/sitemaps.html#element-type-chart - Documenta
   
   
   
+  
+  
 
         
       </ul>
@@ -3053,7 +3132,6 @@ See https://www.openhab.org/docs/ui/sitemaps.html#element-type-chart - Documenta
     
   </li>
 
-  
   
   
   
@@ -3453,12 +3531,12 @@ showing a graph for each member (which is the default).</p>
       <pre class="lines">
 
 
-365
-366
-367</pre>
+402
+403
+404</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 365</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 402</span>
 
 <span class="keyword">def</span> <span class="function">group=</span>(value)
   <span class="instance-variable">@group</span> = value
@@ -3509,12 +3587,12 @@ the legend if there is more than one series in the chart.</p>
       <pre class="lines">
 
 
-361
-362
-363</pre>
+398
+399
+400</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 361</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 398</span>
 
 <span class="keyword">def</span> <span class="function">legend=</span>(value)
   <span class="instance-variable">@legend</span> = value
@@ -3564,12 +3642,12 @@ the legend if there is more than one series in the chart.</p>
       <pre class="lines">
 
 
-357
-358
-359</pre>
+394
+395
+396</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 357</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 394</span>
 
 <span class="keyword">def</span> <span class="function">period</span>
   <span class="instance-variable">@period</span>
@@ -3619,12 +3697,12 @@ the legend if there is more than one series in the chart.</p>
       <pre class="lines">
 
 
-354
-355
-356</pre>
+391
+392
+393</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 354</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 391</span>
 
 <span class="keyword">def</span> <span class="function">refresh</span>
   <span class="instance-variable">@refresh</span>
@@ -3674,12 +3752,12 @@ the legend if there is more than one series in the chart.</p>
       <pre class="lines">
 
 
-351
-352
-353</pre>
+388
+389
+390</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 351</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 388</span>
 
 <span class="keyword">def</span> <span class="function">service</span>
   <span class="instance-variable">@service</span>
@@ -3744,12 +3822,12 @@ the legend if there is more than one series in the chart.</p>
       <pre class="lines">
 
 
-371
-372
-373</pre>
+408
+409
+410</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 371</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 408</span>
 
 <span class="keyword">def</span> <span class="function">y_axis_pattern</span>
   <span class="instance-variable">@y_axis_pattern</span>
@@ -3805,12 +3883,12 @@ showing a graph for each member (which is the default).</p>
       <pre class="lines">
 
 
-419
-420
-421</pre>
+456
+457
+458</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 419</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 456</span>
 
 <span class="keyword">def</span> <span class="function">group?</span>
   <span class="instance-variable">@group</span>
@@ -3859,12 +3937,12 @@ the legend if there is more than one series in the chart.</p>
       <pre class="lines">
 
 
-414
-415
-416</pre>
+451
+452
+453</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 414</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 451</span>
 
 <span class="keyword">def</span> <span class="function">legend?</span>
   <span class="instance-variable">@legend</span>
@@ -3879,7 +3957,7 @@ the legend if there is more than one series in the chart.</p>
 </div>
 
         <footer>
-  Generated on Thu Oct 19 05:03:02 2023 by
+  Generated on Sat Dec 16 23:12:52 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.3).
 </footer>

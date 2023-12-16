@@ -84,7 +84,7 @@ and channels. - Documentation for openhab-scripting JRuby helper library.">
         </nav>
         <div class="page-versions">
   <ul class="version-switcher">
-    <li><a href="/openhab-jruby/5.9" class="version-button stable">Stable <small>(5.9)</small></a></li>
+    <li><a href="/openhab-jruby/5.11" class="version-button stable">Stable <small>(5.11)</small></a></li>
     <li><a href="/openhab-jruby/main" class="version-button main">Latest <small>(main)</small></a></li>
   </ul>
   
@@ -468,6 +468,19 @@ and channels. - Documentation for openhab-scripting JRuby helper library.">
   
   <li class="">
     <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Events/ChannelTriggeredEvent.html" title="OpenHAB::Core::Events::ChannelTriggeredEvent (class)">ChannelTriggeredEvent</a></span>
+      
+        &lt; AbstractEvent
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Events/ItemAddedEvent.html" title="OpenHAB::Core::Events::ItemAddedEvent (class)">ItemAddedEvent</a></span>
       
         &lt; AbstractItemRegistryEvent
@@ -545,6 +558,19 @@ and channels. - Documentation for openhab-scripting JRuby helper library.">
   <li class="">
     <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Events/ItemStateEvent.html" title="OpenHAB::Core::Events::ItemStateEvent (class)">ItemStateEvent</a></span>
+      
+        &lt; ItemEvent
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Events/ItemStateUpdatedEvent.html" title="OpenHAB::Core::Events::ItemStateUpdatedEvent (class)">ItemStateUpdatedEvent</a></span>
       
         &lt; ItemEvent
       
@@ -801,6 +827,19 @@ and channels. - Documentation for openhab-scripting JRuby helper library.">
   <li class="">
     <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Items/Item.html" title="OpenHAB::Core::Items::Item (module)">Item</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Items/ItemChannelLinks.html" title="OpenHAB::Core::Items::ItemChannelLinks (class)">ItemChannelLinks</a></span>
+      
+        &lt; SimpleDelegator
       
       
     </span>
@@ -1138,6 +1177,10 @@ and channels. - Documentation for openhab-scripting JRuby helper library.">
     
   </li>
 
+  
+  
+  
+  
   
   
   
@@ -2098,6 +2141,40 @@ and channels. - Documentation for openhab-scripting JRuby helper library.">
         
   
   
+  <li class="collapsed">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-2" href="../../DSL/ConfigDescription.html" title="OpenHAB::DSL::ConfigDescription (module)">ConfigDescription</a></span>
+      
+      
+        <a class="arrow toggle right"></a>
+      
+    </span>
+    
+    
+      
+      <ul>
+        
+        
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../DSL/ConfigDescription/Builder.html" title="OpenHAB::DSL::ConfigDescription::Builder (class)">Builder</a></span>
+      
+        &lt; Object
+      
+      
+    </span>
+    
+    
+  </li>
+
+
+        
+      </ul>
+    
+  </li>
+
+  
   <li class="">
     <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-2" href="../../DSL/Debouncer.html" title="OpenHAB::DSL::Debouncer (class)">Debouncer</a></span>
@@ -2723,6 +2800,8 @@ and channels. - Documentation for openhab-scripting JRuby helper library.">
   
   
   
+  
+  
 
         
       </ul>
@@ -3065,7 +3144,6 @@ and channels. - Documentation for openhab-scripting JRuby helper library.">
   
   
   
-  
 
               </ul>
             </section>
@@ -3129,7 +3207,7 @@ and channels.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#handle_command-instance_method" title="#handle_command (instance method)">#<strong>handle_command</strong>(command)  &#x21d2; void </a>
+      <a href="#handle_command-instance_method" title="#handle_command (instance method)">#<strong>handle_command</strong>(command)  &#x21d2; Object </a>
     
 
     
@@ -3152,7 +3230,7 @@ and channels.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#send_command-instance_method" title="#send_command (instance method)">#<strong>send_command</strong>(command)  &#x21d2; void </a>
+      <a href="#send_command-instance_method" title="#send_command (instance method)">#<strong>send_command</strong>(command)  &#x21d2; Object </a>
     
 
     
@@ -3175,7 +3253,7 @@ and channels.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#send_update-instance_method" title="#send_update (instance method)">#<strong>send_update</strong>(state)  &#x21d2; void </a>
+      <a href="#send_update-instance_method" title="#send_update (instance method)">#<strong>send_update</strong>(state)  &#x21d2; Object </a>
     
 
     
@@ -3208,7 +3286,7 @@ and channels.</p>
       <div class="method_details first">
   <h3 class="signature first" id="handle_command-instance_method">
   
-    #<strong>handle_command</strong>(command)  &#x21d2; <tt>void</tt> 
+    #<strong>handle_command</strong>(command)  &#x21d2; <tt><span class='object_link'>Object</span></tt> 
   
 
   
@@ -3216,7 +3294,7 @@ and channels.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p class="note returns_void">This method returns an undefined value.</p><p>Forward the given command to the respective thing handler.</p>
+    <p>Forward the given command to the respective thing handler.</p>
 
 
   </div>
@@ -3245,12 +3323,24 @@ and channels.</p>
       <pre class="lines">
 
 
-34</pre>
+16
+17
+18
+19
+20
+21
+22</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core/things/profile_callback.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core/things/profile_callback.rb', line 16</span>
 
-def_state_parsing_method(<span class="symbol">:handle_command</span>, <span class="symbol">:command</span>)</pre>
+<span class="keyword">def</span> <span class="function">handle_command</span>(command)
+  <span class="keyword">unless</span> instance_variable_defined?(<span class="symbol">:@dummy_channel_item</span>)
+    <span class="instance-variable">@dummy_channel_item</span> = <span class="constant">DSL</span>::<span class="constant">Items</span>::<span class="constant">ItemBuilder</span>.item_factory.create_item(link.channel.accepted_item_type, <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>)
+  <span class="keyword">end</span>
+  command = <span class="instance-variable">@dummy_channel_item</span>.format_command(command) <span class="keyword">if</span> <span class="instance-variable">@dummy_channel_item</span>
+  <span class="keyword">super</span>(command)
+<span class="keyword">end</span></pre>
     </td>
   </tr>
 </table>
@@ -3259,7 +3349,7 @@ def_state_parsing_method(<span class="symbol">:handle_command</span>, <span clas
       <div class="method_details ">
   <h3 class="signature " id="send_command-instance_method">
   
-    #<strong>send_command</strong>(command)  &#x21d2; <tt>void</tt> 
+    #<strong>send_command</strong>(command)  &#x21d2; <tt><span class='object_link'>Object</span></tt> 
   
 
   
@@ -3267,7 +3357,7 @@ def_state_parsing_method(<span class="symbol">:handle_command</span>, <span clas
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p class="note returns_void">This method returns an undefined value.</p><p>Send a command to the framework.</p>
+    <p>Send a command to the framework.</p>
 
 
   </div>
@@ -3296,12 +3386,18 @@ def_state_parsing_method(<span class="symbol">:handle_command</span>, <span clas
       <pre class="lines">
 
 
-41</pre>
+29
+30
+31
+32</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core/things/profile_callback.rb', line 41</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core/things/profile_callback.rb', line 29</span>
 
-def_state_parsing_method(<span class="symbol">:send_command</span>, <span class="symbol">:command</span>)</pre>
+<span class="keyword">def</span> <span class="function">send_command</span>(command)
+  command = link.item.format_command(command)
+  <span class="keyword">super</span>(command)
+<span class="keyword">end</span></pre>
     </td>
   </tr>
 </table>
@@ -3310,7 +3406,7 @@ def_state_parsing_method(<span class="symbol">:send_command</span>, <span class=
       <div class="method_details ">
   <h3 class="signature " id="send_update-instance_method">
   
-    #<strong>send_update</strong>(state)  &#x21d2; <tt>void</tt> 
+    #<strong>send_update</strong>(state)  &#x21d2; <tt><span class='object_link'>Object</span></tt> 
   
 
   
@@ -3318,7 +3414,7 @@ def_state_parsing_method(<span class="symbol">:send_command</span>, <span class=
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p class="note returns_void">This method returns an undefined value.</p><p>Send a state update to the framework.</p>
+    <p>Send a state update to the framework.</p>
 
 
   </div>
@@ -3347,12 +3443,18 @@ def_state_parsing_method(<span class="symbol">:send_command</span>, <span class=
       <pre class="lines">
 
 
-48</pre>
+39
+40
+41
+42</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core/things/profile_callback.rb', line 48</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core/things/profile_callback.rb', line 39</span>
 
-def_state_parsing_method(<span class="symbol">:send_update</span>, <span class="symbol">:state</span>)</pre>
+<span class="keyword">def</span> <span class="function">send_update</span>(state)
+  state = link.item.format_update(state)
+  <span class="keyword">super</span>(state)
+<span class="keyword">end</span></pre>
     </td>
   </tr>
 </table>
@@ -3363,7 +3465,7 @@ def_state_parsing_method(<span class="symbol">:send_update</span>, <span class="
 </div>
 
         <footer>
-  Generated on Thu Oct 19 05:02:55 2023 by
+  Generated on Sat Dec 16 23:12:48 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.3).
 </footer>

@@ -83,7 +83,7 @@
         </nav>
         <div class="page-versions">
   <ul class="version-switcher">
-    <li><a href="/openhab-jruby/5.9" class="version-button stable">Stable <small>(5.9)</small></a></li>
+    <li><a href="/openhab-jruby/5.11" class="version-button stable">Stable <small>(5.11)</small></a></li>
     <li><a href="/openhab-jruby/main" class="version-button main">Latest <small>(main)</small></a></li>
   </ul>
   
@@ -467,6 +467,19 @@
   
   <li class="">
     <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Events/ChannelTriggeredEvent.html" title="OpenHAB::Core::Events::ChannelTriggeredEvent (class)">ChannelTriggeredEvent</a></span>
+      
+        &lt; AbstractEvent
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Events/ItemAddedEvent.html" title="OpenHAB::Core::Events::ItemAddedEvent (class)">ItemAddedEvent</a></span>
       
         &lt; AbstractItemRegistryEvent
@@ -544,6 +557,19 @@
   <li class="">
     <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Events/ItemStateEvent.html" title="OpenHAB::Core::Events::ItemStateEvent (class)">ItemStateEvent</a></span>
+      
+        &lt; ItemEvent
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Events/ItemStateUpdatedEvent.html" title="OpenHAB::Core::Events::ItemStateUpdatedEvent (class)">ItemStateUpdatedEvent</a></span>
       
         &lt; ItemEvent
       
@@ -800,6 +826,19 @@
   <li class="">
     <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Items/Item.html" title="OpenHAB::Core::Items::Item (module)">Item</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Items/ItemChannelLinks.html" title="OpenHAB::Core::Items::ItemChannelLinks (class)">ItemChannelLinks</a></span>
+      
+        &lt; SimpleDelegator
       
       
     </span>
@@ -1137,6 +1176,10 @@
     
   </li>
 
+  
+  
+  
+  
   
   
   
@@ -2097,6 +2140,40 @@
         
   
   
+  <li class="collapsed">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-2" href="../ConfigDescription.html" title="OpenHAB::DSL::ConfigDescription (module)">ConfigDescription</a></span>
+      
+      
+        <a class="arrow toggle right"></a>
+      
+    </span>
+    
+    
+      
+      <ul>
+        
+        
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../ConfigDescription/Builder.html" title="OpenHAB::DSL::ConfigDescription::Builder (class)">Builder</a></span>
+      
+        &lt; Object
+      
+      
+    </span>
+    
+    
+  </li>
+
+
+        
+      </ul>
+    
+  </li>
+
+  
   <li class="">
     <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-2" href="../Debouncer.html" title="OpenHAB::DSL::Debouncer (class)">Debouncer</a></span>
@@ -2722,6 +2799,8 @@
   
   
   
+  
+  
 
         
       </ul>
@@ -3064,7 +3143,6 @@
   
   
   
-  
 
               </ul>
             </section>
@@ -3133,7 +3211,7 @@
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#accepted_item_type-instance_method" title="#accepted_item_type (instance method)">#<strong>accepted_item_type</strong>  &#x21d2; Object </a>
+      <a href="#accepted_item_type-instance_method" title="#accepted_item_type (instance method)">#<strong>accepted_item_type</strong>  &#x21d2; String </a>
     
 
     
@@ -3152,7 +3230,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>Returns the value of attribute accepted_item_type.</p>
+    <span class="summary_desc"><div class='inline'><p>The accepted item type.</p>
 </div></span>
   
 </li>
@@ -3625,7 +3703,7 @@ This parameter is not needed for the <span class='object_link'><a href="ThingBui
       
       
         &mdash;
-        <div class='inline'><p>The accepted item type.</p>
+        <div class='inline'><p>The accepted item type. If nil, infer the item type from the channel&nbsp;type.</p>
 </div>
       
     </li>
@@ -3639,15 +3717,6 @@ This parameter is not needed for the <span class='object_link'><a href="ThingBui
       <pre class="lines">
 
 
-289
-290
-291
-292
-293
-294
-295
-296
-297
 298
 299
 300
@@ -3677,10 +3746,19 @@ This parameter is not needed for the <span class='object_link'><a href="ThingBui
 324
 325
 326
-327</pre>
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/things/builder.rb', line 289</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/things/builder.rb', line 298</span>
 
 <span class="keyword">def</span> <span class="function">initialize</span>(uid,
                type,
@@ -3736,7 +3814,7 @@ This parameter is not needed for the <span class='object_link'><a href="ThingBui
       <div class="method_details first">
   <h3 class="signature first" id="accepted_item_type-instance_method">
   
-    #<strong>accepted_item_type</strong>  &#x21d2; <tt><span class='object_link'>Object</span></tt>  <span class="extras">(readonly)</span>
+    #<strong>accepted_item_type</strong>  &#x21d2; <tt>String</tt>  <span class="extras">(readonly)</span>
   
 
   
@@ -3744,13 +3822,30 @@ This parameter is not needed for the <span class='object_link'><a href="ThingBui
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>Returns the value of attribute accepted_item_type.</p>
+    <p>Returns The accepted item type.</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The accepted item type.</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -3758,15 +3853,15 @@ This parameter is not needed for the <span class='object_link'><a href="ThingBui
       <pre class="lines">
 
 
-260
-261
-262</pre>
+357
+358
+359</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/things/builder.rb', line 260</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/things/builder.rb', line 357</span>
 
 <span class="keyword">def</span> <span class="function">accepted_item_type</span>
-  <span class="instance-variable">@accepted_item_type</span>
+  <span class="instance-variable">@accepted_item_type</span> ||= <span class="predefined-constant">self</span>.class.channel_type_registry.get_channel_type(type)&amp;.item_type
 <span class="keyword">end</span></pre>
     </td>
   </tr>
@@ -3800,12 +3895,12 @@ This parameter is not needed for the <span class='object_link'><a href="ThingBui
       <pre class="lines">
 
 
-260
-261
-262</pre>
+263
+264
+265</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/things/builder.rb', line 260</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/things/builder.rb', line 263</span>
 
 <span class="keyword">def</span> <span class="function">auto_update_policy</span>
   <span class="instance-variable">@auto_update_policy</span>
@@ -3842,12 +3937,12 @@ This parameter is not needed for the <span class='object_link'><a href="ThingBui
       <pre class="lines">
 
 
-260
-261
-262</pre>
+263
+264
+265</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/things/builder.rb', line 260</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/things/builder.rb', line 263</span>
 
 <span class="keyword">def</span> <span class="function">config</span>
   <span class="instance-variable">@config</span>
@@ -3884,12 +3979,12 @@ This parameter is not needed for the <span class='object_link'><a href="ThingBui
       <pre class="lines">
 
 
-260
-261
-262</pre>
+263
+264
+265</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/things/builder.rb', line 260</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/things/builder.rb', line 263</span>
 
 <span class="keyword">def</span> <span class="function">default_tags</span>
   <span class="instance-variable">@default_tags</span>
@@ -3926,12 +4021,12 @@ This parameter is not needed for the <span class='object_link'><a href="ThingBui
       <pre class="lines">
 
 
-260
-261
-262</pre>
+263
+264
+265</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/things/builder.rb', line 260</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/things/builder.rb', line 263</span>
 
 <span class="keyword">def</span> <span class="function">description</span>
   <span class="instance-variable">@description</span>
@@ -3968,12 +4063,12 @@ This parameter is not needed for the <span class='object_link'><a href="ThingBui
       <pre class="lines">
 
 
-259
-260
-261</pre>
+262
+263
+264</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/things/builder.rb', line 259</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/things/builder.rb', line 262</span>
 
 <span class="keyword">def</span> <span class="function">label</span>
   <span class="instance-variable">@label</span>
@@ -4010,12 +4105,12 @@ This parameter is not needed for the <span class='object_link'><a href="ThingBui
       <pre class="lines">
 
 
-260
-261
-262</pre>
+263
+264
+265</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/things/builder.rb', line 260</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/things/builder.rb', line 263</span>
 
 <span class="keyword">def</span> <span class="function">properties</span>
   <span class="instance-variable">@properties</span>
@@ -4052,12 +4147,12 @@ This parameter is not needed for the <span class='object_link'><a href="ThingBui
       <pre class="lines">
 
 
-260
-261
-262</pre>
+263
+264
+265</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/things/builder.rb', line 260</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/things/builder.rb', line 263</span>
 
 <span class="keyword">def</span> <span class="function">type</span>
   <span class="instance-variable">@type</span>
@@ -4094,12 +4189,12 @@ This parameter is not needed for the <span class='object_link'><a href="ThingBui
       <pre class="lines">
 
 
-260
-261
-262</pre>
+263
+264
+265</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/things/builder.rb', line 260</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/things/builder.rb', line 263</span>
 
 <span class="keyword">def</span> <span class="function">uid</span>
   <span class="instance-variable">@uid</span>
@@ -4115,7 +4210,7 @@ This parameter is not needed for the <span class='object_link'><a href="ThingBui
 </div>
 
         <footer>
-  Generated on Thu Oct 19 05:03:00 2023 by
+  Generated on Sat Dec 16 23:12:51 2023 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.3).
 </footer>
