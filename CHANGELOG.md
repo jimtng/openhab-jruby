@@ -1,5 +1,14 @@
 # JRuby openHAB Scripting Change Log
 
+## [v5.12.0](https://github.com/openhab/openhab-jruby/tree/v5.12.0) (2023-12-19)
+
+
+
+### Features
+* Use github release notes generator for changelogs by @jimtng in https://github.com/jimtng/openhab-jruby/pull/30
+
+
+**Full Changelog**: https://github.com/jimtng/openhab-jruby/compare/v5.11.0...v5.12.0
 ## [v5.11.0](https://github.com/openhab/openhab-jruby/tree/v5.11.0) (2023-10-29)
 
 [Full Changelog](https://github.com/openhab/openhab-jruby/compare/v5.10.0...v5.11.0)
