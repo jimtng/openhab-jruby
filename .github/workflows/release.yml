@@ -51,10 +51,13 @@ jobs:
         run: |
           bin/rake update_doc_links[${{ env.OLD_VERSION }},${{ env.NEW_VERSION }}]
 
+          echo "Generating release notes"
           gh release create v${{ env.NEW_VERSION }} --generate-notes --draft
+          echo "Saving release notes"
           gh release view v${{ env.NEW_VERSION }} --json body | jq -r .body | sed '1,3d' > tmp/new_changes.md
+          echo "Deleting draft release"
           gh release delete v${{ env.NEW_VERSION }} --cleanup-tag --yes`
-
+          echo "Updating CHANGELOG"
           bin/rake changelog[${{ env.OLD_VERSION }},${{ env.NEW_VERSION }},tmp/new_changes.md]
           git add Gemfile.lock CHANGELOG.md USAGE.md templates .known_good_references
           git commit --amend --no-edit
