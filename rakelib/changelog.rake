@@ -1,16 +1,5 @@
 # frozen_string_literal: true
 
-require "github_changelog_generator/task"
-
-module GitHubChangelogGenerator
-  class Generator
-    # Don't add any header or footer
-    def insert_fixed_string(log)
-      log
-    end
-  end
-end
-
 directory "tmp"
 
 desc "Generate Changelog"
@@ -20,21 +9,18 @@ task :changelog, %i[old_version new_version output] => ["tmp"] do |_task, args|
     raise ArgumentError, "old_version, new_version, and output arguments must be specified"
   end
 
-  GitHubChangelogGenerator::RakeTask.new :new_changelog do |config|
-    config.user = "jimtng"
-    config.project = "openhab-jruby"
-    config.since_tag = "v#{old_version}"
-    config.future_release = "v#{new_version}"
-    config.bug_prefix = "### Bug Fixes"
-    config.enhancement_prefix = "### Features"
-    config.issues = true
-    config.add_pr_wo_labels = false
-    config.add_issues_wo_labels = false
-    config.exclude_labels = ["documentation"]
-    config.output = new_filename
-  end
+  `gh release create v#{new_version} --generate-notes --draft`
+  release_notes = `gh release view v#{new_version} --json body | jq -r .body`
+  `gh release delete v#{new_version} --cleanup-tag --yes`
 
-  Rake::Task["new_changelog"].execute
+  # Remove the first 3 lines of the generated release notes.
+  # They consist of a comment, a blank line and `## What's Changed`
+  release_notes = release_notes.split("\n")[3..].join("\n")
+
+  today = Time.now.strftime("%Y-%m-%d")
+  header = "## [v#{new_version}](https://github.com/openhab/openhab-jruby/tree/v#{new_version}) (#{today})\n\n"
+
+  File.write(new_filename, "#{header}\n\n#{release_notes}")
 
   insert_new_changelog(new_filename, main_filename: "CHANGELOG.md")
 end
