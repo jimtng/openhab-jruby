@@ -47,7 +47,7 @@ jobs:
           ruby -Ilib/openhab/dsl -r version -e 'puts "new_version=#{OpenHAB::DSL::VERSION}"' >> $GITHUB_OUTPUT
       - name: Generate CHANGELOG
         env:
-          CHANGELOG_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           bin/rake update_doc_links[${{ env.OLD_VERSION }},${{ env.NEW_VERSION }}]
           bin/rake changelog[${{ env.OLD_VERSION }},${{ env.NEW_VERSION }},tmp/new_changes.md]
