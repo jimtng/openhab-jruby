@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-directory "tmp"
-
 desc "Generate Changelog"
 task :changelog, %i[old_version new_version output] => ["tmp"] do |_task, args|
   old_version, new_version, new_filename = args.values_at(:old_version, :new_version, :output)
