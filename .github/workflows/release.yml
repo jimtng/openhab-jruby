@@ -47,31 +47,36 @@ jobs:
           ruby -Ilib/openhab/dsl -r version -e 'puts "new_version=#{OpenHAB::DSL::VERSION}"' >> $GITHUB_OUTPUT
       - name: Generate CHANGELOG
         env:
-          CHANGELOG_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          bin/rake update_doc_links[${{ env.OLD_VERSION }},${{ env.NEW_VERSION }}]
-          bin/rake changelog[${{ env.OLD_VERSION }},${{ env.NEW_VERSION }},tmp/new_changes.md]
-          git add Gemfile.lock CHANGELOG.md USAGE.md templates .known_good_references
-      - name: Release Gem
-        env:
-          GEM_HOST_API_KEY: ${{ secrets.GEM_HOST_API_KEY }} 
-        run: |
-          git commit --amend --no-edit
-          bin/rake release || (git status; false)
-      - name: Create Github Release
-        env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create v${{ env.NEW_VERSION }} --notes-file tmp/new_changes.md 
-  publish_main_docs:
-    needs: release
-    uses: ./.github/workflows/yardoc.yml
-    with:
-      ref_name: main
-      ref_type: branch
-  publish_tag_docs:
-    needs: release
-    uses: ./.github/workflows/yardoc.yml
-    with:
-      ref_name: v${{needs.release.outputs.NEW_VERSION}}
-      ref_type: tag
+          bin/rake update_doc_links[${{ env.OLD_VERSION }},${{ env.NEW_VERSION }}]
+
+          echo "Generating release notes"
+          gh release create v${{ env.NEW_VERSION }} --generate-notes --draft
+          echo "Saving release notes"
+          gh release view v${{ env.NEW_VERSION }} --json body | jq -r .body | sed '1,3d' > new_changes.md
+          echo "Deleting draft release"
+          gh release delete v${{ env.NEW_VERSION }} --cleanup-tag --yes
+          echo "Updating CHANGELOG"
+          bin/rake changelog[${{ env.OLD_VERSION }},${{ env.NEW_VERSION }},new_changes.md]
+          git add Gemfile.lock CHANGELOG.md USAGE.md templates .known_good_references
+          git commit --amend --no-edit
+          gh release create v${{ env.NEW_VERSION }} --notes-file new_changes.md 
+          
+      # - name: Release Gem
+        # env:
+          # GEM_HOST_API_KEY: ${{ secrets.GEM_HOST_API_KEY }} 
+        # run: |
+      #     bin/rake release || (git status; false)
+  # publish_main_docs:
+  #   needs: release
+  #   uses: ./.github/workflows/yardoc.yml
+  #   with:
+  #     ref_name: main
+  #     ref_type: branch
+  # publish_tag_docs:
+  #   needs: release
+  #   uses: ./.github/workflows/yardoc.yml
+  #   with:
+  #     ref_name: v${{needs.release.outputs.NEW_VERSION}}
+  #     ref_type: tag
