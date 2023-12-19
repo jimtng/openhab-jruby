@@ -21,7 +21,7 @@ task :changelog, %i[old_version new_version output] => ["tmp"] do |_task, args|
   end
 
   GitHubChangelogGenerator::RakeTask.new :new_changelog do |config|
-    config.user = "openhab"
+    config.user = "jimtng"
     config.project = "openhab-jruby"
     config.since_tag = "v#{old_version}"
     config.future_release = "v#{new_version}"
