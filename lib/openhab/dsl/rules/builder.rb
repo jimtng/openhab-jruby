@@ -1369,9 +1369,9 @@ module OpenHAB
           @ruby_triggers << [:every, value, { at: at }]
 
           if value == :day && at.is_a?(Item)
-            raise ArgumentError, "Attachments are not supported with dynamic datetime triggers" unless attach.nil?
+            # raise ArgumentError, "Attachments are not supported with dynamic datetime triggers" unless attach.nil?
 
-            return trigger("timer.DateTimeTrigger", itemName: at.name, timeOnly: true)
+            return trigger("timer.DateTimeTrigger", itemName: at.name, timeOnly: true, attach: attach)
           end
 
           cron_expression = case value
