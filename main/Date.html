@@ -83,7 +83,7 @@
         </nav>
         <div class="page-versions">
   <ul class="version-switcher">
-    <li><a href="/openhab-jruby/5.22" class="version-button stable">Stable <small>(5.22)</small></a></li>
+    <li><a href="/openhab-jruby/5.29" class="version-button stable">Stable <small>(5.29)</small></a></li>
     <li><a href="/openhab-jruby/main" class="version-button main">Latest <small>(main)</small></a></li>
   </ul>
   
@@ -1118,6 +1118,9 @@
   
   
   
+  
+  
+  
 
         
       </ul>
@@ -1730,6 +1733,11 @@
     
   </li>
 
+  
+  
+  
+  
+  
   
   
   
@@ -2760,13 +2768,48 @@
   
   <li class="">
     <span class="sidebar-link">
-      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="OpenHAB/DSL/Sitemaps/ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="OpenHAB/DSL/Sitemaps/ButtonBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtonBuilder (class)">ButtonBuilder</a></span>
       
         &lt; WidgetBuilder
       
       
     </span>
     
+    
+  </li>
+
+  
+  <li class="collapsed">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="OpenHAB/DSL/Sitemaps/ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
+      
+        &lt; LinkableWidgetBuilder
+      
+      
+        <a class="arrow toggle right"></a>
+      
+    </span>
+    
+    
+      
+      <ul>
+        
+        
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="OpenHAB/DSL/Sitemaps/ButtongridBuilder/Buttongrid.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder::Buttongrid (module)">Buttongrid</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+
+        
+      </ul>
     
   </li>
 
@@ -3681,6 +3724,28 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#to_instant-instance_method" title="#to_instant (instance method)">#<strong>to_instant</strong>(context = nil)  &#x21d2; Instant </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#to_local_date-instance_method" title="#to_local_date (instance method)">#<strong>to_local_date</strong>(_context = nil)  &#x21d2; LocalDate </a>
     
 
@@ -3766,11 +3831,86 @@
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#today%3F-instance_method" title="#today? (instance method)">#<strong>today?</strong>  &#x21d2; true, false </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns true if the date, converted to the system time zone, is today.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#tomorrow%3F-instance_method" title="#tomorrow? (instance method)">#<strong>tomorrow?</strong>  &#x21d2; true, false </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns true if the date, converted to the system time zone, is tomorrow.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#yesterday%3F-instance_method" title="#yesterday? (instance method)">#<strong>yesterday?</strong>  &#x21d2; true, false </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns true if the date, converted to the system time zone, is yesterday.</p>
+</div></span>
+  
+</li>
+
+      
     </ul>
   
 
 
 
+  
+  
+  
+  
+  
+  
   
   
   
@@ -3851,17 +3991,19 @@
       <pre class="lines">
 
 
-86
-87
-88
-89
-90
-91</pre>
+106
+107
+108
+109
+110
+111
+112</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/ruby/date.rb', line 86</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/ruby/date.rb', line 106</span>
 
 <span class="keyword">def</span> <span class="function">coerce</span>(other)
+  logger.trace { <span class="string"><span class="delimiter">&quot;</span><span class="content">Coercing </span><span class="inline"><span class="inline-delimiter">#{</span><span class="predefined-constant">self</span><span class="inline-delimiter">}</span></span><span class="content"> as a request from </span><span class="inline"><span class="inline-delimiter">#{</span>other.class<span class="inline-delimiter">}</span></span><span class="delimiter">&quot;</span></span> }
   <span class="keyword">return</span> <span class="predefined-constant">nil</span> <span class="keyword">unless</span> other.respond_to?(<span class="symbol">:to_date</span>)
   <span class="keyword">return</span> [other.to_date, <span class="predefined-constant">self</span>] <span class="keyword">if</span> other.method(<span class="symbol">:to_date</span>).arity.zero?
 
@@ -3913,20 +4055,20 @@
       <pre class="lines">
 
 
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76</pre>
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/ruby/date.rb', line 66</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/ruby/date.rb', line 86</span>
 
 <span class="keyword">def</span> <span class="function">compare_with_coercion</span>(other)
   <span class="keyword">return</span> compare_without_coercion(other) <span class="keyword">if</span> other.is_a?(<span class="predefined-constant">self</span>.class)
@@ -3981,10 +4123,10 @@
       <pre class="lines">
 
 
-95</pre>
+116</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/ruby/date.rb', line 95</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/ruby/date.rb', line 116</span>
 
 alias_method <span class="symbol">:inspect</span>, <span class="symbol">:to_s</span></pre>
     </td>
@@ -4053,17 +4195,17 @@ alias_method <span class="symbol">:inspect</span>, <span class="symbol">:to_s</s
       <pre class="lines">
 
 
-30
-31
 32
 33
 34
 35
 36
-37</pre>
+37
+38
+39</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/ruby/date.rb', line 30</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/ruby/date.rb', line 32</span>
 
 <span class="keyword">def</span> <span class="function">minus_with_temporal</span>(other)
   <span class="keyword">case</span> other
@@ -4139,19 +4281,96 @@ alias_method <span class="symbol">:inspect</span>, <span class="symbol">:to_s</s
       <pre class="lines">
 
 
-16
-17
 18
 19
-20</pre>
+20
+21
+22</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/ruby/date.rb', line 16</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/ruby/date.rb', line 18</span>
 
 <span class="keyword">def</span> <span class="function">plus_with_temporal</span>(other)
   <span class="keyword">return</span> to_local_date + other <span class="keyword">if</span> other.is_a?(java.time.temporal.TemporalAmount)
 
   plus_without_temporal(other)
+<span class="keyword">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_instant-instance_method">
+  
+    #<strong>to_instant</strong>(context = nil)  &#x21d2; <tt><span class='object_link'><a href="OpenHAB/CoreExt/Java/Instant.html" title="OpenHAB::CoreExt::Java::Instant (class)">Instant</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>context</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="OpenHAB/CoreExt/Java/ZonedDateTime.html" title="OpenHAB::CoreExt::Java::ZonedDateTime (class)">ZonedDateTime</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>A <span class='object_link'><a href="OpenHAB/CoreExt/Java/ZonedDateTime.html" title="OpenHAB::CoreExt::Java::ZonedDateTime (class)">ZonedDateTime</a></span> used to fill in missing fields during conversion.
+<span class='object_link'><a href="OpenHAB/CoreExt/Java/ZonedDateTime.html#now-class_method" title="OpenHAB::CoreExt::Java::ZonedDateTime.now (method)">ZonedDateTime.now</a></span> is assumed
+if not given.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="OpenHAB/CoreExt/Java/Instant.html" title="OpenHAB::CoreExt::Java::Instant (class)">Instant</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+80
+81
+82
+83</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/ruby/date.rb', line 80</span>
+
+<span class="keyword">def</span> <span class="function">to_instant</span>(context = <span class="predefined-constant">nil</span>)
+  context ||= <span class="constant">Instant</span>.now.to_zoned_date_time
+  to_zoned_date_time(context).to_instant
 <span class="keyword">end</span></pre>
     </td>
   </tr>
@@ -4195,12 +4414,12 @@ alias_method <span class="symbol">:inspect</span>, <span class="symbol">:to_s</s
       <pre class="lines">
 
 
-42
-43
-44</pre>
+44
+45
+46</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/ruby/date.rb', line 42</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/ruby/date.rb', line 44</span>
 
 <span class="keyword">def</span> <span class="function">to_local_date</span>(_context = <span class="predefined-constant">nil</span>)
   java.time.LocalDate.of(year, month, day)
@@ -4247,12 +4466,12 @@ alias_method <span class="symbol">:inspect</span>, <span class="symbol">:to_s</s
       <pre class="lines">
 
 
-47
-48
-49</pre>
+49
+50
+51</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/ruby/date.rb', line 47</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/ruby/date.rb', line 49</span>
 
 <span class="keyword">def</span> <span class="function">to_month</span>
   java.time.Month.of(month)
@@ -4299,12 +4518,12 @@ alias_method <span class="symbol">:inspect</span>, <span class="symbol">:to_s</s
       <pre class="lines">
 
 
-52
-53
-54</pre>
+54
+55
+56</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/ruby/date.rb', line 52</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/ruby/date.rb', line 54</span>
 
 <span class="keyword">def</span> <span class="function">to_month_day</span>
   java.time.MonthDay.of(month, day)
@@ -4374,16 +4593,165 @@ if not given.</p>
       <pre class="lines">
 
 
-61
-62
-63</pre>
+71
+72
+73</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/ruby/date.rb', line 61</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/ruby/date.rb', line 71</span>
 
 <span class="keyword">def</span> <span class="function">to_zoned_date_time</span>(context = <span class="predefined-constant">nil</span>)
   to_local_date.to_zoned_date_time(context)
 <span class="keyword">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="today?-instance_method">
+  
+    #<strong>today?</strong>  &#x21d2; <tt>true</tt>, <tt>false</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns true if the date, converted to the system time zone, is today.</p>
+<p>This is the equivalent of checking if the current datetime is between midnight and end of the day
+of the system time zone.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>true</tt>, <tt>false</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+64</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/ruby/date.rb', line 64</span>
+
+def_delegators <span class="symbol">:to_zoned_date_time</span>, <span class="symbol">:yesterday?</span>, <span class="symbol">:today?</span>, <span class="symbol">:tomorrow?</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="tomorrow?-instance_method">
+  
+    #<strong>tomorrow?</strong>  &#x21d2; <tt>true</tt>, <tt>false</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns true if the date, converted to the system time zone, is tomorrow.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>true</tt>, <tt>false</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+64</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/ruby/date.rb', line 64</span>
+
+def_delegators <span class="symbol">:to_zoned_date_time</span>, <span class="symbol">:yesterday?</span>, <span class="symbol">:today?</span>, <span class="symbol">:tomorrow?</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="yesterday?-instance_method">
+  
+    #<strong>yesterday?</strong>  &#x21d2; <tt>true</tt>, <tt>false</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns true if the date, converted to the system time zone, is yesterday.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>true</tt>, <tt>false</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+64</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/ruby/date.rb', line 64</span>
+
+def_delegators <span class="symbol">:to_zoned_date_time</span>, <span class="symbol">:yesterday?</span>, <span class="symbol">:today?</span>, <span class="symbol">:tomorrow?</span></pre>
     </td>
   </tr>
 </table>
@@ -4394,7 +4762,7 @@ if not given.</p>
 </div>
 
         <footer>
-  Generated on Thu Jul 11 01:34:37 2024 by
+  Generated on Thu Sep 26 14:31:11 2024 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.3).
 </footer>

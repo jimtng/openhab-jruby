@@ -83,7 +83,7 @@
         </nav>
         <div class="page-versions">
   <ul class="version-switcher">
-    <li><a href="/openhab-jruby/5.22" class="version-button stable">Stable <small>(5.22)</small></a></li>
+    <li><a href="/openhab-jruby/5.29" class="version-button stable">Stable <small>(5.29)</small></a></li>
     <li><a href="/openhab-jruby/main" class="version-button main">Latest <small>(main)</small></a></li>
   </ul>
   
@@ -1118,6 +1118,9 @@
   
   
   
+  
+  
+  
 
         
       </ul>
@@ -1730,6 +1733,11 @@
     
   </li>
 
+  
+  
+  
+  
+  
   
   
   
@@ -2760,13 +2768,48 @@
   
   <li class="">
     <span class="sidebar-link">
-      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../DSL/Sitemaps/ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../DSL/Sitemaps/ButtonBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtonBuilder (class)">ButtonBuilder</a></span>
       
         &lt; WidgetBuilder
       
       
     </span>
     
+    
+  </li>
+
+  
+  <li class="collapsed">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../DSL/Sitemaps/ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
+      
+        &lt; LinkableWidgetBuilder
+      
+      
+        <a class="arrow toggle right"></a>
+      
+    </span>
+    
+    
+      
+      <ul>
+        
+        
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="../../DSL/Sitemaps/ButtongridBuilder/Buttongrid.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder::Buttongrid (module)">Buttongrid</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+
+        
+      </ul>
     
   </li>
 
@@ -3710,7 +3753,7 @@ on a member-of-group trigger.</p>
       <pre class="code"><span class="info file"># File 'lib/openhab/core/events/item_event.rb', line 34</span>
 
 <span class="keyword">def</span> <span class="function">group</span>
-  triggering_group = inputs&amp;.[](<span class="string"><span class="delimiter">&quot;</span><span class="content">triggeringGroup</span><span class="delimiter">&quot;</span></span>) || <span class="global-variable">$ctx</span>&amp;.[](<span class="string"><span class="delimiter">&quot;</span><span class="content">triggeringGroup</span><span class="delimiter">&quot;</span></span>)
+  triggering_group = inputs&amp;.[](<span class="string"><span class="delimiter">&quot;</span><span class="content">triggeringGroup</span><span class="delimiter">&quot;</span></span>) || <span class="constant">Core</span>.ui_context&amp;.[](<span class="symbol">:triggeringGroup</span>)
   <span class="constant">Items</span>::<span class="constant">Proxy</span>.new(triggering_group) <span class="keyword">if</span> triggering_group
 <span class="keyword">end</span></pre>
     </td>
@@ -3783,7 +3826,7 @@ on a member-of-group trigger.</p>
 </div>
 
         <footer>
-  Generated on Thu Jul 11 01:34:40 2024 by
+  Generated on Thu Sep 26 14:31:15 2024 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.3).
 </footer>

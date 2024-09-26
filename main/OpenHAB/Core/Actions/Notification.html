@@ -33,7 +33,7 @@
   <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
 
 
-    <meta property="og:description" name="description" content="Provides methods for {https://next.openhab.org/addons/integrations/openhabcloud/#cloud-notification-actions
+    <meta property="og:description" name="description" content="Provides methods for {https://www.openhab.org/addons/integrations/openhabcloud/#cloud-notification-actions
 openHAB Cloud Notification Actions}. - Documentation for openhab-scripting JRuby helper library.">
     <meta property="og:image" content="https://raw.githubusercontent.com/jruby/collateral/master/logos/PNGs/circle-fill/full-color/jruby-logo-circle-logo-fill-outline-medium.png">
     <meta property="og:image:alt" content="The JRuby logo">
@@ -84,7 +84,7 @@ openHAB Cloud Notification Actions}. - Documentation for openhab-scripting JRuby
         </nav>
         <div class="page-versions">
   <ul class="version-switcher">
-    <li><a href="/openhab-jruby/5.22" class="version-button stable">Stable <small>(5.22)</small></a></li>
+    <li><a href="/openhab-jruby/5.29" class="version-button stable">Stable <small>(5.29)</small></a></li>
     <li><a href="/openhab-jruby/main" class="version-button main">Latest <small>(main)</small></a></li>
   </ul>
   
@@ -1119,6 +1119,9 @@ openHAB Cloud Notification Actions}. - Documentation for openhab-scripting JRuby
   
   
   
+  
+  
+  
 
         
       </ul>
@@ -1731,6 +1734,11 @@ openHAB Cloud Notification Actions}. - Documentation for openhab-scripting JRuby
     
   </li>
 
+  
+  
+  
+  
+  
   
   
   
@@ -2761,13 +2769,48 @@ openHAB Cloud Notification Actions}. - Documentation for openhab-scripting JRuby
   
   <li class="">
     <span class="sidebar-link">
-      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../DSL/Sitemaps/ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../DSL/Sitemaps/ButtonBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtonBuilder (class)">ButtonBuilder</a></span>
       
         &lt; WidgetBuilder
       
       
     </span>
     
+    
+  </li>
+
+  
+  <li class="collapsed">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../DSL/Sitemaps/ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
+      
+        &lt; LinkableWidgetBuilder
+      
+      
+        <a class="arrow toggle right"></a>
+      
+    </span>
+    
+    
+      
+      <ul>
+        
+        
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="../../DSL/Sitemaps/ButtongridBuilder/Buttongrid.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder::Buttongrid (module)">Buttongrid</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+
+        
+      </ul>
     
   </li>
 
@@ -3526,7 +3569,7 @@ openHAB Cloud Notification Actions}. - Documentation for openhab-scripting JRuby
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    <p>Provides methods for <a href="https://next.openhab.org/addons/integrations/openhabcloud/#cloud-notification-actions" target="_parent" title="openHAB Cloud Notification Actions">openHAB Cloud Notification Actions</a>.</p>
+    <p>Provides methods for <a href="https://www.openhab.org/addons/integrations/openhabcloud/#cloud-notification-actions" target="_parent" title="openHAB Cloud Notification Actions">openHAB Cloud Notification Actions</a>.</p>
 
 
   </div>
@@ -3614,7 +3657,7 @@ openHAB Cloud Notification Actions}. - Documentation for openhab-scripting JRuby
   
 
   
-    <span class="summary_desc"><div class='inline'><p>Send a notification using <a href="https://next.openhab.org/addons/integrations/openhabcloud/#cloud-notification-actions" target="_parent" title="openHAB Cloud Notification Action">openHAB Cloud Notification Action</a>.</p>
+    <span class="summary_desc"><div class='inline'><p>Send a notification using <a href="https://www.openhab.org/addons/integrations/openhabcloud/#cloud-notification-actions" target="_parent" title="openHAB Cloud Notification Action">openHAB Cloud Notification Action</a>.</p>
 </div></span>
   
 </li>
@@ -3730,11 +3773,6 @@ If nil, hide broadcast notifications.</p>
       <pre class="lines">
 
 
-123
-124
-125
-126
-127
 128
 129
 130
@@ -3747,10 +3785,15 @@ If nil, hide broadcast notifications.</p>
 137
 138
 139
-140</pre>
+140
+141
+142
+143
+144
+145</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core/actions/notification.rb', line 123</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core/actions/notification.rb', line 128</span>
 
 <span class="keyword">def</span> <span class="function">hide</span>(<span class="key">email</span>: <span class="predefined-constant">nil</span>, <span class="key">id</span>: <span class="predefined-constant">nil</span>, <span class="key">tag</span>: <span class="predefined-constant">nil</span>)
   <span class="keyword">unless</span> <span class="constant">Actions</span>.const_defined?(<span class="symbol">:NotificationAction</span>)
@@ -3854,12 +3897,12 @@ If nil, hide broadcast notifications.</p>
       <pre class="lines">
 
 
-152
-153
-154</pre>
+157
+158
+159</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core/actions/notification.rb', line 152</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core/actions/notification.rb', line 157</span>
 
 <span class="keyword">def</span> <span class="function">log</span>(msg, <span class="key">icon</span>: <span class="predefined-constant">nil</span>, <span class="key">tag</span>: <span class="predefined-constant">nil</span>)
   <span class="constant">NotificationAction</span>.send_log_notification(msg.to_s, icon&amp;.to_s, tag&amp;.to_s)
@@ -3888,7 +3931,7 @@ If nil, hide broadcast notifications.</p>
   </div>
 
 <p class="note returns_void">This method returns an undefined value.</p><p>Send a notification using
-<a href="https://next.openhab.org/addons/integrations/openhabcloud/#cloud-notification-actions" target="_parent" title="openHAB Cloud Notification Action">openHAB Cloud Notification Action</a>.</p>
+<a href="https://www.openhab.org/addons/integrations/openhabcloud/#cloud-notification-actions" target="_parent" title="openHAB Cloud Notification Action">openHAB Cloud Notification Action</a>.</p>
 
 
   </div>
@@ -4063,7 +4106,7 @@ update/overwrite the existing notification with the same ID.</p>
       
         &mdash;
         <div class='inline'><p>The action to be performed when the user clicks on the notification.
-Specified using the <a href="https://next.openhab.org/addons/integrations/openhabcloud/#action-syntax" target="_parent" title="action syntax">action syntax</a>.</p>
+Specified using the <a href="https://www.openhab.org/addons/integrations/openhabcloud/#action-syntax" target="_parent" title="action syntax">action syntax</a>.</p>
 </div>
       
     </li>
@@ -4073,7 +4116,7 @@ Specified using the <a href="https://next.openhab.org/addons/integrations/openha
         <span class='name'>attachment</span>
       
       
-        <span class='type'>(<tt>String</tt>, <tt>nil</tt>)</span>
+        <span class='type'>(<tt>String</tt>, <tt><span class='object_link'><a href="../Items/Item.html" title="OpenHAB::Core::Items::Item (module)">Item</a></span></tt>, <tt>nil</tt>)</span>
       
       
         <em class="default">(defaults to: <tt>nil</tt>)</em>
@@ -4081,7 +4124,10 @@ Specified using the <a href="https://next.openhab.org/addons/integrations/openha
       
         &mdash;
         <div class='inline'><p>The URL of the media attachment to be displayed with the notification.
-This URL must be reachable by the push notification client.</p>
+This can either be a fully qualified URL, prefixed with
+<code>http://</code> or <code>https://</code> and reachable by the client device,
+a relative path on the user's openHAB instance starting with <code>/</code>,
+or an image item.</p>
 </div>
       
     </li>
@@ -4101,7 +4147,7 @@ This URL must be reachable by the push notification client.</p>
         <div class='inline'><p>Buttons to include in the notification.</p>
 <ul>
 <li>In array form, each element is specified as <code>Title=$action</code>, where <code>$action</code> follows the
-<a href="https://next.openhab.org/addons/integrations/openhabcloud/#action-syntax" target="_parent" title="action syntax">action syntax</a>.</li>
+<a href="https://www.openhab.org/addons/integrations/openhabcloud/#action-syntax" target="_parent" title="action syntax">action syntax</a>.</li>
 <li>In hash form, the keys are the button titles and the values are the actions.</li>
 </ul>
 <p>The maximum number of buttons is 3.</p>
@@ -4125,9 +4171,6 @@ This URL must be reachable by the push notification client.</p>
       <pre class="lines">
 
 
-66
-67
-68
 69
 70
 71
@@ -4166,10 +4209,15 @@ This URL must be reachable by the push notification client.</p>
 104
 105
 106
-107</pre>
+107
+108
+109
+110
+111
+112</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core/actions/notification.rb', line 66</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core/actions/notification.rb', line 69</span>
 
 <span class="keyword">def</span> <span class="function">send</span>(
   msg,
@@ -4196,11 +4244,13 @@ This URL must be reachable by the push notification client.</p>
   tag ||= severity
   args.push(msg.to_s, icon&amp;.to_s, tag&amp;.to_s)
 
-  <span class="comment"># @!deprecated OH 4.1</span>
+  <span class="comment"># @deprecated OH 4.1</span>
   <span class="keyword">if</span> <span class="constant">Core</span>.version &gt;= <span class="constant">Core</span>::<span class="constant">V4_2</span>
     buttons ||= []
     buttons = buttons.map { |title, action| <span class="string"><span class="delimiter">&quot;</span><span class="inline"><span class="inline-delimiter">#{</span>title<span class="inline-delimiter">}</span></span><span class="content">=</span><span class="inline"><span class="inline-delimiter">#{</span>action<span class="inline-delimiter">}</span></span><span class="delimiter">&quot;</span></span> } <span class="keyword">if</span> buttons.is_a?(<span class="constant">Hash</span>)
     raise <span class="constant">ArgumentError</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">buttons must contain (0..3) elements.</span><span class="delimiter">&quot;</span></span> <span class="keyword">unless</span> (<span class="integer">0</span>..<span class="integer">3</span>).cover?(buttons.size)
+
+    attachment = <span class="string"><span class="delimiter">&quot;</span><span class="content">item:</span><span class="inline"><span class="inline-delimiter">#{</span>attachment.name<span class="inline-delimiter">}</span></span><span class="delimiter">&quot;</span></span> <span class="keyword">if</span> attachment.is_a?(<span class="constant">Item</span>) &amp;&amp; attachment.image_item?
 
     args.push(title&amp;.to_s,
               id&amp;.to_s,
@@ -4223,7 +4273,7 @@ This URL must be reachable by the push notification client.</p>
 </div>
 
         <footer>
-  Generated on Thu Jul 11 01:34:42 2024 by
+  Generated on Thu Sep 26 14:31:18 2024 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.3).
 </footer>

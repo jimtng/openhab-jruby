@@ -83,7 +83,7 @@
         </nav>
         <div class="page-versions">
   <ul class="version-switcher">
-    <li><a href="/openhab-jruby/5.22" class="version-button stable">Stable <small>(5.22)</small></a></li>
+    <li><a href="/openhab-jruby/5.29" class="version-button stable">Stable <small>(5.29)</small></a></li>
     <li><a href="/openhab-jruby/main" class="version-button main">Latest <small>(main)</small></a></li>
   </ul>
   
@@ -1118,6 +1118,9 @@
   
   
   
+  
+  
+  
 
         
       </ul>
@@ -1730,6 +1733,11 @@
     
   </li>
 
+  
+  
+  
+  
+  
   
   
   
@@ -2760,13 +2768,48 @@
   
   <li class="">
     <span class="sidebar-link">
-      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="DSL/Sitemaps/ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="DSL/Sitemaps/ButtonBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtonBuilder (class)">ButtonBuilder</a></span>
       
         &lt; WidgetBuilder
       
       
     </span>
     
+    
+  </li>
+
+  
+  <li class="collapsed">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="DSL/Sitemaps/ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
+      
+        &lt; LinkableWidgetBuilder
+      
+      
+        <a class="arrow toggle right"></a>
+      
+    </span>
+    
+    
+      
+      <ul>
+        
+        
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="DSL/Sitemaps/ButtongridBuilder/Buttongrid.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder::Buttongrid (module)">Buttongrid</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+
+        
+      </ul>
     
   </li>
 
@@ -4097,12 +4140,12 @@ logger.info <span class="string"><span class="delimiter">&quot;</span><span clas
       <pre class="lines">
 
 
-253
-254
-255</pre>
+283
+284
+285</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 253</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 283</span>
 
 <span class="keyword">def</span> <span class="function">level</span>
   <span class="constant">Logger</span>.log_service.get_level(name)[name]&amp;.downcase&amp;.to_sym
@@ -4157,12 +4200,12 @@ logger.info <span class="string"><span class="delimiter">&quot;</span><span clas
       <pre class="lines">
 
 
-169
-170
-171</pre>
+199
+200
+201</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 169</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 199</span>
 
 <span class="keyword">def</span> <span class="function">events</span>
   <span class="constant">Log</span>.logger(<span class="string"><span class="delimiter">&quot;</span><span class="content">openhab.event</span><span class="delimiter">&quot;</span></span>)
@@ -4210,12 +4253,12 @@ logger.info <span class="string"><span class="delimiter">&quot;</span><span clas
       <pre class="lines">
 
 
-163
-164
-165</pre>
+193
+194
+195</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 163</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 193</span>
 
 <span class="keyword">def</span> <span class="function">gem_root</span>
   <span class="constant">Log</span>.logger(<span class="constant">PREFIX</span>)
@@ -4263,12 +4306,12 @@ logger.info <span class="string"><span class="delimiter">&quot;</span><span clas
       <pre class="lines">
 
 
-157
-158
-159</pre>
+187
+188
+189</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 157</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 187</span>
 
 <span class="keyword">def</span> <span class="function">root</span>
   <span class="constant">Log</span>.logger(org.slf4j.Logger::<span class="constant">ROOT_LOGGER_NAME</span>)
@@ -4377,10 +4420,10 @@ confirmed that logging is enabled at debug level.</p>
       <pre class="lines">
 
 
-269</pre>
+299</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 269</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 299</span>
 
 def_level_method(<span class="symbol">:debug</span>)</pre>
     </td>
@@ -4426,10 +4469,10 @@ def_level_method(<span class="symbol">:debug</span>)</pre>
       <pre class="lines">
 
 
-270</pre>
+300</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 270</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 300</span>
 
 def_level_predicate(<span class="symbol">:debug</span>)</pre>
     </td>
@@ -4530,10 +4573,10 @@ confirmed that logging is enabled at error level.</p>
       <pre class="lines">
 
 
-263</pre>
+293</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 263</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 293</span>
 
 def_level_method(<span class="symbol">:error</span>)</pre>
     </td>
@@ -4579,10 +4622,10 @@ def_level_method(<span class="symbol">:error</span>)</pre>
       <pre class="lines">
 
 
-264</pre>
+294</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 264</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 294</span>
 
 def_level_predicate(<span class="symbol">:error</span>)</pre>
     </td>
@@ -4683,10 +4726,10 @@ confirmed that logging is enabled at info level.</p>
       <pre class="lines">
 
 
-267</pre>
+297</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 267</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 297</span>
 
 def_level_method(<span class="symbol">:info</span>)</pre>
     </td>
@@ -4732,10 +4775,10 @@ def_level_method(<span class="symbol">:info</span>)</pre>
       <pre class="lines">
 
 
-268</pre>
+298</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 268</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 298</span>
 
 def_level_predicate(<span class="symbol">:info</span>)</pre>
     </td>
@@ -4784,12 +4827,12 @@ def_level_predicate(<span class="symbol">:info</span>)</pre>
       <pre class="lines">
 
 
-234
-235
-236</pre>
+264
+265
+266</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 234</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 264</span>
 
 <span class="keyword">def</span> <span class="function">inspect</span>
   <span class="string"><span class="delimiter">&quot;</span><span class="content">#&lt;OpenHAB::Logger </span><span class="inline"><span class="inline-delimiter">#{</span>name<span class="inline-delimiter">}</span></span><span class="content">&gt;</span><span class="delimiter">&quot;</span></span>
@@ -4843,15 +4886,15 @@ def_level_predicate(<span class="symbol">:info</span>)</pre>
       <pre class="lines">
 
 
-280
-281
-282
-283
-284
-285</pre>
+310
+311
+312
+313
+314
+315</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 280</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 310</span>
 
 <span class="keyword">def</span> <span class="function">log_exception</span>(exception)
   exception = clean_backtrace(exception)
@@ -4902,12 +4945,12 @@ def_level_predicate(<span class="symbol">:info</span>)</pre>
       <pre class="lines">
 
 
-229
-230
-231</pre>
+259
+260
+261</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 229</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 259</span>
 
 <span class="keyword">def</span> <span class="function">name</span>
   <span class="instance-variable">@slf4j_logger</span>.name
@@ -5010,10 +5053,10 @@ confirmed that logging is enabled at trace level.</p>
       <pre class="lines">
 
 
-271</pre>
+301</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 271</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 301</span>
 
 def_level_method(<span class="symbol">:trace</span>)</pre>
     </td>
@@ -5059,10 +5102,10 @@ def_level_method(<span class="symbol">:trace</span>)</pre>
       <pre class="lines">
 
 
-272</pre>
+302</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 272</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 302</span>
 
 def_level_predicate(<span class="symbol">:trace</span>)</pre>
     </td>
@@ -5163,10 +5206,10 @@ confirmed that logging is enabled at warn level.</p>
       <pre class="lines">
 
 
-265</pre>
+295</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 265</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 295</span>
 
 def_level_method(<span class="symbol">:warn</span>)</pre>
     </td>
@@ -5212,10 +5255,10 @@ def_level_method(<span class="symbol">:warn</span>)</pre>
       <pre class="lines">
 
 
-266</pre>
+296</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 266</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/log.rb', line 296</span>
 
 def_level_predicate(<span class="symbol">:warn</span>)</pre>
     </td>
@@ -5228,7 +5271,7 @@ def_level_predicate(<span class="symbol">:warn</span>)</pre>
 </div>
 
         <footer>
-  Generated on Thu Jul 11 01:34:35 2024 by
+  Generated on Thu Sep 26 14:31:09 2024 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.3).
 </footer>

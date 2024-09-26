@@ -83,7 +83,7 @@
         </nav>
         <div class="page-versions">
   <ul class="version-switcher">
-    <li><a href="/openhab-jruby/5.22" class="version-button stable">Stable <small>(5.22)</small></a></li>
+    <li><a href="/openhab-jruby/5.29" class="version-button stable">Stable <small>(5.29)</small></a></li>
     <li><a href="/openhab-jruby/main" class="version-button main">Latest <small>(main)</small></a></li>
   </ul>
   
@@ -1118,6 +1118,9 @@
   
   
   
+  
+  
+  
 
         
       </ul>
@@ -1730,6 +1733,11 @@
     
   </li>
 
+  
+  
+  
+  
+  
   
   
   
@@ -2760,13 +2768,48 @@
   
   <li class="">
     <span class="sidebar-link">
-      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="OpenHAB/DSL/Sitemaps/ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="OpenHAB/DSL/Sitemaps/ButtonBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtonBuilder (class)">ButtonBuilder</a></span>
       
         &lt; WidgetBuilder
       
       
     </span>
     
+    
+  </li>
+
+  
+  <li class="collapsed">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="OpenHAB/DSL/Sitemaps/ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
+      
+        &lt; LinkableWidgetBuilder
+      
+      
+        <a class="arrow toggle right"></a>
+      
+    </span>
+    
+    
+      
+      <ul>
+        
+        
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="OpenHAB/DSL/Sitemaps/ButtongridBuilder/Buttongrid.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder::Buttongrid (module)">Buttongrid</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+
+        
+      </ul>
     
   </li>
 
@@ -3484,6 +3527,97 @@
 
       <main class="page">
         <div class="content"><div id='filecontents'><h1 id="jruby-openhab-scripting-change-log"><a href="#jruby-openhab-scripting-change-log" class="header-anchor">#</a>JRuby openHAB Scripting Change Log</h1>
+<h2 id="v5290-(2024-09-19)"><a href="#v5290-(2024-09-19)" class="header-anchor">#</a><a href="https://github.com/openhab/openhab-jruby/tree/v5.29.0">v5.29.0</a> (2024-09-19)</h2>
+<h3 id="features"><a href="#features" class="header-anchor">#</a>Features</h3>
+<ul>
+<li>Add <code>#time_only?</code> and <code>#offset</code> to TimerEvent by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/333">#333</a></li>
+<li>Add <code>#yesterday?</code>, <code>#today?</code>, and <code>#tomorrow?</code> to ZonedDateTime, Date, and Time classes. by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/341">#341</a></li>
+<li>Make working with Instant easier by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/338">#338</a></li>
+</ul>
+<h3 id="bug-fixes"><a href="#bug-fixes" class="header-anchor">#</a>Bug Fixes</h3>
+<ul>
+<li>Fix timed command expire by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/337">#337</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/openhab/openhab-jruby/compare/v5.28.0...v5.29.0">v5.28.0...v5.29.0</a></p>
+<h2 id="v5280-(2024-09-15)"><a href="#v5280-(2024-09-15)" class="header-anchor">#</a><a href="https://github.com/openhab/openhab-jruby/tree/v5.28.0">v5.28.0</a> (2024-09-15)</h2>
+<h3 id="features"><a href="#features" class="header-anchor">#</a>Features</h3>
+<ul>
+<li>Allow literal states for sitemap visibility rules by <a href="https://github.com/ccutrer">@ccutrer</a> in <a href="https://github.com/openhab/openhab-jruby/pull/335">#335</a></li>
+<li>Move #items and #things to EntityLookup by <a href="https://github.com/ccutrer">@ccutrer</a> in <a href="https://github.com/openhab/openhab-jruby/pull/336">#336</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/openhab/openhab-jruby/compare/v5.27.2...v5.28.0">v5.27.2...v5.28.0</a></p>
+<h2 id="v5272-(2024-09-11)"><a href="#v5272-(2024-09-11)" class="header-anchor">#</a><a href="https://github.com/openhab/openhab-jruby/tree/v5.27.2">v5.27.2</a> (2024-09-11)</h2>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/openhab/openhab-jruby/compare/v5.27.1...v5.27.2">v5.27.1...v5.27.2</a></p>
+<h2 id="v5271-(2024-09-09)"><a href="#v5271-(2024-09-09)" class="header-anchor">#</a><a href="https://github.com/openhab/openhab-jruby/tree/v5.27.1">v5.27.1</a> (2024-09-09)</h2>
+<h3 id="bug-fixes"><a href="#bug-fixes" class="header-anchor">#</a>Bug Fixes</h3>
+<ul>
+<li>Make all providers notify their listeners when the script is unloaded by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/330">#330</a></li>
+<li>Make DateTimeType.parse use the local timezone when a time-only string doesn't specify a tz by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/331">#331</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/openhab/openhab-jruby/compare/v5.27.0...v5.27.1">v5.27.0...v5.27.1</a></p>
+<h2 id="v5270-(2024-09-08)"><a href="#v5270-(2024-09-08)" class="header-anchor">#</a><a href="https://github.com/openhab/openhab-jruby/tree/v5.27.0">v5.27.0</a> (2024-09-08)</h2>
+<h3 id="features"><a href="#features" class="header-anchor">#</a>Features</h3>
+<ul>
+<li>Support offset in <code>at</code> and <code>every :day, at:</code> triggers by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/278">#278</a></li>
+<li>Support space separator between date and time by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/329">#329</a></li>
+</ul>
+<h3 id="bug-fixes"><a href="#bug-fixes" class="header-anchor">#</a>Bug Fixes</h3>
+<ul>
+<li>DateTimeType implements Java's Comparable in openHAB 4.3 by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/328">#328</a></li>
+<li>Sitemap updates not propagated to listeners by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/327">#327</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/openhab/openhab-jruby/compare/v5.26.0...v5.27.0">v5.26.0...v5.27.0</a></p>
+<h2 id="v5260-(2024-08-25)"><a href="#v5260-(2024-08-25)" class="header-anchor">#</a><a href="https://github.com/openhab/openhab-jruby/tree/v5.26.0">v5.26.0</a> (2024-08-25)</h2>
+<h3 id="features"><a href="#features" class="header-anchor">#</a>Features</h3>
+<ul>
+<li>Add median persistence methods by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/326">#326</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/openhab/openhab-jruby/compare/v5.25.0...v5.26.0">v5.25.0...v5.26.0</a></p>
+<h2 id="v5250-(2024-08-20)"><a href="#v5250-(2024-08-20)" class="header-anchor">#</a><a href="https://github.com/openhab/openhab-jruby/tree/v5.25.0">v5.25.0</a> (2024-08-20)</h2>
+<h3 id="features"><a href="#features" class="header-anchor">#</a>Features</h3>
+<ul>
+<li>Add <code>Thing#bridge?</code> by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/324">#324</a></li>
+<li>Support adding group members with <code>GroupItem.members.add</code> by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/322">#322</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/openhab/openhab-jruby/compare/v5.24.2...v5.25.0">v5.24.2...v5.25.0</a></p>
+<h2 id="v5242-(2024-07-30)"><a href="#v5242-(2024-07-30)" class="header-anchor">#</a><a href="https://github.com/openhab/openhab-jruby/tree/v5.24.2">v5.24.2</a> (2024-07-30)</h2>
+<h3 id="features"><a href="#features" class="header-anchor">#</a>Features</h3>
+<ul>
+<li>Support creating a rule in an initially disabled state by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/319">#319</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/openhab/openhab-jruby/compare/v5.24.1...v5.24.2">v5.24.1...v5.24.2</a></p>
+<h2 id="v5241-(2024-07-26)"><a href="#v5241-(2024-07-26)" class="header-anchor">#</a><a href="https://github.com/openhab/openhab-jruby/tree/v5.24.1">v5.24.1</a> (2024-07-26)</h2>
+<h3 id="features"><a href="#features" class="header-anchor">#</a>Features</h3>
+<ul>
+<li>Prepend script name to logger calls within rules, scripts, and profiles by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/317">#317</a></li>
+</ul>
+<h3 id="bug-fixes"><a href="#bug-fixes" class="header-anchor">#</a>Bug Fixes</h3>
+<ul>
+<li>Fix access to context variables in UI rules by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/318">#318</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/openhab/openhab-jruby/compare/v5.24.0...v5.24.1">v5.24.0...v5.24.1</a></p>
+<h2 id="v5240-(2024-07-23)"><a href="#v5240-(2024-07-23)" class="header-anchor">#</a><a href="https://github.com/openhab/openhab-jruby/tree/v5.24.0">v5.24.0</a> (2024-07-23)</h2>
+<h3 id="features"><a href="#features" class="header-anchor">#</a>Features</h3>
+<ul>
+<li>Support creating a trigger <code>profile</code> by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/316">#316</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/openhab/openhab-jruby/compare/v5.23.0...v5.24.0">v5.23.0...v5.24.0</a></p>
+<h2 id="v5230-(2024-07-22)"><a href="#v5230-(2024-07-22)" class="header-anchor">#</a><a href="https://github.com/openhab/openhab-jruby/tree/v5.23.0">v5.23.0</a> (2024-07-22)</h2>
+<h3 id="features"><a href="#features" class="header-anchor">#</a>Features</h3>
+<ul>
+<li>Notification: support Image item as attachment by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/315">#315</a></li>
+<li>Support attachment for <code>every</code> with dynamic datetime trigger by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/307">#307</a></li>
+<li>TimeSeries: add <code>#&lt;&lt;</code> convenience method and refactor with LazyArray by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/313">#313</a></li>
+<li>TimedCommand: support resuming and rescheduling timed commands by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/312">#312</a></li>
+<li>Sitemaps: support Button widgets inside buttongrids by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/272">#272</a></li>
+<li>Support <code>every</code> trigger with multiple days of week. by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/309">#309</a></li>
+</ul>
+<h3 id="bug-fixes"><a href="#bug-fixes" class="header-anchor">#</a>Bug Fixes</h3>
+<ul>
+<li>Add <code>call_item?</code> predicate to GroupItem by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/311">#311</a></li>
+<li>Fix <code>every</code> day-of-week trigger by <a href="https://github.com/jimtng">@jimtng</a> in <a href="https://github.com/openhab/openhab-jruby/pull/308">#308</a></li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/openhab/openhab-jruby/compare/v5.22.1...v5.23.0">v5.22.1...v5.23.0</a></p>
 <h2 id="v5221-(2024-07-06)"><a href="#v5221-(2024-07-06)" class="header-anchor">#</a><a href="https://github.com/openhab/openhab-jruby/tree/v5.22.1">v5.22.1</a> (2024-07-06)</h2>
 <h3 id="bug-fixes"><a href="#bug-fixes" class="header-anchor">#</a>Bug Fixes</h3>
 <ul>
@@ -5216,7 +5350,7 @@ trigger on member changes, it has been replaced with <code>members</code></li>
 </div></div>
 
         <footer>
-  Generated on Thu Jul 11 01:34:31 2024 by
+  Generated on Thu Sep 26 14:31:04 2024 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.3).
 </footer>

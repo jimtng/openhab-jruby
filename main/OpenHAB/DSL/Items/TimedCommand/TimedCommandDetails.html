@@ -84,7 +84,7 @@ timed command is being called. - Documentation for openhab-scripting JRuby helpe
         </nav>
         <div class="page-versions">
   <ul class="version-switcher">
-    <li><a href="/openhab-jruby/5.22" class="version-button stable">Stable <small>(5.22)</small></a></li>
+    <li><a href="/openhab-jruby/5.29" class="version-button stable">Stable <small>(5.29)</small></a></li>
     <li><a href="/openhab-jruby/main" class="version-button main">Latest <small>(main)</small></a></li>
   </ul>
   
@@ -1119,6 +1119,9 @@ timed command is being called. - Documentation for openhab-scripting JRuby helpe
   
   
   
+  
+  
+  
 
         
       </ul>
@@ -1731,6 +1734,11 @@ timed command is being called. - Documentation for openhab-scripting JRuby helpe
     
   </li>
 
+  
+  
+  
+  
+  
   
   
   
@@ -2761,13 +2769,48 @@ timed command is being called. - Documentation for openhab-scripting JRuby helpe
   
   <li class="">
     <span class="sidebar-link">
-      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Sitemaps/ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Sitemaps/ButtonBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtonBuilder (class)">ButtonBuilder</a></span>
       
         &lt; WidgetBuilder
       
       
     </span>
     
+    
+  </li>
+
+  
+  <li class="collapsed">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Sitemaps/ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
+      
+        &lt; LinkableWidgetBuilder
+      
+      
+        <a class="arrow toggle right"></a>
+      
+    </span>
+    
+    
+      
+      <ul>
+        
+        
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="../../Sitemaps/ButtongridBuilder/Buttongrid.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder::Buttongrid (module)">Buttongrid</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+
+        
+      </ul>
     
   </li>
 
@@ -3598,6 +3641,52 @@ timed command is being called. - Documentation for openhab-scripting JRuby helpe
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reschedule-instance_method" title="#reschedule (instance method)">#<strong>reschedule</strong>(time = nil)  &#x21d2; void </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Reschedule the timed command.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#resume-instance_method" title="#resume (instance method)">#<strong>resume</strong>  &#x21d2; void </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Resume a cancelled timed command to its original expiration time.</p>
+</div></span>
+  
+</li>
+
+      
     </ul>
   
 
@@ -3713,12 +3802,124 @@ timed command is being called. - Documentation for openhab-scripting JRuby helpe
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="reschedule-instance_method">
+  
+    #<strong>reschedule</strong>(time = nil)  &#x21d2; <tt>void</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p><p>Reschedule the timed command.</p>
+<p>If the timed command was cancelled, this will also resume it.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>time</span>
+      
+      
+        <span class='type'>(<tt><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/temporal/TemporalAmount.html" target="_parent" title="java.time.temporal.TemporalAmount">java.time.temporal.TemporalAmount</a></tt>, <tt>#to_zoned_date_time</tt>, <tt>Proc</tt>, <tt>nil</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>When to reschedule the timer for. If unspecified, the original time is used.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+77
+78
+79
+80</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/timed_command.rb', line 77</span>
+
+<span class="keyword">def</span> <span class="function">reschedule</span>(time = <span class="predefined-constant">nil</span>)
+  <span class="predefined-constant">self</span>.resolution = <span class="predefined-constant">nil</span>
+  timer.reschedule(time)
+<span class="keyword">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="resume-instance_method">
+  
+    #<strong>resume</strong>  &#x21d2; <tt>void</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p><p>Resume a cancelled timed command to its original expiration time.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+87
+88
+89
+90
+91
+92
+93</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/timed_command.rb', line 87</span>
+
+<span class="keyword">def</span> <span class="function">resume</span>
+  <span class="keyword">if</span> expired?
+    logger.warn <span class="string"><span class="delimiter">&quot;</span><span class="content">Cannot resume a timed command that has expired. Use reschedule instead.</span><span class="delimiter">&quot;</span></span>
+  <span class="keyword">else</span>
+    <span class="predefined-constant">self</span>.resolution = <span class="predefined-constant">nil</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
         <footer>
-  Generated on Thu Jul 11 01:34:42 2024 by
+  Generated on Thu Sep 26 14:31:17 2024 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.3).
 </footer>

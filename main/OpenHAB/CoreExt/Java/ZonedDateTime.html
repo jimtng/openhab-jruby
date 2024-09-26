@@ -83,7 +83,7 @@
         </nav>
         <div class="page-versions">
   <ul class="version-switcher">
-    <li><a href="/openhab-jruby/5.22" class="version-button stable">Stable <small>(5.22)</small></a></li>
+    <li><a href="/openhab-jruby/5.29" class="version-button stable">Stable <small>(5.29)</small></a></li>
     <li><a href="/openhab-jruby/main" class="version-button main">Latest <small>(main)</small></a></li>
   </ul>
   
@@ -1118,6 +1118,9 @@
   
   
   
+  
+  
+  
 
         
       </ul>
@@ -1730,6 +1733,11 @@
     
   </li>
 
+  
+  
+  
+  
+  
   
   
   
@@ -2760,13 +2768,48 @@
   
   <li class="">
     <span class="sidebar-link">
-      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../DSL/Sitemaps/ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../DSL/Sitemaps/ButtonBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtonBuilder (class)">ButtonBuilder</a></span>
       
         &lt; WidgetBuilder
       
       
     </span>
     
+    
+  </li>
+
+  
+  <li class="collapsed">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../DSL/Sitemaps/ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
+      
+        &lt; LinkableWidgetBuilder
+      
+      
+        <a class="arrow toggle right"></a>
+      
+    </span>
+    
+    
+      
+      <ul>
+        
+        
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="../../DSL/Sitemaps/ButtongridBuilder/Buttongrid.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder::Buttongrid (module)">Buttongrid</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+
+        
+      </ul>
     
   </li>
 
@@ -3964,6 +4007,29 @@ the mixed-in class.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#to_instant-instance_method" title="#to_instant (instance method)">#<strong>to_instant</strong>  &#x21d2; Instant </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Converts this object to an <span class='object_link'><a href="Instant.html" title="OpenHAB::CoreExt::Java::Instant (class)">Instant</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#to_local_date-instance_method" title="#to_local_date (instance method)">#<strong>to_local_date</strong>(_context = nil)  &#x21d2; LocalDate </a>
     
 
@@ -4093,11 +4159,86 @@ the mixed-in class.</p>
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#today%3F-instance_method" title="#today? (instance method)">#<strong>today?</strong>  &#x21d2; true, false </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns true if the date, converted to the system time zone, is today.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#tomorrow%3F-instance_method" title="#tomorrow? (instance method)">#<strong>tomorrow?</strong>  &#x21d2; true, false </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns true if the date, converted to the system time zone, is tomorrow.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#yesterday%3F-instance_method" title="#yesterday? (instance method)">#<strong>yesterday?</strong>  &#x21d2; true, false </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns true if the date, converted to the system time zone, is yesterday.</p>
+</div></span>
+  
+</li>
+
+      
     </ul>
   
 
 
 
+  
+  
+  
+  
+  
+  
   
   
   
@@ -4166,7 +4307,7 @@ the mixed-in class.</p>
 </pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 18</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 21</span>
 
 </pre>
     </td>
@@ -4258,7 +4399,7 @@ the mixed-in class.</p>
 </pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 24</span>
 
 </pre>
     </td>
@@ -4328,14 +4469,14 @@ the mixed-in class.</p>
       <pre class="lines">
 
 
-56
-57
-58
 59
-60</pre>
+60
+61
+62
+63</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 56</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 59</span>
 
 <span class="keyword">def</span> <span class="function">+</span>(other)
   <span class="keyword">return</span> plus(other.seconds) <span class="keyword">if</span> other.is_a?(<span class="constant">Numeric</span>)
@@ -4420,18 +4561,18 @@ the mixed-in class.</p>
       <pre class="lines">
 
 
-43
-44
-45
 46
 47
 48
 49
 50
-51</pre>
+51
+52
+53
+54</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 43</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 46</span>
 
 <span class="keyword">def</span> <span class="function">-</span>(other)
   <span class="keyword">if</span> other.respond_to?(<span class="symbol">:to_zoned_date_time</span>)
@@ -4484,18 +4625,18 @@ the mixed-in class.</p>
       <pre class="lines">
 
 
-189
-190
-191
-192
-193
-194
-195
-196
-197</pre>
+222
+223
+224
+225
+226
+227
+228
+229
+230</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 189</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 222</span>
 
 <span class="keyword">def</span> <span class="function">&lt;=&gt;</span>(other)
   <span class="comment"># compare instants, otherwise it will differ by timezone, which we don't want</span>
@@ -4564,14 +4705,16 @@ the mixed-in class.</p>
       <pre class="lines">
 
 
-205
-206
-207</pre>
+252
+253
+254
+255</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 205</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 252</span>
 
 <span class="keyword">def</span> <span class="function">coerce</span>(other)
+  logger.trace { <span class="string"><span class="delimiter">&quot;</span><span class="content">Coercing </span><span class="inline"><span class="inline-delimiter">#{</span><span class="predefined-constant">self</span><span class="inline-delimiter">}</span></span><span class="content"> as a request from </span><span class="inline"><span class="inline-delimiter">#{</span>other.class<span class="inline-delimiter">}</span></span><span class="delimiter">&quot;</span></span> }
   [other.to_zoned_date_time(<span class="predefined-constant">self</span>), <span class="predefined-constant">self</span>] <span class="keyword">if</span> other.respond_to?(<span class="symbol">:to_zoned_date_time</span>)
 <span class="keyword">end</span></pre>
     </td>
@@ -4674,16 +4817,16 @@ the mixed-in class.</p>
       <pre class="lines">
 
 
-178
-179
-180
-181
-182
-183
-184</pre>
+211
+212
+213
+214
+215
+216
+217</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 178</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 211</span>
 
 <span class="keyword">def</span> <span class="function">days_until</span>(holiday, holiday_file = <span class="predefined-constant">nil</span>)
   holiday = holiday.to_s.upcase
@@ -4764,12 +4907,12 @@ the mixed-in class.</p>
       <pre class="lines">
 
 
-118
-119
-120</pre>
+151
+152
+153</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 118</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 151</span>
 
 <span class="keyword">def</span> <span class="function">holiday</span>(holiday_file = <span class="predefined-constant">nil</span>)
   ::<span class="constant">Ephemeris</span>.get_bank_holiday_name(*[<span class="predefined-constant">self</span>, holiday_file || <span class="constant">DSL</span>.holiday_file].compact)&amp;.downcase&amp;.to_sym
@@ -4838,12 +4981,12 @@ the mixed-in class.</p>
       <pre class="lines">
 
 
-128
-129
-130</pre>
+161
+162
+163</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 128</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 161</span>
 
 <span class="keyword">def</span> <span class="function">holiday?</span>(holiday_file = <span class="predefined-constant">nil</span>)
   ::<span class="constant">Ephemeris</span>.bank_holiday?(*[<span class="predefined-constant">self</span>, holiday_file || <span class="constant">DSL</span>.holiday_file].compact)
@@ -4914,12 +5057,12 @@ the mixed-in class.</p>
       <pre class="lines">
 
 
-163
-164
-165</pre>
+196
+197
+198</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 163</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 196</span>
 
 <span class="keyword">def</span> <span class="function">in_dayset?</span>(set)
   ::<span class="constant">Ephemeris</span>.in_dayset?(set.to_s, <span class="predefined-constant">self</span>)
@@ -4988,12 +5131,12 @@ the mixed-in class.</p>
       <pre class="lines">
 
 
-138
-139
-140</pre>
+171
+172
+173</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 138</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 171</span>
 
 <span class="keyword">def</span> <span class="function">next_holiday</span>(holiday_file = <span class="predefined-constant">nil</span>)
   ::<span class="constant">Ephemeris</span>.get_next_bank_holiday(*[<span class="predefined-constant">self</span>, holiday_file || <span class="constant">DSL</span>.holiday_file].compact).downcase.to_sym
@@ -5040,12 +5183,12 @@ the mixed-in class.</p>
       <pre class="lines">
 
 
-79
-80
-81</pre>
+82
+83
+84</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 79</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 82</span>
 
 <span class="keyword">def</span> <span class="function">to_date</span>
   <span class="constant">Date</span>.new(year, month_value, day_of_month)
@@ -5093,16 +5236,12 @@ the mixed-in class.</p>
       <pre class="lines">
 
 
-74
-75
-76</pre>
+79</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 74</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 79</span>
 
-<span class="keyword">def</span> <span class="function">to_f</span>
-  to_instant.to_epoch_milli / <span class="float">1000.0</span>
-<span class="keyword">end</span></pre>
+delegate <span class="symbol"><span class="delimiter">%i[</span><span class="content">to_i to_f</span><span class="delimiter">]</span></span> =&gt; <span class="symbol">:to_instant</span></pre>
     </td>
   </tr>
 </table>
@@ -5146,15 +5285,64 @@ the mixed-in class.</p>
       <pre class="lines">
 
 
-66
-67
-68</pre>
+</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 66</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 65</span>
 
-<span class="keyword">def</span> <span class="function">to_i</span>
-  to_instant.epoch_second
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_instant-instance_method">
+  
+    #<strong>to_instant</strong>  &#x21d2; <tt><span class='object_link'><a href="Instant.html" title="OpenHAB::CoreExt::Java::Instant (class)">Instant</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Converts this object to an <span class='object_link'><a href="Instant.html" title="OpenHAB::CoreExt::Java::Instant (class)">Instant</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Instant.html" title="OpenHAB::CoreExt::Java::Instant (class)">Instant</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+236
+237
+238</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 236</span>
+
+<span class="keyword">def</span> <span class="function">to_instant</span>(_context = <span class="predefined-constant">nil</span>)
+  raw_to_instant
 <span class="keyword">end</span></pre>
     </td>
   </tr>
@@ -5198,12 +5386,12 @@ the mixed-in class.</p>
       <pre class="lines">
 
 
-84
-85
-86</pre>
+87
+88
+89</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 84</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 87</span>
 
 <span class="keyword">def</span> <span class="function">to_local_date</span>(_context = <span class="predefined-constant">nil</span>)
   toLocalDate
@@ -5250,12 +5438,12 @@ the mixed-in class.</p>
       <pre class="lines">
 
 
-32
-33
-34</pre>
+35
+36
+37</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 35</span>
 
 <span class="keyword">def</span> <span class="function">to_local_time</span>(_context = <span class="predefined-constant">nil</span>)
   toLocalTime
@@ -5302,10 +5490,10 @@ the mixed-in class.</p>
       <pre class="lines">
 
 
-37</pre>
+40</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 37</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 40</span>
 
 alias_method <span class="symbol">:to_month</span>, <span class="symbol">:month</span></pre>
     </td>
@@ -5350,12 +5538,12 @@ alias_method <span class="symbol">:to_month</span>, <span class="symbol">:month<
       <pre class="lines">
 
 
-89
-90
-91</pre>
+92
+93
+94</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 89</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 92</span>
 
 <span class="keyword">def</span> <span class="function">to_month_day</span>
   <span class="constant">MonthDay</span>.of(month, day_of_month)
@@ -5405,7 +5593,7 @@ alias_method <span class="symbol">:to_month</span>, <span class="symbol">:month<
 </pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 95</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 98</span>
 
 </pre>
     </td>
@@ -5472,15 +5660,123 @@ during conversion. Not used in this class.</p>
       <pre class="lines">
 
 
-102
-103
-104</pre>
+105
+106
+107</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 102</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 105</span>
 
 <span class="keyword">def</span> <span class="function">to_zoned_date_time</span>(context = <span class="predefined-constant">nil</span>) <span class="comment"># rubocop:disable Lint/UnusedMethodArgument</span>
   <span class="predefined-constant">self</span>
+<span class="keyword">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="today?-instance_method">
+  
+    #<strong>today?</strong>  &#x21d2; <tt>true</tt>, <tt>false</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns true if the date, converted to the system time zone, is today.</p>
+<p>This is the equivalent of checking if the current datetime is between midnight and end of the day
+of the system time zone.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>true</tt>, <tt>false</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+126
+127
+128</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 126</span>
+
+<span class="keyword">def</span> <span class="function">today?</span>
+  with_zone_same_instant(<span class="constant">ZoneId</span>.system_default).to_local_date == <span class="constant">LocalDate</span>.now
+<span class="keyword">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="tomorrow?-instance_method">
+  
+    #<strong>tomorrow?</strong>  &#x21d2; <tt>true</tt>, <tt>false</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns true if the date, converted to the system time zone, is tomorrow.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>true</tt>, <tt>false</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+135
+136
+137</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 135</span>
+
+<span class="keyword">def</span> <span class="function">tomorrow?</span>
+  with_zone_same_instant(<span class="constant">ZoneId</span>.system_default).to_local_date == <span class="constant">LocalDate</span>.now + <span class="integer">1</span>
 <span class="keyword">end</span></pre>
     </td>
   </tr>
@@ -5533,15 +5829,68 @@ during conversion. Not used in this class.</p>
       <pre class="lines">
 
 
-150
-151
-152</pre>
+183
+184
+185</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 150</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 183</span>
 
 <span class="keyword">def</span> <span class="function">weekend?</span>
   ::<span class="constant">Ephemeris</span>.weekend?(<span class="predefined-constant">self</span>)
+<span class="keyword">end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="yesterday?-instance_method">
+  
+    #<strong>yesterday?</strong>  &#x21d2; <tt>true</tt>, <tt>false</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns true if the date, converted to the system time zone, is yesterday.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>true</tt>, <tt>false</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+114
+115
+116</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core_ext/java/zoned_date_time.rb', line 114</span>
+
+<span class="keyword">def</span> <span class="function">yesterday?</span>
+  with_zone_same_instant(<span class="constant">ZoneId</span>.system_default).to_local_date == <span class="constant">LocalDate</span>.now - <span class="integer">1</span>
 <span class="keyword">end</span></pre>
     </td>
   </tr>
@@ -5553,7 +5902,7 @@ during conversion. Not used in this class.</p>
 </div>
 
         <footer>
-  Generated on Thu Jul 11 01:34:44 2024 by
+  Generated on Thu Sep 26 14:31:19 2024 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.3).
 </footer>

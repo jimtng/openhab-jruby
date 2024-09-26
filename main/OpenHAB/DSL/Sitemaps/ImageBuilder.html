@@ -88,7 +88,7 @@ that points to an image. - Documentation for openhab-scripting JRuby helper libr
         </nav>
         <div class="page-versions">
   <ul class="version-switcher">
-    <li><a href="/openhab-jruby/5.22" class="version-button stable">Stable <small>(5.22)</small></a></li>
+    <li><a href="/openhab-jruby/5.29" class="version-button stable">Stable <small>(5.29)</small></a></li>
     <li><a href="/openhab-jruby/main" class="version-button main">Latest <small>(main)</small></a></li>
   </ul>
   
@@ -1123,6 +1123,9 @@ that points to an image. - Documentation for openhab-scripting JRuby helper libr
   
   
   
+  
+  
+  
 
         
       </ul>
@@ -1735,6 +1738,11 @@ that points to an image. - Documentation for openhab-scripting JRuby helper libr
     
   </li>
 
+  
+  
+  
+  
+  
   
   
   
@@ -2765,13 +2773,48 @@ that points to an image. - Documentation for openhab-scripting JRuby helper libr
   
   <li class="">
     <span class="sidebar-link">
-      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="ButtonBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtonBuilder (class)">ButtonBuilder</a></span>
       
         &lt; WidgetBuilder
       
       
     </span>
     
+    
+  </li>
+
+  
+  <li class="collapsed">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
+      
+        &lt; LinkableWidgetBuilder
+      
+      
+        <a class="arrow toggle right"></a>
+      
+    </span>
+    
+    
+      
+      <ul>
+        
+        
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="ButtongridBuilder/Buttongrid.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder::Buttongrid (module)">Buttongrid</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+
+        
+      </ul>
     
   </li>
 
@@ -3657,7 +3700,7 @@ that points to an image.</p>
   
   
   <h3 class="inherited">Methods included from <span class='object_link'><a href="../../Core/EntityLookup.html" title="OpenHAB::Core::EntityLookup (module)">Core::EntityLookup</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="../../Core/EntityLookup.html#method_missing-instance_method" title="OpenHAB::Core::EntityLookup#method_missing (method)">#method_missing</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="../../Core/EntityLookup.html#items-instance_method" title="OpenHAB::Core::EntityLookup#items (method)">#items</a></span>, <span class='object_link'><a href="../../Core/EntityLookup.html#method_missing-instance_method" title="OpenHAB::Core::EntityLookup#method_missing (method)">#method_missing</a></span>, <span class='object_link'><a href="../../Core/EntityLookup.html#things-instance_method" title="OpenHAB::Core::EntityLookup#things (method)">#things</a></span></p>
 <div id="method_missing_details" class="method_details_list">
   <h2>Dynamic Method Handling</h2>
   <p class="notice super">
@@ -3716,12 +3759,12 @@ that points to an image.</p>
       <pre class="lines">
 
 
-1143
-1144
-1145</pre>
+1181
+1182
+1183</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 1143</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 1181</span>
 
 <span class="keyword">def</span> <span class="function">refresh</span>
   <span class="instance-variable">@refresh</span>
@@ -3777,12 +3820,12 @@ if the associated item's state is not a URL</p>
       <pre class="lines">
 
 
-1141
-1142
-1143</pre>
+1179
+1180
+1181</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 1141</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 1179</span>
 
 <span class="keyword">def</span> <span class="function">url</span>
   <span class="instance-variable">@url</span>
@@ -3798,7 +3841,7 @@ if the associated item's state is not a URL</p>
 </div>
 
         <footer>
-  Generated on Thu Jul 11 01:34:40 2024 by
+  Generated on Thu Sep 26 14:31:14 2024 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.3).
 </footer>

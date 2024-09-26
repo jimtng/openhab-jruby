@@ -108,7 +108,7 @@ command will reschedule the timed command for that new duration. - Documentation
         </nav>
         <div class="page-versions">
   <ul class="version-switcher">
-    <li><a href="/openhab-jruby/5.22" class="version-button stable">Stable <small>(5.22)</small></a></li>
+    <li><a href="/openhab-jruby/5.29" class="version-button stable">Stable <small>(5.29)</small></a></li>
     <li><a href="/openhab-jruby/main" class="version-button main">Latest <small>(main)</small></a></li>
   </ul>
   
@@ -1143,6 +1143,9 @@ command will reschedule the timed command for that new duration. - Documentation
   
   
   
+  
+  
+  
 
         
       </ul>
@@ -1755,6 +1758,11 @@ command will reschedule the timed command for that new duration. - Documentation
     
   </li>
 
+  
+  
+  
+  
+  
   
   
   
@@ -2785,13 +2793,48 @@ command will reschedule the timed command for that new duration. - Documentation
   
   <li class="">
     <span class="sidebar-link">
-      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Sitemaps/ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Sitemaps/ButtonBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtonBuilder (class)">ButtonBuilder</a></span>
       
         &lt; WidgetBuilder
       
       
     </span>
     
+    
+  </li>
+
+  
+  <li class="collapsed">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Sitemaps/ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
+      
+        &lt; LinkableWidgetBuilder
+      
+      
+        <a class="arrow toggle right"></a>
+      
+    </span>
+    
+    
+      
+      <ul>
+        
+        
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="../Sitemaps/ButtongridBuilder/Buttongrid.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder::Buttongrid (module)">Buttongrid</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+
+        
+      </ul>
     
   </li>
 
@@ -3645,7 +3688,11 @@ command will reschedule the timed command for that new duration.</p>
     <strong>Note:</strong>
     <div class='inline'><p>If a block is provided, and the timer is canceled because the
 item changed state while it was waiting, the block will still be
-executed. Be sure to check <span class='object_link'><a href="TimedCommand/TimedCommandDetails.html#expired%3F-instance_method" title="OpenHAB::DSL::Items::TimedCommand::TimedCommandDetails#expired? (method)">#expired?</a></span>
+executed. The timed command can be reinstated by calling <span class='object_link'><a href="TimedCommand/TimedCommandDetails.html#resume-instance_method" title="OpenHAB::DSL::Items::TimedCommand::TimedCommandDetails#resume (method)">#resume</a></span> or
+<span class='object_link'><a href="TimedCommand/TimedCommandDetails.html#reschedule-instance_method" title="OpenHAB::DSL::Items::TimedCommand::TimedCommandDetails#reschedule (method)">#reschedule</a></span>.</p>
+<p>If the timer expired, the timed command can be rescheduled from inside the block by calling
+<span class='object_link'><a href="TimedCommand/TimedCommandDetails.html#reschedule-instance_method" title="OpenHAB::DSL::Items::TimedCommand::TimedCommandDetails#reschedule (method)">#reschedule</a></span>.</p>
+<p>Be sure to check <span class='object_link'><a href="TimedCommand/TimedCommandDetails.html#expired%3F-instance_method" title="OpenHAB::DSL::Items::TimedCommand::TimedCommandDetails#expired? (method)">#expired?</a></span>
 and/or <span class='object_link'><a href="TimedCommand/TimedCommandDetails.html#cancelled%3F-instance_method" title="OpenHAB::DSL::Items::TimedCommand::TimedCommandDetails#cancelled? (method)">#cancelled?</a></span> to determine why
 the block was called.</p>
 </div>
@@ -3814,39 +3861,6 @@ other action.</p>
       <pre class="lines">
 
 
-119
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133
-134
-135
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148
-149
-150
-151
 152
 153
 154
@@ -3859,10 +3873,43 @@ other action.</p>
 161
 162
 163
-164</pre>
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/timed_command.rb', line 119</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/items/timed_command.rb', line 152</span>
 
 <span class="keyword">def</span> <span class="function">command</span>(command, <span class="key">for</span>: <span class="predefined-constant">nil</span>, <span class="key">on_expire</span>: <span class="predefined-constant">nil</span>, <span class="key">only_when_ensured</span>: <span class="predefined-constant">false</span>, &amp;block)
   duration = binding.local_variable_get(<span class="symbol">:for</span>)
@@ -3895,7 +3942,7 @@ other action.</p>
           create_ensured_timed_command.call
         <span class="keyword">else</span>
           <span class="comment"># timed command still pending; reset it</span>
-          logger.trace <span class="string"><span class="delimiter">&quot;</span><span class="content">Outstanding Timed Command </span><span class="inline"><span class="inline-delimiter">#{</span>timed_command_details<span class="inline-delimiter">}</span></span><span class="content"> encountered - rescheduling</span><span class="delimiter">&quot;</span></span>
+          logger.trace { <span class="string"><span class="delimiter">&quot;</span><span class="content">Outstanding Timed Command </span><span class="inline"><span class="inline-delimiter">#{</span>timed_command_details<span class="inline-delimiter">}</span></span><span class="content"> encountered - rescheduling</span><span class="delimiter">&quot;</span></span> }
           timed_command_details.on_expire = on_expire <span class="keyword">unless</span> on_expire.nil?
           timed_command_details.timer.reschedule(duration)
           <span class="comment"># disable the cancel rule while we send the new command</span>
@@ -3920,7 +3967,7 @@ other action.</p>
 </div>
 
         <footer>
-  Generated on Thu Jul 11 01:34:34 2024 by
+  Generated on Thu Sep 26 14:31:08 2024 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.3).
 </footer>
