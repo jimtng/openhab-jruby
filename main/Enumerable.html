@@ -83,7 +83,7 @@
         </nav>
         <div class="page-versions">
   <ul class="version-switcher">
-    <li><a href="/openhab-jruby/5.29" class="version-button stable">Stable <small>(5.29)</small></a></li>
+    <li><a href="/openhab-jruby/5.34" class="version-button stable">Stable <small>(5.34)</small></a></li>
     <li><a href="/openhab-jruby/main" class="version-button main">Latest <small>(main)</small></a></li>
   </ul>
   
@@ -568,6 +568,7 @@
     
   </li>
 
+  
   
   <li class="">
     <span class="sidebar-link">
@@ -2842,6 +2843,19 @@
   
   <li class="">
     <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="OpenHAB/DSL/Sitemaps/ColortemperaturepickerBuilder.html" title="OpenHAB::DSL::Sitemaps::ColortemperaturepickerBuilder (class)">ColortemperaturepickerBuilder</a></span>
+      
+        &lt; WidgetBuilder
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="OpenHAB/DSL/Sitemaps/DefaultBuilder.html" title="OpenHAB::DSL::Sitemaps::DefaultBuilder (class)">DefaultBuilder</a></span>
       
         &lt; WidgetBuilder
@@ -3874,7 +3888,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#command!-instance_method" title="#command! (instance method)">#<strong>command!</strong>(command)  &#x21d2; self </a>
+      <a href="#command!-instance_method" title="#command! (instance method)">#<strong>command!</strong>(command, **kwargs)  &#x21d2; self </a>
     
 
     
@@ -4219,7 +4233,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#toggle-instance_method" title="#toggle (instance method)">#<strong>toggle</strong>  &#x21d2; self </a>
+      <a href="#toggle-instance_method" title="#toggle (instance method)">#<strong>toggle</strong>(source: nil)  &#x21d2; self </a>
     
 
     
@@ -4485,7 +4499,7 @@ otherwise self</p>
       <div class="method_details ">
   <h3 class="signature " id="command!-instance_method">
   
-    #<strong>command!</strong>(command)  &#x21d2; <tt>self</tt> 
+    #<strong>command!</strong>(command, **kwargs)  &#x21d2; <tt>self</tt> 
   
 
   
@@ -4530,10 +4544,10 @@ otherwise self</p>
     <td>
       <pre class="code"><span class="info file"># File 'lib/openhab/core/items/semantics/enumerable.rb', line 106</span>
 
-<span class="keyword">def</span> <span class="function">command!</span>(command)
+<span class="keyword">def</span> <span class="function">command!</span>(command, **kwargs)
   <span class="comment"># We cannot alias this to #command above, otherwise it will call</span>
   <span class="comment"># DSL::Items::Ensure::Item#command which checks for ensure_states</span>
-  each { |i| i.command!(command) }
+  each { |i| i.command!(command, **kwargs) }
   <span class="predefined-constant">self</span>
 <span class="keyword">end</span></pre>
     </td>
@@ -4705,8 +4719,6 @@ before calling <span class='object_link'><a href="#points-instance_method" title
       <pre class="lines">
 
 
-647
-648
 649
 650
 651
@@ -4716,10 +4728,12 @@ before calling <span class='object_link'><a href="#points-instance_method" title
 655
 656
 657
-658</pre>
+658
+659
+660</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core/items/semantics.rb', line 647</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core/items/semantics.rb', line 649</span>
 
 <span class="keyword">def</span> <span class="function">equipments</span>(*types)
   <span class="keyword">begin</span>
@@ -4944,8 +4958,6 @@ before calling <span class='object_link'><a href="#points-instance_method" title
       <pre class="lines">
 
 
-617
-618
 619
 620
 621
@@ -4955,10 +4967,12 @@ before calling <span class='object_link'><a href="#points-instance_method" title
 625
 626
 627
-628</pre>
+628
+629
+630</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core/items/semantics.rb', line 617</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core/items/semantics.rb', line 619</span>
 
 <span class="keyword">def</span> <span class="function">locations</span>(*types)
   <span class="keyword">begin</span>
@@ -5584,8 +5598,6 @@ before calling <span class='object_link'><a href="#points-instance_method" title
       <pre class="lines">
 
 
-669
-670
 671
 672
 673
@@ -5608,10 +5620,12 @@ before calling <span class='object_link'><a href="#points-instance_method" title
 690
 691
 692
-693</pre>
+693
+694
+695</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core/items/semantics.rb', line 669</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core/items/semantics.rb', line 671</span>
 
 <span class="keyword">def</span> <span class="function">points</span>(*point_or_property_types)
   <span class="keyword">unless</span> (<span class="integer">0</span>..<span class="integer">2</span>).cover?(point_or_property_types.length)
@@ -5910,7 +5924,7 @@ before calling <span class='object_link'><a href="#points-instance_method" title
       <div class="method_details ">
   <h3 class="signature " id="toggle-instance_method">
   
-    #<strong>toggle</strong>  &#x21d2; <tt>self</tt> 
+    #<strong>toggle</strong>(source: nil)  &#x21d2; <tt>self</tt> 
   
 
   
@@ -5952,8 +5966,8 @@ before calling <span class='object_link'><a href="#points-instance_method" title
     <td>
       <pre class="code"><span class="info file"># File 'lib/openhab/core/items/semantics/enumerable.rb', line 201</span>
 
-<span class="keyword">def</span> <span class="function">toggle</span>
-  each(&amp;<span class="symbol">:toggle</span>)
+<span class="keyword">def</span> <span class="function">toggle</span>(<span class="key">source</span>: <span class="predefined-constant">nil</span>)
+  each { |i| i.toggle(<span class="key">source</span>: source) }
 <span class="keyword">end</span></pre>
     </td>
   </tr>
@@ -6132,7 +6146,7 @@ otherwise self</p>
 </div>
 
         <footer>
-  Generated on Thu Sep 26 14:31:09 2024 by
+  Generated on Thu Jan 16 22:53:13 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.3).
 </footer>
