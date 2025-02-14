@@ -57,7 +57,13 @@ module OpenHAB
 
         # @return [Integer, nil]
         def <=>(other)
+          logger.trace { "(#{self.class}) #{self} <=> #{other} (#{other.class})" }
           return to_f <=> other if other.is_a?(Numeric)
+          return to_nanos <=> (other | "ns").to_i if other.is_a?(QuantityType) && other.unit.compatible?(Units::SECOND)
+
+          if !other.is_a?(self.class) && other.respond_to?(:coerce)
+            return other.coerce(self)&.then { |lhs, rhs| lhs <=> rhs }
+          end
 
           super
         rescue TypeError
@@ -72,6 +78,7 @@ module OpenHAB
         #
         def coerce(other)
           return [other.seconds, self] if other.is_a?(Numeric)
+          return [other, to_nanos | "ns"] if other.is_a?(QuantityType) && other.unit.compatible?(Units::SECOND)
 
           [other.to_i.seconds, self] if other.is_a?(Period)
         end
@@ -87,7 +94,9 @@ module OpenHAB
           #     plus_seconds(other)
           #   elsif other.is_a?(Numeric)
           #     plus(other.seconds)
-          #   elsif other.respond_to?(:coerce) && (rhs, lhs = other.coerce(self))
+          #   elsif other.is_a?(QuantityType) && other.unit.compatible?(Units::SECOND)
+          #     plus_nanos((other | "ns").to_i)
+          #   elsif other.respond_to?(:coerce) && (lhs, rhs = other.coerce(self))
           #     lhs + rhs
           #   else
           #     raise TypeError, "#{other.class} can't be coerced into Duration"
@@ -101,7 +110,9 @@ module OpenHAB
                 #{java_op}_seconds(other)
               elsif other.is_a?(Numeric)
                 #{java_op}(other.seconds)
-              elsif other.respond_to?(:coerce) && (rhs, lhs = other.coerce(self))
+              elsif other.is_a?(QuantityType) && other.unit.compatible?(Units::SECOND)
+                #{java_op}_nanos((other | "ns").to_i)
+              elsif other.respond_to?(:coerce) && (lhs, rhs = other.coerce(self))
                 lhs #{ruby_op} rhs
               else
                 raise TypeError, "\#{other.class} can't be coerced into Duration"
@@ -121,7 +132,7 @@ module OpenHAB
           #     Duration.of_seconds(to_f * other)
           #   elsif other.is_a?(Duration)
           #     Duration.of_seconds(to_f * other.to_f)
-          #   elsif other.respond_to?(:coerce) && (rhs, lhs = other.coerce(self))
+          #   elsif other.respond_to?(:coerce) && (lhs, rhs = other.coerce(self))
           #     lhs * rhs
           #   else
           #     raise TypeError, "#{other.class} can't be coerced into Duration"
@@ -135,7 +146,7 @@ module OpenHAB
                 Duration.of_seconds(to_f #{ruby_op} other)
               elsif other.is_a?(Duration)
                 Duration.of_seconds(to_f #{ruby_op} other.to_f)
-              elsif other.respond_to?(:coerce) && (rhs, lhs = other.coerce(self))
+              elsif other.respond_to?(:coerce) && (lhs, rhs = other.coerce(self))
                 lhs #{ruby_op} rhs
               else
                 raise TypeError, "\#{other.class} can't be coerced into Duration"

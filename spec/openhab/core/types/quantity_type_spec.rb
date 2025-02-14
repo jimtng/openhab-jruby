@@ -181,5 +181,21 @@ RSpec.describe OpenHAB::Core::Types::QuantityType do
         expect(ten_c < DecimalType.new(49)).to be false
       end
     end
+
+    it "Time Quantity is comparable against Duration" do
+      expect(1 | "s" < 2.seconds).to be true
+      expect(1 | "s" > 2.seconds).to be false
+      expect(1 | "s" > 2.milliseconds).to be true
+      expect(1 | "s" < 2.milliseconds).to be false
+      expect(1 | "s" == 1.second).to be true
+      expect(1 | "s" != 1.second).to be false
+
+      expect(2.seconds <  1 | "s").to be false
+      expect(2.seconds >  1 | "s").to be true
+      expect(2.milliseconds >  1 | "s").to be false
+      expect(2.milliseconds <  1 | "s").to be true
+      expect(1.second == 1 | "s").to be true
+      expect(1.second != 1 | "s").to be false
+    end
   end
 end

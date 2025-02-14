@@ -15,13 +15,34 @@ RSpec.describe Duration do
     expect(5.seconds).to eq 5
   end
 
-  it "is addable and subtractable" do
-    expect(60.seconds + 5).to eql 65.seconds
-    expect(5 + 60.seconds).to eql 65.seconds
-    expect(1.hour + 5.minutes).to eql 65.minutes
-    expect(1.hour - 5.minutes).to eql 55.minutes
-    expect(60.seconds - 5).to eql 55.seconds
-    expect(60 - 5.seconds).to eql 55.seconds
+  describe "math operations" do
+    describe "additions and subtractions" do
+      it "works with other Durations" do
+        expect(1.hour + 5.minutes).to eql 65.minutes
+        expect(1.hour - 5.minutes).to eql 55.minutes
+      end
+
+      it "works with Period" do
+        expect(5.hours + Period.of_days(1)).to eql 29.hours
+        expect(25.hours - Period.of_days(1)).to eql 1.hours
+        expect(Period.of_days(1) + 5.hours).to eql 29.hours
+        expect(Period.of_days(1) - 5.hours).to eql 19.hours
+      end
+
+      it "works with Numeric" do
+        expect(60.seconds + 5).to eql 65.seconds
+        expect(5 + 60.seconds).to eql 65.seconds
+        expect(60.seconds - 5).to eql 55.seconds
+        expect(60 - 5.seconds).to eql 55.seconds
+      end
+
+      it "works with Time QuantityType" do
+        expect(1.second + QuantityType.new("5 s")).to eql 6.seconds
+        expect(5.seconds - QuantityType.new("1 s")).to eql 4.seconds
+        expect(QuantityType.new("5 s") + 1.second).to eql QuantityType.new("6 s")
+        expect(QuantityType.new("5 s") - 1.second).to eql QuantityType.new("4 s")
+      end
+    end
   end
 
   describe "#to_i" do
