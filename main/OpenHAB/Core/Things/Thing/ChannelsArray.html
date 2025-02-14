@@ -84,7 +84,7 @@ by channel id - Documentation for openhab-scripting JRuby helper library.">
         </nav>
         <div class="page-versions">
   <ul class="version-switcher">
-    <li><a href="/openhab-jruby/5.34" class="version-button stable">Stable <small>(5.34)</small></a></li>
+    <li><a href="/openhab-jruby/5.35" class="version-button stable">Stable <small>(5.35)</small></a></li>
     <li><a href="/openhab-jruby/main" class="version-button main">Latest <small>(main)</small></a></li>
   </ul>
   
@@ -1728,6 +1728,19 @@ by channel id - Documentation for openhab-scripting JRuby helper library.">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="" title="OpenHAB::Core::Things::Thing::ChannelsArray (class)">ChannelsArray</a></span>
       
         &lt; Array
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="Properties.html" title="OpenHAB::Core::Things::Thing::Properties (class)">Properties</a></span>
+      
+        &lt; Object
       
       
     </span>
@@ -3702,13 +3715,13 @@ by channel id</p>
       <pre class="lines">
 
 
-78
-79
-80
-81</pre>
+85
+86
+87
+88</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core/things/thing.rb', line 78</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core/things/thing.rb', line 85</span>
 
 <span class="keyword">def</span> <span class="function">initialize</span>(thing, array)
   <span class="keyword">super</span>(array)
@@ -3783,15 +3796,15 @@ by channel id</p>
       <pre class="lines">
 
 
-87
-88
-89
-90
-91
-92</pre>
+94
+95
+96
+97
+98
+99</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core/things/thing.rb', line 87</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core/things/thing.rb', line 94</span>
 
 <span class="keyword">def</span> <span class="function">[]</span>(index)
   <span class="keyword">return</span> <span class="instance-variable">@thing</span>.get_channel(index) <span class="keyword">if</span> index.is_a?(<span class="constant">ChannelUID</span>)
@@ -3809,7 +3822,7 @@ by channel id</p>
 </div>
 
         <footer>
-  Generated on Thu Jan 16 22:53:14 2025 by
+  Generated on Fri Feb 14 03:33:37 2025 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.3).
 </footer>
