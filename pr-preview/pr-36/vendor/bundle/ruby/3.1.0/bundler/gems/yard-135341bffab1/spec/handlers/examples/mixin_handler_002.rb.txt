@@ -1,3 +1,0 @@
-module B1; end
-
-A1.include(B1)
