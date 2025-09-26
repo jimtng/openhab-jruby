@@ -1,0 +1,57 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+require 'optparse'
+
+#begin
+#  require 'yaml-lint'
+#rescue LoadError
+  $: << File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib'))
+  require 'yaml-lint'
+#end
+
+options = {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: yaml-lint [options] <file(s) or folder(s)>"
+
+  opts.on("-q", "--quiet", "Run quiet. Only log failing files.") do |q|
+    options[:quiet] = q
+  end
+  opts.on("-Q", "--very-quiet", "Run more quiet. Return code is the number of failed files.") do |q|
+    options[:veryquiet] = q
+  end
+
+  opts.on("-n", "--no-check-file-ext", "Do not check the file extension to match known yaml files.") do |n|
+    options[:nocheckfileext] = true
+  end
+
+  opts.on("-i", "--ignore-non-yaml-files", "Ignoring non-yaml files.") do |n|
+    options[:ignorenoyaml] = true
+  end
+
+  opts.on("-e x,y,z", "--exclude x,y,z", Array, "Coma-separated list of files or folders to exclude.") do |n|
+    options[:exclude] = n
+  end
+
+  opts.on("-c", "--no-color", "Disables the colors in the output.") do |n|
+    options[:nocolor] = true
+  end
+
+  opts.on_tail("-h", "--help") do |q|
+    puts 'yaml-lint is a tool to check the syntax of your YAML files'
+    puts opts
+    exit -1
+  end
+end.parse!
+
+puts "Checking the content of #{ARGV}" unless options[:quiet]
+
+failed = 0
+
+ARGV.each do|file|
+  lint = YamlLint.new(file, options)
+  failed = failed + lint.do_lint
+end
+
+puts 'Done.' unless options[:quiet]
+exit failed
