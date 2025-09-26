@@ -1,0 +1,33 @@
+name: Deploy Preview Docs on Pull Request
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+
+env:
+  RUBY_VERSION: 3.1.4
+
+concurrency:
+  group: preview-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'ci skip')"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ env.RUBY_VERSION }}
+          bundler-cache: true
+
+      - name: Build YARD docs
+        run: bin/yardoc
+
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./docs/yard/
