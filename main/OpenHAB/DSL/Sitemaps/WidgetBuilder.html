@@ -84,8 +84,8 @@
         </nav>
         <div class="page-versions">
   <ul class="version-switcher">
-    <li><a href="/openhab-jruby/5.42" class="version-button stable" onclick="gotoVersion(event)">Stable <small>(5.42)</small></a></li>
-    <li><a href="/openhab-jruby/main" class="version-button main" onclick="gotoVersion(event)">Latest <small>(main)</small></a></li>
+    <li><a href="/openhab-jruby/5.50" class="version-button stable">Stable <small>(5.50)</small></a></li>
+    <li><a href="/openhab-jruby/main" class="version-button main">Latest <small>(main)</small></a></li>
   </ul>
   <div class="archived-versions">
     <div class="dropdown-wrapper">
@@ -665,6 +665,60 @@
       
     </span>
     
+    
+  </li>
+
+  
+  <li class="collapsed">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Events/Source.html" title="OpenHAB::Core::Events::Source (class)">Source</a></span>
+      
+        &lt; Delegator
+      
+      
+        <a class="arrow toggle right"></a>
+      
+    </span>
+    
+    
+      
+      <ul>
+        
+        
+  
+  
+  
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="../../Core/Events/Source/Component.html" title="OpenHAB::Core::Events::Source::Component (class)">Component</a></span>
+      
+        &lt; Object
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+        
+      </ul>
     
   </li>
 
@@ -1252,7 +1306,6 @@
   
   
   
-  
 
         
       </ul>
@@ -1447,9 +1500,55 @@
   
   <li class="">
     <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Sitemaps/LinkableWidget.html" title="OpenHAB::Core::Sitemaps::LinkableWidget (module)">LinkableWidget</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Sitemaps/Provider.html" title="OpenHAB::Core::Sitemaps::Provider (class)">Provider</a></span>
       
         &lt; Provider
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Sitemaps/Registry.html" title="OpenHAB::Core::Sitemaps::Registry (class)">Registry</a></span>
+      
+        &lt; Object
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Sitemaps/Sitemap.html" title="OpenHAB::Core::Sitemaps::Sitemap (module)">Sitemap</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Sitemaps/Widget.html" title="OpenHAB::Core::Sitemaps::Widget (module)">Widget</a></span>
       
       
     </span>
@@ -2462,6 +2561,17 @@
     
   </li>
 
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-2" href="../../CoreExt/TimePredicates.html" title="OpenHAB::CoreExt::TimePredicates (module)">TimePredicates</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
 
         
       </ul>
@@ -2815,37 +2925,15 @@
   </li>
 
   
-  <li class="collapsed">
+  <li class="">
     <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
       
         &lt; LinkableWidgetBuilder
       
       
-        <a class="arrow toggle right"></a>
-      
     </span>
     
-    
-      
-      <ul>
-        
-        
-  
-  <li class="">
-    <span class="sidebar-link">
-      <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="ButtongridBuilder/Buttongrid.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder::Buttongrid (module)">Buttongrid</a></span>
-      
-      
-    </span>
-    
-    
-  </li>
-
-  
-
-        
-      </ul>
     
   </li>
 
@@ -4070,12 +4158,12 @@ It can be a string, or a hash of conditions and icons.</p>
       <pre class="lines">
 
 
-94
-95
-96</pre>
+91
+92
+93</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 94</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 91</span>
 
 <span class="keyword">def</span> <span class="function">icon</span>
   <span class="instance-variable">@icon</span>
@@ -4132,12 +4220,12 @@ It can be a string, or a hash of conditions and icons.</p>
       <pre class="lines">
 
 
-112
-113
-114</pre>
+109
+110
+111</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 112</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 109</span>
 
 <span class="keyword">def</span> <span class="function">icon_colors</span>
   <span class="instance-variable">@icon_colors</span>
@@ -4187,12 +4275,12 @@ It can be a string, or a hash of conditions and icons.</p>
       <pre class="lines">
 
 
-77
-78
-79</pre>
+74
+75
+76</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 77</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 74</span>
 
 <span class="keyword">def</span> <span class="function">item</span>
   <span class="instance-variable">@item</span>
@@ -4241,12 +4329,12 @@ It can be a string, or a hash of conditions and icons.</p>
       <pre class="lines">
 
 
-74
-75
-76</pre>
+71
+72
+73</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 74</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 71</span>
 
 <span class="keyword">def</span> <span class="function">label</span>
   <span class="instance-variable">@label</span>
@@ -4303,12 +4391,12 @@ It can be a string, or a hash of conditions and icons.</p>
       <pre class="lines">
 
 
-104
-105
-106</pre>
+101
+102
+103</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 104</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 101</span>
 
 <span class="keyword">def</span> <span class="function">label_colors</span>
   <span class="instance-variable">@label_colors</span>
@@ -4381,12 +4469,12 @@ This is mutually exclusive with <span class='object_link'><a href="#icon-instanc
       <pre class="lines">
 
 
-100
-101
-102</pre>
+97
+98
+99</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 100</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 97</span>
 
 <span class="keyword">def</span> <span class="function">static_icon</span>
   <span class="instance-variable">@static_icon</span>
@@ -4443,12 +4531,12 @@ This is mutually exclusive with <span class='object_link'><a href="#icon-instanc
       <pre class="lines">
 
 
-108
-109
-110</pre>
+105
+106
+107</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 108</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 105</span>
 
 <span class="keyword">def</span> <span class="function">value_colors</span>
   <span class="instance-variable">@value_colors</span>
@@ -4505,12 +4593,12 @@ This is mutually exclusive with <span class='object_link'><a href="#icon-instanc
       <pre class="lines">
 
 
-116
-117
-118</pre>
+113
+114
+115</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 116</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 113</span>
 
 <span class="keyword">def</span> <span class="function">visibilities</span>
   <span class="instance-variable">@visibilities</span>
@@ -4569,13 +4657,13 @@ This is mutually exclusive with <span class='object_link'><a href="#icon-instanc
       <pre class="lines">
 
 
-201
-202
-203
-204</pre>
+198
+199
+200
+201</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 201</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 198</span>
 
 <span class="keyword">def</span> <span class="function">icon_color</span>(rules)
   rules = { <span class="key">default</span>: rules } <span class="keyword">if</span> rules.is_a?(<span class="constant">String</span>)
@@ -4628,13 +4716,13 @@ This is mutually exclusive with <span class='object_link'><a href="#icon-instanc
       <pre class="lines">
 
 
-187
-188
-189
-190</pre>
+184
+185
+186
+187</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 187</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 184</span>
 
 <span class="keyword">def</span> <span class="function">label_color</span>(rules)
   rules = { <span class="key">default</span>: rules } <span class="keyword">if</span> rules.is_a?(<span class="constant">String</span>)
@@ -4687,13 +4775,13 @@ This is mutually exclusive with <span class='object_link'><a href="#icon-instanc
       <pre class="lines">
 
 
-194
-195
-196
-197</pre>
+191
+192
+193
+194</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 194</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 191</span>
 
 <span class="keyword">def</span> <span class="function">value_color</span>(rules)
   rules = { <span class="key">default</span>: rules } <span class="keyword">if</span> rules.is_a?(<span class="constant">String</span>)
@@ -4746,12 +4834,12 @@ This is mutually exclusive with <span class='object_link'><a href="#icon-instanc
       <pre class="lines">
 
 
-208
-209
-210</pre>
+205
+206
+207</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 208</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 205</span>
 
 <span class="keyword">def</span> <span class="function">visibility</span>(*rules)
   <span class="instance-variable">@visibilities</span>.concat(rules)
@@ -4766,9 +4854,9 @@ This is mutually exclusive with <span class='object_link'><a href="#icon-instanc
 </div>
 
         <footer>
-  Generated on Fri Sep 26 19:05:23 2025 by
+  Generated on Tue Jul 28 01:59:27 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.1.4).
+  0.9.37 (ruby-3.4.2).
 </footer>
 
       </main>

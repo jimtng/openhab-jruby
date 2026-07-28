@@ -85,8 +85,8 @@ openHAB Cloud Notification Actions}. - Documentation for openhab-scripting JRuby
         </nav>
         <div class="page-versions">
   <ul class="version-switcher">
-    <li><a href="/openhab-jruby/5.42" class="version-button stable" onclick="gotoVersion(event)">Stable <small>(5.42)</small></a></li>
-    <li><a href="/openhab-jruby/main" class="version-button main" onclick="gotoVersion(event)">Latest <small>(main)</small></a></li>
+    <li><a href="/openhab-jruby/5.50" class="version-button stable">Stable <small>(5.50)</small></a></li>
+    <li><a href="/openhab-jruby/main" class="version-button main">Latest <small>(main)</small></a></li>
   </ul>
   <div class="archived-versions">
     <div class="dropdown-wrapper">
@@ -666,6 +666,60 @@ openHAB Cloud Notification Actions}. - Documentation for openhab-scripting JRuby
       
     </span>
     
+    
+  </li>
+
+  
+  <li class="collapsed">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Events/Source.html" title="OpenHAB::Core::Events::Source (class)">Source</a></span>
+      
+        &lt; Delegator
+      
+      
+        <a class="arrow toggle right"></a>
+      
+    </span>
+    
+    
+      
+      <ul>
+        
+        
+  
+  
+  
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="../Events/Source/Component.html" title="OpenHAB::Core::Events::Source::Component (class)">Component</a></span>
+      
+        &lt; Object
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+        
+      </ul>
     
   </li>
 
@@ -1253,7 +1307,6 @@ openHAB Cloud Notification Actions}. - Documentation for openhab-scripting JRuby
   
   
   
-  
 
         
       </ul>
@@ -1448,9 +1501,55 @@ openHAB Cloud Notification Actions}. - Documentation for openhab-scripting JRuby
   
   <li class="">
     <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Sitemaps/LinkableWidget.html" title="OpenHAB::Core::Sitemaps::LinkableWidget (module)">LinkableWidget</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Sitemaps/Provider.html" title="OpenHAB::Core::Sitemaps::Provider (class)">Provider</a></span>
       
         &lt; Provider
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Sitemaps/Registry.html" title="OpenHAB::Core::Sitemaps::Registry (class)">Registry</a></span>
+      
+        &lt; Object
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Sitemaps/Sitemap.html" title="OpenHAB::Core::Sitemaps::Sitemap (module)">Sitemap</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Sitemaps/Widget.html" title="OpenHAB::Core::Sitemaps::Widget (module)">Widget</a></span>
       
       
     </span>
@@ -2463,6 +2562,17 @@ openHAB Cloud Notification Actions}. - Documentation for openhab-scripting JRuby
     
   </li>
 
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-2" href="../../CoreExt/TimePredicates.html" title="OpenHAB::CoreExt::TimePredicates (module)">TimePredicates</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
 
         
       </ul>
@@ -2816,37 +2926,15 @@ openHAB Cloud Notification Actions}. - Documentation for openhab-scripting JRuby
   </li>
 
   
-  <li class="collapsed">
+  <li class="">
     <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../DSL/Sitemaps/ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
       
         &lt; LinkableWidgetBuilder
       
       
-        <a class="arrow toggle right"></a>
-      
     </span>
     
-    
-      
-      <ul>
-        
-        
-  
-  <li class="">
-    <span class="sidebar-link">
-      <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="../../DSL/Sitemaps/ButtongridBuilder/Buttongrid.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder::Buttongrid (module)">Buttongrid</a></span>
-      
-      
-    </span>
-    
-    
-  </li>
-
-  
-
-        
-      </ul>
     
   </li>
 
@@ -3753,14 +3841,14 @@ When both are provided, two calls will be made to the NotificationAction:</p>
         <span class='name'>email</span>
       
       
-        <span class='type'>(<tt>String</tt>, <tt>nil</tt>)</span>
+        <span class='type'>(<tt>String</tt>, <tt>&lt;String&gt;</tt>, <tt>nil</tt>)</span>
       
       
         <em class="default">(defaults to: <tt>nil</tt>)</em>
       
       
         &mdash;
-        <div class='inline'><p>The email address to hide notifications for.
+        <div class='inline'><p>The email address(es) to hide notifications for.
 If nil, hide broadcast notifications.</p>
 </div>
       
@@ -3822,27 +3910,32 @@ If nil, hide broadcast notifications.</p>
       <pre class="lines">
 
 
-128
-129
-130
-131
-132
-133
-134
-135
-136
-137
-138
-139
 140
 141
 142
 143
 144
-145</pre>
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core/actions/notification.rb', line 128</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core/actions/notification.rb', line 140</span>
 
 <span class="keyword">def</span> <span class="function">hide</span>(<span class="key">email</span>: <span class="predefined-constant">nil</span>, <span class="key">id</span>: <span class="predefined-constant">nil</span>, <span class="key">tag</span>: <span class="predefined-constant">nil</span>)
   <span class="keyword">unless</span> <span class="constant">Actions</span>.const_defined?(<span class="symbol">:NotificationAction</span>)
@@ -3852,7 +3945,12 @@ If nil, hide broadcast notifications.</p>
   raise <span class="constant">ArgumentError</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Either id or tag must be provided.</span><span class="delimiter">&quot;</span></span> <span class="keyword">unless</span> id || tag
 
   args = []
-  <span class="keyword">if</span> email
+  <span class="keyword">if</span> email.is_a?(<span class="constant">Enumerable</span>)
+    email.each <span class="keyword">do</span> |e|
+      hide(<span class="key">email</span>: e, <span class="key">id</span>:, <span class="key">tag</span>:)
+    <span class="keyword">end</span>
+    <span class="keyword">return</span>
+  <span class="keyword">elsif</span> email
     args.push(email)
     notification = <span class="symbol">:notification</span>
   <span class="keyword">else</span>
@@ -3946,12 +4044,12 @@ If nil, hide broadcast notifications.</p>
       <pre class="lines">
 
 
-157
-158
-159</pre>
+174
+175
+176</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core/actions/notification.rb', line 157</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core/actions/notification.rb', line 174</span>
 
 <span class="keyword">def</span> <span class="function">log</span>(msg, <span class="key">icon</span>: <span class="predefined-constant">nil</span>, <span class="key">tag</span>: <span class="predefined-constant">nil</span>)
   <span class="constant">NotificationAction</span>.send_log_notification(msg.to_s, icon&amp;.to_s, tag&amp;.to_s)
@@ -4040,14 +4138,15 @@ If nil, hide broadcast notifications.</p>
         <span class='name'>email</span>
       
       
-        <span class='type'>(<tt>String</tt>, <tt>nil</tt>)</span>
+        <span class='type'>(<tt>String</tt>, <tt>&lt;String&gt;</tt>, <tt>nil</tt>)</span>
       
       
         <em class="default">(defaults to: <tt>nil</tt>)</em>
       
       
         &mdash;
-        <div class='inline'><p>The email address to send to. If <code>nil</code>, the message will be broadcasted.</p>
+        <div class='inline'><p>The email address(es) to send to. If <code>nil</code>, the message will be
+broadcast.</p>
 </div>
       
     </li>
@@ -4206,6 +4305,19 @@ or an image item.</p>
   
 </ul>
 
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
   <p class="tag_title">See Also:</p>
   <ul class="see">
@@ -4220,7 +4332,6 @@ or an image item.</p>
       <pre class="lines">
 
 
-69
 70
 71
 72
@@ -4263,10 +4374,22 @@ or an image item.</p>
 109
 110
 111
-112</pre>
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/core/actions/notification.rb', line 69</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/core/actions/notification.rb', line 70</span>
 
 <span class="keyword">def</span> <span class="function">send</span>(
   msg,
@@ -4285,7 +4408,21 @@ or an image item.</p>
   <span class="keyword">end</span>
 
   args = []
-  <span class="keyword">if</span> email
+  <span class="keyword">if</span> email.is_a?(<span class="constant">Enumerable</span>)
+    email.each <span class="keyword">do</span> |e|
+      send(msg,
+           <span class="key">email</span>: e,
+           <span class="key">icon</span>:,
+           <span class="key">tag</span>:,
+           <span class="key">severity</span>:,
+           <span class="key">id</span>:,
+           <span class="key">title</span>:,
+           <span class="key">on_click</span>:,
+           <span class="key">attachment</span>:,
+           <span class="key">buttons</span>:)
+    <span class="keyword">end</span>
+    <span class="keyword">return</span>
+  <span class="keyword">elsif</span> email
     args.push(<span class="symbol">:send_notification</span>, email)
   <span class="keyword">else</span>
     args.push(<span class="symbol">:send_broadcast_notification</span>)
@@ -4293,22 +4430,19 @@ or an image item.</p>
   tag ||= severity
   args.push(msg.to_s, icon&amp;.to_s, tag&amp;.to_s)
 
-  <span class="comment"># @deprecated OH 4.1</span>
-  <span class="keyword">if</span> <span class="constant">Core</span>.version &gt;= <span class="constant">Core</span>::<span class="constant">V4_2</span>
-    buttons ||= []
-    buttons = buttons.map { |button_title, action| <span class="string"><span class="delimiter">&quot;</span><span class="inline"><span class="inline-delimiter">#{</span>button_title<span class="inline-delimiter">}</span></span><span class="content">=</span><span class="inline"><span class="inline-delimiter">#{</span>action<span class="inline-delimiter">}</span></span><span class="delimiter">&quot;</span></span> } <span class="keyword">if</span> buttons.is_a?(<span class="constant">Hash</span>)
-    raise <span class="constant">ArgumentError</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">buttons must contain (0..3) elements.</span><span class="delimiter">&quot;</span></span> <span class="keyword">unless</span> (<span class="integer">0</span>..<span class="integer">3</span>).cover?(buttons.size)
+  buttons ||= []
+  buttons = buttons.map { |button_title, action| <span class="string"><span class="delimiter">&quot;</span><span class="inline"><span class="inline-delimiter">#{</span>button_title<span class="inline-delimiter">}</span></span><span class="content">=</span><span class="inline"><span class="inline-delimiter">#{</span>action<span class="inline-delimiter">}</span></span><span class="delimiter">&quot;</span></span> } <span class="keyword">if</span> buttons.is_a?(<span class="constant">Hash</span>)
+  raise <span class="constant">ArgumentError</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">buttons must contain (0..3) elements.</span><span class="delimiter">&quot;</span></span> <span class="keyword">unless</span> (<span class="integer">0</span>..<span class="integer">3</span>).cover?(buttons.size)
 
-    attachment = <span class="string"><span class="delimiter">&quot;</span><span class="content">item:</span><span class="inline"><span class="inline-delimiter">#{</span>attachment.name<span class="inline-delimiter">}</span></span><span class="delimiter">&quot;</span></span> <span class="keyword">if</span> attachment.is_a?(<span class="constant">Item</span>) &amp;&amp; attachment.image_item?
+  attachment = <span class="string"><span class="delimiter">&quot;</span><span class="content">item:</span><span class="inline"><span class="inline-delimiter">#{</span>attachment.name<span class="inline-delimiter">}</span></span><span class="delimiter">&quot;</span></span> <span class="keyword">if</span> attachment.is_a?(<span class="constant">Item</span>) &amp;&amp; attachment.image_item?
 
-    args.push(title&amp;.to_s,
-              id&amp;.to_s,
-              on_click&amp;.to_s,
-              attachment&amp;.to_s,
-              buttons[<span class="integer">0</span>]&amp;.to_s,
-              buttons[<span class="integer">1</span>]&amp;.to_s,
-              buttons[<span class="integer">2</span>]&amp;.to_s)
-  <span class="keyword">end</span>
+  args.push(title&amp;.to_s,
+            id&amp;.to_s,
+            on_click&amp;.to_s,
+            attachment&amp;.to_s,
+            buttons[<span class="integer">0</span>]&amp;.to_s,
+            buttons[<span class="integer">1</span>]&amp;.to_s,
+            buttons[<span class="integer">2</span>]&amp;.to_s)
 
   <span class="constant">NotificationAction</span>.__send__(*args)
 <span class="keyword">end</span></pre>
@@ -4322,9 +4456,9 @@ or an image item.</p>
 </div>
 
         <footer>
-  Generated on Fri Sep 26 19:05:28 2025 by
+  Generated on Tue Jul 28 01:59:32 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.1.4).
+  0.9.37 (ruby-3.4.2).
 </footer>
 
       </main>

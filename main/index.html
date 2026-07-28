@@ -84,8 +84,8 @@
         </nav>
         <div class="page-versions">
   <ul class="version-switcher">
-    <li><a href="/openhab-jruby/5.42" class="version-button stable" onclick="gotoVersion(event)">Stable <small>(5.42)</small></a></li>
-    <li><a href="/openhab-jruby/main" class="version-button main" onclick="gotoVersion(event)">Latest <small>(main)</small></a></li>
+    <li><a href="/openhab-jruby/5.50" class="version-button stable">Stable <small>(5.50)</small></a></li>
+    <li><a href="/openhab-jruby/main" class="version-button main">Latest <small>(main)</small></a></li>
   </ul>
   <div class="archived-versions">
     <div class="dropdown-wrapper">
@@ -665,6 +665,60 @@
       
     </span>
     
+    
+  </li>
+
+  
+  <li class="collapsed">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="OpenHAB/Core/Events/Source.html" title="OpenHAB::Core::Events::Source (class)">Source</a></span>
+      
+        &lt; Delegator
+      
+      
+        <a class="arrow toggle right"></a>
+      
+    </span>
+    
+    
+      
+      <ul>
+        
+        
+  
+  
+  
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="OpenHAB/Core/Events/Source/Component.html" title="OpenHAB::Core::Events::Source::Component (class)">Component</a></span>
+      
+        &lt; Object
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+        
+      </ul>
     
   </li>
 
@@ -1252,7 +1306,6 @@
   
   
   
-  
 
         
       </ul>
@@ -1447,9 +1500,55 @@
   
   <li class="">
     <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="OpenHAB/Core/Sitemaps/LinkableWidget.html" title="OpenHAB::Core::Sitemaps::LinkableWidget (module)">LinkableWidget</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="OpenHAB/Core/Sitemaps/Provider.html" title="OpenHAB::Core::Sitemaps::Provider (class)">Provider</a></span>
       
         &lt; Provider
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="OpenHAB/Core/Sitemaps/Registry.html" title="OpenHAB::Core::Sitemaps::Registry (class)">Registry</a></span>
+      
+        &lt; Object
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="OpenHAB/Core/Sitemaps/Sitemap.html" title="OpenHAB::Core::Sitemaps::Sitemap (module)">Sitemap</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="OpenHAB/Core/Sitemaps/Widget.html" title="OpenHAB::Core::Sitemaps::Widget (module)">Widget</a></span>
       
       
     </span>
@@ -2462,6 +2561,17 @@
     
   </li>
 
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-2" href="OpenHAB/CoreExt/TimePredicates.html" title="OpenHAB::CoreExt::TimePredicates (module)">TimePredicates</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
 
         
       </ul>
@@ -2815,37 +2925,15 @@
   </li>
 
   
-  <li class="collapsed">
+  <li class="">
     <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="OpenHAB/DSL/Sitemaps/ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
       
         &lt; LinkableWidgetBuilder
       
       
-        <a class="arrow toggle right"></a>
-      
     </span>
     
-    
-      
-      <ul>
-        
-        
-  
-  <li class="">
-    <span class="sidebar-link">
-      <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="OpenHAB/DSL/Sitemaps/ButtongridBuilder/Buttongrid.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder::Buttongrid (module)">Buttongrid</a></span>
-      
-      
-    </span>
-    
-    
-  </li>
-
-  
-
-        
-      </ul>
     
   </li>
 
@@ -4613,6 +4701,22 @@ between(<span class="string"><span class="delimiter">&quot;</span><span class="c
 <span class="comment"># Compare against time of day</span>
 <span class="constant">Time</span>.now.between?(<span class="string"><span class="delimiter">&quot;</span><span class="content">5am</span><span class="delimiter">&quot;</span></span>..<span class="string"><span class="delimiter">&quot;</span><span class="content">11pm</span><span class="delimiter">&quot;</span></span>)
 </code></pre>
+<h4><a href="#proximity-checks" aria-hidden="true" class="header-anchor" id="proximity-checks">#</a>Proximity Checks</h4>
+<p>The <span class='object_link'><a href="OpenHAB/CoreExt/TimePredicates.html#within%3F-instance_method" title="OpenHAB::CoreExt::TimePredicates#within? (method)">within?</a></span> method allows you to check if a date/time object is within a specific distance (epsilon) of an anchor time. By default, this anchor time is <code>now</code>.
+This is highly useful for checking if a sensor update is fresh or if an event occurred near a specific deadline.</p>
+<pre class="code ruby"><code class="ruby">time_object.within?(epsilon, <span class="key">of</span>: <span class="constant">ZonedDateTime</span>.now)
+</code></pre>
+<h5><a href="#example" aria-hidden="true" class="header-anchor" id="example">#</a>Example</h5>
+<p>Check a sensor's last update timestamp when a different event occurs:</p>
+<pre class="code ruby"><code class="ruby">rule <span class="string"><span class="delimiter">'</span><span class="content">Welcome home light</span><span class="delimiter">'</span></span> <span class="keyword">do</span>
+  changed <span class="constant">Front_Door</span>, <span class="key">to</span>: <span class="constant">OPEN</span>
+  run <span class="keyword">do</span>
+    <span class="comment"># Evaluates if the hallway motion sensor was updated in the last 5 minutes.</span>
+    <span class="comment"># If not, assume someone is arriving from the outside and turn on the light.</span>
+    <span class="constant">Hallway_Light</span>.on <span class="keyword">unless</span> <span class="constant">Hallway_Motion</span>.last_state_change.within?(<span class="integer">5</span>.minutes)
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</code></pre>
 <h3><a href="#ephemeris" aria-hidden="true" class="header-anchor" id="ephemeris">#</a>Ephemeris</h3>
 <p><span class='object_link'><a href="OpenHAB/CoreExt/Ephemeris.html" title="OpenHAB::CoreExt::Ephemeris (module)">Helper methods</a></span> to easily access <a href="https://www.openhab.org/docs/configuration/actions.html#ephemeris">openHAB's Ephemeris action</a> are provided on all date-like objects:</p>
 <pre class="code ruby"><code class="ruby"><span class="constant">Time</span>.now.holiday? <span class="comment"># =&gt; false</span>
@@ -4762,7 +4866,7 @@ For example, to display the temperature in both °C and °F:</p>
 <p>You can create an openHAB profile in JRuby that can be applied to item channel links.
 For more details, see <span class='object_link'><a href="OpenHAB/DSL.html#profile-class_method" title="OpenHAB::DSL.profile (method)">#profile</a></span>.</p>
 <h3><a href="#sitemaps" aria-hidden="true" class="header-anchor" id="sitemaps">#</a>Sitemaps</h3>
-<p>Sitemaps can be created via <span class='object_link'><a href="OpenHAB/Core/Sitemaps/Provider.html#build-instance_method" title="OpenHAB::Core::Sitemaps::Provider#build (method)">sitemaps.build</a></span>.</p>
+<p>Sitemaps can be created via <span class='object_link'><a href="OpenHAB/Core/Sitemaps/Registry.html#build-instance_method" title="OpenHAB::Core::Sitemaps::Registry#build (method)">sitemaps.build</a></span>.</p>
 <pre class="code ruby"><code class="ruby">sitemaps.build <span class="keyword">do</span>
   sitemap <span class="string"><span class="delimiter">&quot;</span><span class="content">default</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">My Residence</span><span class="delimiter">&quot;</span></span> <span class="keyword">do</span>
     frame <span class="key">label</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Control</span><span class="delimiter">&quot;</span></span> <span class="keyword">do</span>
@@ -5121,9 +5225,9 @@ formatter = java.time.format.DateTimeFormatter.of_pattern(<span class="string"><
 </div></div>
 
         <footer>
-  Generated on Fri Sep 26 19:05:15 2025 by
+  Generated on Tue Jul 28 01:59:18 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.1.4).
+  0.9.37 (ruby-3.4.2).
 </footer>
 
       </main>

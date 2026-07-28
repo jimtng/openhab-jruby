@@ -89,8 +89,8 @@ explicitly. - Documentation for openhab-scripting JRuby helper library.">
         </nav>
         <div class="page-versions">
   <ul class="version-switcher">
-    <li><a href="/openhab-jruby/5.42" class="version-button stable" onclick="gotoVersion(event)">Stable <small>(5.42)</small></a></li>
-    <li><a href="/openhab-jruby/main" class="version-button main" onclick="gotoVersion(event)">Latest <small>(main)</small></a></li>
+    <li><a href="/openhab-jruby/5.50" class="version-button stable">Stable <small>(5.50)</small></a></li>
+    <li><a href="/openhab-jruby/main" class="version-button main">Latest <small>(main)</small></a></li>
   </ul>
   <div class="archived-versions">
     <div class="dropdown-wrapper">
@@ -670,6 +670,60 @@ explicitly. - Documentation for openhab-scripting JRuby helper library.">
       
     </span>
     
+    
+  </li>
+
+  
+  <li class="collapsed">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Core/Events/Source.html" title="OpenHAB::Core::Events::Source (class)">Source</a></span>
+      
+        &lt; Delegator
+      
+      
+        <a class="arrow toggle right"></a>
+      
+    </span>
+    
+    
+      
+      <ul>
+        
+        
+  
+  
+  
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="../Core/Events/Source/Component.html" title="OpenHAB::Core::Events::Source::Component (class)">Component</a></span>
+      
+        &lt; Object
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+        
+      </ul>
     
   </li>
 
@@ -1257,7 +1311,6 @@ explicitly. - Documentation for openhab-scripting JRuby helper library.">
   
   
   
-  
 
         
       </ul>
@@ -1452,9 +1505,55 @@ explicitly. - Documentation for openhab-scripting JRuby helper library.">
   
   <li class="">
     <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Core/Sitemaps/LinkableWidget.html" title="OpenHAB::Core::Sitemaps::LinkableWidget (module)">LinkableWidget</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Core/Sitemaps/Provider.html" title="OpenHAB::Core::Sitemaps::Provider (class)">Provider</a></span>
       
         &lt; Provider
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Core/Sitemaps/Registry.html" title="OpenHAB::Core::Sitemaps::Registry (class)">Registry</a></span>
+      
+        &lt; Object
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Core/Sitemaps/Sitemap.html" title="OpenHAB::Core::Sitemaps::Sitemap (module)">Sitemap</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Core/Sitemaps/Widget.html" title="OpenHAB::Core::Sitemaps::Widget (module)">Widget</a></span>
       
       
     </span>
@@ -2467,6 +2566,17 @@ explicitly. - Documentation for openhab-scripting JRuby helper library.">
     
   </li>
 
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-2" href="../CoreExt/TimePredicates.html" title="OpenHAB::CoreExt::TimePredicates (module)">TimePredicates</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
 
         
       </ul>
@@ -2820,37 +2930,15 @@ explicitly. - Documentation for openhab-scripting JRuby helper library.">
   </li>
 
   
-  <li class="collapsed">
+  <li class="">
     <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../DSL/Sitemaps/ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
       
         &lt; LinkableWidgetBuilder
       
       
-        <a class="arrow toggle right"></a>
-      
     </span>
     
-    
-      
-      <ul>
-        
-        
-  
-  <li class="">
-    <span class="sidebar-link">
-      <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="../DSL/Sitemaps/ButtongridBuilder/Buttongrid.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder::Buttongrid (module)">Buttongrid</a></span>
-      
-      
-    </span>
-    
-    
-  </li>
-
-  
-
-        
-      </ul>
     
   </li>
 
@@ -4022,7 +4110,7 @@ explicitly.</p>
     .split(<span class="constant">File</span>::<span class="constant">PATH_SEPARATOR</span>)
       .reject(&amp;<span class="symbol">:empty?</span>)
       .reject <span class="keyword">do</span> |path|
-                       <span class="global-variable">$LOAD_PATH</span>.include?(path)
+        <span class="global-variable">$LOAD_PATH</span>.include?(path)
                      <span class="keyword">end</span>)
 
   requires = jrubyscripting_config&amp;.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">require</span><span class="delimiter">&quot;</span></span>) || <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>
@@ -4279,11 +4367,6 @@ The addon's bundle id is used as the identifier.</p>
       <pre class="lines">
 
 
-365
-366
-367
-368
-369
 370
 371
 372
@@ -4312,10 +4395,15 @@ The addon's bundle id is used as the identifier.</p>
 395
 396
 397
-398</pre>
+398
+399
+400
+401
+402
+403</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/rspec/helpers.rb', line 365</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/rspec/helpers.rb', line 370</span>
 
 <span class="keyword">def</span> <span class="function">install_addon</span>(addon_id, <span class="key">wait</span>: <span class="predefined-constant">true</span>, <span class="key">ready_markers</span>: <span class="predefined-constant">nil</span>)
   service_filter = <span class="string"><span class="delimiter">&quot;</span><span class="content">(component.name=org.openhab.core.karafaddons)</span><span class="delimiter">&quot;</span></span>
@@ -4468,7 +4556,12 @@ The addon's bundle id is used as the identifier.</p>
 297
 298
 299
-300</pre>
+300
+301
+302
+303
+304
+305</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/openhab/rspec/helpers.rb', line 221</span>
@@ -4512,6 +4605,13 @@ The addon's bundle id is used as the identifier.</p>
     rs.register_tracker(org.openhab.core.service.ReadyService::<span class="constant">ReadyTracker</span>.impl { continue.call }, filter)
   <span class="keyword">end</span>
 
+  <span class="comment"># openHAB 5.2.0.M5+ can leave RuleEngineImpl.started false in the rspec</span>
+  <span class="comment"># harness even after the rule-engine startlevel marker is reached.</span>
+  <span class="comment"># Force it on so RuleEngineImpl.runRule won't drop triggered events.</span>
+  rule_manager = <span class="constant">OSGi</span>.service(<span class="string"><span class="delimiter">&quot;</span><span class="content">org.openhab.core.automation.RuleManager</span><span class="delimiter">&quot;</span></span>)
+  rule_manager.class.field_accessor <span class="symbol">:started</span>
+  rule_manager.started = <span class="predefined-constant">true</span> <span class="keyword">unless</span> rule_manager.started
+
   <span class="keyword">begin</span>
     <span class="comment"># load storage based type providers</span>
     ast = org.openhab.core.thing.binding.AbstractStorageBasedTypeProvider
@@ -4523,20 +4623,18 @@ The addon's bundle id is used as the identifier.</p>
       <span class="constant">OSGi</span>.service_component_classes(bundle)
           .select { |klass, _services| klass.ancestors.include?(ast.java_class) }
           .each <span class="keyword">do</span> |klass, services|
-        new_ast_klass = <span class="constant">Class</span>.new(ast)
-        new_ast_klass.become_java!
-        wrapped_storage_service = <span class="constant">Mocks</span>::<span class="constant">AbstractStorageBasedTypeProviderWrappedStorageService</span>
-                                  .new(storage_service,
-                                       new_ast_klass.java_class,
-                                       klass)
-        new_ast = new_ast_klass.new(wrapped_storage_service)
+            new_ast_klass = <span class="constant">Class</span>.new(ast)
+            new_ast_klass.become_java!
+            wrapped_storage_service = <span class="constant">Mocks</span>::<span class="constant">AbstractStorageBasedTypeProviderWrappedStorageService</span>
+                                      .new(storage_service,
+                                           new_ast_klass.java_class,
+                                           klass)
+            new_ast = new_ast_klass.new(wrapped_storage_service)
 
-        services -= [klass.name]
-        <span class="constant">OSGi</span>.register_service(new_ast, *services, <span class="key">bundle</span>: ast_bundle)
+            services -= [klass.name]
+            <span class="constant">OSGi</span>.register_service(new_ast, *services, <span class="key">bundle</span>: ast_bundle)
       <span class="keyword">end</span>
     <span class="keyword">end</span>
-  <span class="keyword">rescue</span> <span class="constant">NameError</span>
-    <span class="comment"># @deprecated OH 4.0</span>
   <span class="keyword">end</span>
 
   <span class="comment"># RSpec additions</span>
@@ -4584,11 +4682,6 @@ The addon's bundle id is used as the identifier.</p>
       <pre class="lines">
 
 
-309
-310
-311
-312
-313
 314
 315
 316
@@ -4602,10 +4695,15 @@ The addon's bundle id is used as the identifier.</p>
 324
 325
 326
-327</pre>
+327
+328
+329
+330
+331
+332</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/rspec/helpers.rb', line 309</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/rspec/helpers.rb', line 314</span>
 
 <span class="keyword">def</span> <span class="function">load_rules</span>
   automation_paths = Array(::<span class="constant">RSpec</span>.configuration.openhab_automation_search_paths)
@@ -4660,11 +4758,6 @@ recognized.</p>
       <pre class="lines">
 
 
-340
-341
-342
-343
-344
 345
 346
 347
@@ -4674,10 +4767,15 @@ recognized.</p>
 351
 352
 353
-354</pre>
+354
+355
+356
+357
+358
+359</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/rspec/helpers.rb', line 340</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/rspec/helpers.rb', line 345</span>
 
 <span class="keyword">def</span> <span class="function">load_transforms</span>
   transform_path = <span class="string"><span class="delimiter">&quot;</span><span class="inline"><span class="inline-delimiter">#{</span>org.openhab.core.OpenHAB.config_folder<span class="inline-delimiter">}</span></span><span class="content">/transform</span><span class="delimiter">&quot;</span></span>
@@ -4741,12 +4839,12 @@ recognized.</p>
       <pre class="lines">
 
 
-401
-402
-403</pre>
+406
+407
+408</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/rspec/helpers.rb', line 401</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/rspec/helpers.rb', line 406</span>
 
 <span class="keyword">def</span> <span class="function">log_file</span>
   <span class="string"><span class="delimiter">&quot;</span><span class="inline"><span class="inline-delimiter">#{</span>java.lang.System.get_property(<span class="string"><span class="delimiter">&quot;</span><span class="content">openhab.logdir</span><span class="delimiter">&quot;</span></span>, <span class="predefined-constant">nil</span>)<span class="inline-delimiter">}</span></span><span class="content">/openhab.log</span><span class="delimiter">&quot;</span></span>
@@ -4809,21 +4907,47 @@ recognized.</p>
       <pre class="lines">
 
 
-414
-415
-416
-417
-418
-419</pre>
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/rspec/helpers.rb', line 414</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/rspec/helpers.rb', line 419</span>
 
 <span class="keyword">def</span> <span class="function">spec_log_lines</span>
-  <span class="constant">File</span>.open(log_file, <span class="string"><span class="delimiter">&quot;</span><span class="content">rb</span><span class="delimiter">&quot;</span></span>) <span class="keyword">do</span> |f|
-    f.seek(<span class="instance-variable">@log_index</span>) <span class="keyword">if</span> <span class="instance-variable">@log_index</span>
-    f.read.split(<span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>)
+  lines = []
+
+  <span class="comment"># Give the underlying Log4j file channel up to ~50ms to flush its buffer to disk</span>
+  <span class="integer">5</span>.times <span class="keyword">do</span>
+    lines = <span class="constant">File</span>.open(log_file, <span class="string"><span class="delimiter">&quot;</span><span class="content">rb</span><span class="delimiter">&quot;</span></span>) <span class="keyword">do</span> |f|
+      f.seek(<span class="instance-variable">@log_index</span>) <span class="keyword">if</span> <span class="instance-variable">@log_index</span>
+      f.read.split(<span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>)
+    <span class="keyword">end</span>
+
+    <span class="comment"># If we read lines, break early. If it's still empty, yield execution to the</span>
+    <span class="comment"># JVM thread scheduler so the file appender thread can finish flushing.</span>
+    <span class="keyword">break</span> <span class="keyword">unless</span> lines.empty?
+
+    sleep <span class="float">0.01</span>
   <span class="keyword">end</span>
+
+  lines
 <span class="keyword">end</span></pre>
     </td>
   </tr>
@@ -5120,9 +5244,9 @@ will just sleep for <code>duration</code></p>
 </div>
 
         <footer>
-  Generated on Fri Sep 26 19:05:17 2025 by
+  Generated on Tue Jul 28 01:59:20 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.1.4).
+  0.9.37 (ruby-3.4.2).
 </footer>
 
       </main>

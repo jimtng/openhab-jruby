@@ -85,8 +85,8 @@ instance. - Documentation for openhab-scripting JRuby helper library.">
         </nav>
         <div class="page-versions">
   <ul class="version-switcher">
-    <li><a href="/openhab-jruby/5.42" class="version-button stable" onclick="gotoVersion(event)">Stable <small>(5.42)</small></a></li>
-    <li><a href="/openhab-jruby/main" class="version-button main" onclick="gotoVersion(event)">Latest <small>(main)</small></a></li>
+    <li><a href="/openhab-jruby/5.50" class="version-button stable">Stable <small>(5.50)</small></a></li>
+    <li><a href="/openhab-jruby/main" class="version-button main">Latest <small>(main)</small></a></li>
   </ul>
   <div class="archived-versions">
     <div class="dropdown-wrapper">
@@ -666,6 +666,60 @@ instance. - Documentation for openhab-scripting JRuby helper library.">
       
     </span>
     
+    
+  </li>
+
+  
+  <li class="collapsed">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Events/Source.html" title="OpenHAB::Core::Events::Source (class)">Source</a></span>
+      
+        &lt; Delegator
+      
+      
+        <a class="arrow toggle right"></a>
+      
+    </span>
+    
+    
+      
+      <ul>
+        
+        
+  
+  
+  
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="../../Core/Events/Source/Component.html" title="OpenHAB::Core::Events::Source::Component (class)">Component</a></span>
+      
+        &lt; Object
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+        
+      </ul>
     
   </li>
 
@@ -1253,7 +1307,6 @@ instance. - Documentation for openhab-scripting JRuby helper library.">
   
   
   
-  
 
         
       </ul>
@@ -1448,9 +1501,55 @@ instance. - Documentation for openhab-scripting JRuby helper library.">
   
   <li class="">
     <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Sitemaps/LinkableWidget.html" title="OpenHAB::Core::Sitemaps::LinkableWidget (module)">LinkableWidget</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Sitemaps/Provider.html" title="OpenHAB::Core::Sitemaps::Provider (class)">Provider</a></span>
       
         &lt; Provider
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Sitemaps/Registry.html" title="OpenHAB::Core::Sitemaps::Registry (class)">Registry</a></span>
+      
+        &lt; Object
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Sitemaps/Sitemap.html" title="OpenHAB::Core::Sitemaps::Sitemap (module)">Sitemap</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Sitemaps/Widget.html" title="OpenHAB::Core::Sitemaps::Widget (module)">Widget</a></span>
       
       
     </span>
@@ -2463,6 +2562,17 @@ instance. - Documentation for openhab-scripting JRuby helper library.">
     
   </li>
 
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-2" href="../../CoreExt/TimePredicates.html" title="OpenHAB::CoreExt::TimePredicates (module)">TimePredicates</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
 
         
       </ul>
@@ -2816,37 +2926,15 @@ instance. - Documentation for openhab-scripting JRuby helper library.">
   </li>
 
   
-  <li class="collapsed">
+  <li class="">
     <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../Sitemaps/ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
       
         &lt; LinkableWidgetBuilder
       
       
-        <a class="arrow toggle right"></a>
-      
     </span>
     
-    
-      
-      <ul>
-        
-        
-  
-  <li class="">
-    <span class="sidebar-link">
-      <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="../Sitemaps/ButtongridBuilder/Buttongrid.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder::Buttongrid (module)">Buttongrid</a></span>
-      
-      
-    </span>
-    
-    
-  </li>
-
-  
-
-        
-      </ul>
     
   </li>
 
@@ -3896,10 +3984,6 @@ instance.</p>
       <pre class="lines">
 
 
-142
-143
-144
-145
 146
 147
 148
@@ -3907,10 +3991,14 @@ instance.</p>
 150
 151
 152
-153</pre>
+153
+154
+155
+156
+157</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/config_description/builder.rb', line 142</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/config_description/builder.rb', line 146</span>
 
 <span class="keyword">def</span> <span class="function">build</span>(uri = <span class="predefined-constant">nil</span>, &amp;block)
   instance_eval(&amp;block) <span class="keyword">if</span> block
@@ -4555,7 +4643,11 @@ When nil, it will be inferred when this method is called inside a <span class='o
 129
 130
 131
-132</pre>
+132
+133
+134
+135
+136</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/openhab/dsl/config_description/builder.rb', line 86</span>
@@ -4583,29 +4675,33 @@ When nil, it will be inferred when this method is called inside a <span class='o
               <span class="key">unit_label</span>: <span class="predefined-constant">nil</span>,
               <span class="key">verify</span>: <span class="predefined-constant">false</span>)
   <span class="comment"># Extract the named arguments into a hash</span>
-  <span class="instance-variable">@parameters</span> &lt;&lt; method(__method__).parameters
-                                   .select { |param_type, _| param_type == <span class="symbol">:key</span> } <span class="comment"># rubocop:disable Style/HashSlice</span>
-                                   .to_h { |_, key| [key, binding.local_variable_get(key)] }
-                                   .then <span class="keyword">do</span> |p|
-    p[<span class="symbol">:options</span>] = p[<span class="symbol">:options</span>].map <span class="keyword">do</span> |opt_value, opt_label|
-      org.openhab.core.config.core.ParameterOption.new(opt_value, opt_label)
-    <span class="keyword">end</span>
-    p[<span class="symbol">:filter_criteria</span>] = p[<span class="symbol">:filter_criteria</span>].map <span class="keyword">do</span> |filter_name, filter_value|
-      org.openhab.core.config.core.FilterCriteria.new(filter_name, filter_value)
-    <span class="keyword">end</span>
-    p[<span class="symbol">:minimum</span>] = p.delete(<span class="symbol">:min</span>)&amp;.to_d&amp;.to_java
-    p[<span class="symbol">:maximum</span>] = p.delete(<span class="symbol">:max</span>)&amp;.to_d&amp;.to_java
-    p[<span class="symbol">:step</span>] = p.delete(<span class="symbol">:step</span>)&amp;.to_d&amp;.to_java
-    p[<span class="symbol">:group_name</span>] ||= <span class="instance-variable">@current_group</span>
-    type = org.openhab.core.config.core.ConfigDescriptionParameter::<span class="constant">Type</span>.value_of(type.to_s.upcase)
+  <span class="instance-variable">@parameters</span> &lt;&lt;
+    method(__method__)
+    .parameters
+    .select { |param_type, _| param_type == <span class="symbol">:key</span> } <span class="comment"># rubocop:disable Style/HashSlice</span>
+    .to_h { |_, key| [key, binding.local_variable_get(key)] }
+    .then <span class="keyword">do</span> |p|
+      p[<span class="symbol">:options</span>] = p[<span class="symbol">:options</span>].map <span class="keyword">do</span> |opt_value, opt_label|
+        org.openhab.core.config.core.ParameterOption.new(opt_value, opt_label)
+      <span class="keyword">end</span>
+      p[<span class="symbol">:filter_criteria</span>] = p[<span class="symbol">:filter_criteria</span>].map <span class="keyword">do</span> |filter_name, filter_value|
+        org.openhab.core.config.core.FilterCriteria.new(filter_name, filter_value)
+      <span class="keyword">end</span>
+      p[<span class="symbol">:minimum</span>] = p.delete(<span class="symbol">:min</span>)&amp;.to_d&amp;.to_java
+      p[<span class="symbol">:maximum</span>] = p.delete(<span class="symbol">:max</span>)&amp;.to_d&amp;.to_java
+      p[<span class="symbol">:step</span>] = p.delete(<span class="symbol">:step</span>)&amp;.to_d&amp;.to_java
+      p[<span class="symbol">:group_name</span>] ||= <span class="instance-variable">@current_group</span>
+      type = org.openhab.core.config.core.ConfigDescriptionParameter::<span class="constant">Type</span>.value_of(type.to_s.upcase)
 
-    parameter = org.openhab.core.config.core.ConfigDescriptionParameterBuilder.create(name.to_s, type)
+      parameter = org.openhab.core.config.core.ConfigDescriptionParameterBuilder.create(
+        name.to_s, type
+      )
 
-    p.each <span class="keyword">do</span> |key, value|
-      parameter.send(<span class="symbol"><span class="symbol">:</span><span class="delimiter">&quot;</span><span class="content">with_</span><span class="inline"><span class="inline-delimiter">#{</span>key<span class="inline-delimiter">}</span></span><span class="delimiter">&quot;</span></span>, value) <span class="keyword">unless</span> value.nil?
+      p.each <span class="keyword">do</span> |key, value|
+        parameter.send(<span class="symbol"><span class="symbol">:</span><span class="delimiter">&quot;</span><span class="content">with_</span><span class="inline"><span class="inline-delimiter">#{</span>key<span class="inline-delimiter">}</span></span><span class="delimiter">&quot;</span></span>, value) <span class="keyword">unless</span> value.nil?
+      <span class="keyword">end</span>
+      parameter.build
     <span class="keyword">end</span>
-    parameter.build
-  <span class="keyword">end</span>
 <span class="keyword">end</span></pre>
     </td>
   </tr>
@@ -4617,9 +4713,9 @@ When nil, it will be inferred when this method is called inside a <span class='o
 </div>
 
         <footer>
-  Generated on Fri Sep 26 19:05:30 2025 by
+  Generated on Tue Jul 28 01:59:33 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.1.4).
+  0.9.37 (ruby-3.4.2).
 </footer>
 
       </main>

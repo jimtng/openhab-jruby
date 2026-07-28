@@ -84,8 +84,8 @@
         </nav>
         <div class="page-versions">
   <ul class="version-switcher">
-    <li><a href="/openhab-jruby/5.42" class="version-button stable" onclick="gotoVersion(event)">Stable <small>(5.42)</small></a></li>
-    <li><a href="/openhab-jruby/main" class="version-button main" onclick="gotoVersion(event)">Latest <small>(main)</small></a></li>
+    <li><a href="/openhab-jruby/5.50" class="version-button stable">Stable <small>(5.50)</small></a></li>
+    <li><a href="/openhab-jruby/main" class="version-button main">Latest <small>(main)</small></a></li>
   </ul>
   <div class="archived-versions">
     <div class="dropdown-wrapper">
@@ -665,6 +665,60 @@
       
     </span>
     
+    
+  </li>
+
+  
+  <li class="collapsed">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Events/Source.html" title="OpenHAB::Core::Events::Source (class)">Source</a></span>
+      
+        &lt; Delegator
+      
+      
+        <a class="arrow toggle right"></a>
+      
+    </span>
+    
+    
+      
+      <ul>
+        
+        
+  
+  
+  
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="../../Core/Events/Source/Component.html" title="OpenHAB::Core::Events::Source::Component (class)">Component</a></span>
+      
+        &lt; Object
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+        
+      </ul>
     
   </li>
 
@@ -1252,7 +1306,6 @@
   
   
   
-  
 
         
       </ul>
@@ -1447,9 +1500,55 @@
   
   <li class="">
     <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Sitemaps/LinkableWidget.html" title="OpenHAB::Core::Sitemaps::LinkableWidget (module)">LinkableWidget</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Sitemaps/Provider.html" title="OpenHAB::Core::Sitemaps::Provider (class)">Provider</a></span>
       
         &lt; Provider
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Sitemaps/Registry.html" title="OpenHAB::Core::Sitemaps::Registry (class)">Registry</a></span>
+      
+        &lt; Object
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Sitemaps/Sitemap.html" title="OpenHAB::Core::Sitemaps::Sitemap (module)">Sitemap</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Sitemaps/Widget.html" title="OpenHAB::Core::Sitemaps::Widget (module)">Widget</a></span>
       
       
     </span>
@@ -2462,6 +2561,17 @@
     
   </li>
 
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-2" href="../../CoreExt/TimePredicates.html" title="OpenHAB::CoreExt::TimePredicates (module)">TimePredicates</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
 
         
       </ul>
@@ -2815,37 +2925,15 @@
   </li>
 
   
-  <li class="collapsed">
+  <li class="">
     <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
       
         &lt; LinkableWidgetBuilder
       
       
-        <a class="arrow toggle right"></a>
-      
     </span>
     
-    
-      
-      <ul>
-        
-        
-  
-  <li class="">
-    <span class="sidebar-link">
-      <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="ButtongridBuilder/Buttongrid.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder::Buttongrid (module)">Buttongrid</a></span>
-      
-      
-    </span>
-    
-    
-  </li>
-
-  
-
-        
-      </ul>
     
   </li>
 
@@ -3656,7 +3744,7 @@
     
       <li><span class='object_link'><a href="../../DSL.html#sitemaps-class_method" title="OpenHAB::DSL.sitemaps (method)">OpenHAB::DSL.sitemaps</a></span></li>
     
-      <li><span class='object_link'><a href="../../Core/Sitemaps/Provider.html#build-instance_method" title="OpenHAB::Core::Sitemaps::Provider#build (method)">sitemaps.build</a></span></li>
+      <li><span class='object_link'><a href="../../Core/Sitemaps/Registry.html#build-instance_method" title="OpenHAB::Core::Sitemaps::Registry#build (method)">sitemaps.build</a></span></li>
     
   </ul>
 
@@ -3804,21 +3892,21 @@
       <pre class="lines">
 
 
+48
+49
+50
 51
 52
 53
 54
 55
-56
-57
-58
-59</pre>
+56</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 51</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 48</span>
 
-<span class="keyword">def</span> <span class="function">sitemap</span>(name, <span class="key">label</span>: <span class="predefined-constant">nil</span>, <span class="key">icon</span>: <span class="predefined-constant">nil</span>, &amp;block)
-  sitemap = <span class="constant">SitemapBuilder</span>.new(name, <span class="instance-variable">@builder_proxy</span>, <span class="key">label</span>:, <span class="key">icon</span>:, &amp;block)
+<span class="keyword">def</span> <span class="function">sitemap</span>(name, <span class="key">label</span>: <span class="predefined-constant">nil</span>, <span class="key">icon</span>: <span class="predefined-constant">nil</span>, &amp;)
+  sitemap = <span class="constant">SitemapBuilder</span>.new(name, <span class="instance-variable">@builder_proxy</span>, <span class="key">label</span>:, <span class="key">icon</span>:, &amp;)
   sitemap = sitemap.build
   <span class="keyword">if</span> <span class="instance-variable">@update</span> &amp;&amp; <span class="instance-variable">@provider</span>.get(sitemap.uid)
     <span class="instance-variable">@provider</span>.update(sitemap)
@@ -3836,9 +3924,9 @@
 </div>
 
         <footer>
-  Generated on Fri Sep 26 19:05:23 2025 by
+  Generated on Tue Jul 28 01:59:27 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.1.4).
+  0.9.37 (ruby-3.4.2).
 </footer>
 
       </main>

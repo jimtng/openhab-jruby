@@ -86,8 +86,8 @@ This element can only exist within a `Buttongrid` element. - Documentation for o
         </nav>
         <div class="page-versions">
   <ul class="version-switcher">
-    <li><a href="/openhab-jruby/5.42" class="version-button stable" onclick="gotoVersion(event)">Stable <small>(5.42)</small></a></li>
-    <li><a href="/openhab-jruby/main" class="version-button main" onclick="gotoVersion(event)">Latest <small>(main)</small></a></li>
+    <li><a href="/openhab-jruby/5.50" class="version-button stable">Stable <small>(5.50)</small></a></li>
+    <li><a href="/openhab-jruby/main" class="version-button main">Latest <small>(main)</small></a></li>
   </ul>
   <div class="archived-versions">
     <div class="dropdown-wrapper">
@@ -667,6 +667,60 @@ This element can only exist within a `Buttongrid` element. - Documentation for o
       
     </span>
     
+    
+  </li>
+
+  
+  <li class="collapsed">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Events/Source.html" title="OpenHAB::Core::Events::Source (class)">Source</a></span>
+      
+        &lt; Delegator
+      
+      
+        <a class="arrow toggle right"></a>
+      
+    </span>
+    
+    
+      
+      <ul>
+        
+        
+  
+  
+  
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="../../Core/Events/Source/Component.html" title="OpenHAB::Core::Events::Source::Component (class)">Component</a></span>
+      
+        &lt; Object
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+        
+      </ul>
     
   </li>
 
@@ -1254,7 +1308,6 @@ This element can only exist within a `Buttongrid` element. - Documentation for o
   
   
   
-  
 
         
       </ul>
@@ -1449,9 +1502,55 @@ This element can only exist within a `Buttongrid` element. - Documentation for o
   
   <li class="">
     <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Sitemaps/LinkableWidget.html" title="OpenHAB::Core::Sitemaps::LinkableWidget (module)">LinkableWidget</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Sitemaps/Provider.html" title="OpenHAB::Core::Sitemaps::Provider (class)">Provider</a></span>
       
         &lt; Provider
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Sitemaps/Registry.html" title="OpenHAB::Core::Sitemaps::Registry (class)">Registry</a></span>
+      
+        &lt; Object
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Sitemaps/Sitemap.html" title="OpenHAB::Core::Sitemaps::Sitemap (module)">Sitemap</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="../../Core/Sitemaps/Widget.html" title="OpenHAB::Core::Sitemaps::Widget (module)">Widget</a></span>
       
       
     </span>
@@ -2464,6 +2563,17 @@ This element can only exist within a `Buttongrid` element. - Documentation for o
     
   </li>
 
+  
+  <li class="">
+    <span class="sidebar-link">
+      <span class='object_link'><a class="sidebar-link sidebar-link-depth-2" href="../../CoreExt/TimePredicates.html" title="OpenHAB::CoreExt::TimePredicates (module)">TimePredicates</a></span>
+      
+      
+    </span>
+    
+    
+  </li>
+
 
         
       </ul>
@@ -2817,37 +2927,15 @@ This element can only exist within a `Buttongrid` element. - Documentation for o
   </li>
 
   
-  <li class="collapsed">
+  <li class="">
     <span class="sidebar-link">
       <span class='object_link'><a class="sidebar-link sidebar-link-depth-3" href="ButtongridBuilder.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder (class)">ButtongridBuilder</a></span>
       
         &lt; LinkableWidgetBuilder
       
       
-        <a class="arrow toggle right"></a>
-      
     </span>
     
-    
-      
-      <ul>
-        
-        
-  
-  <li class="">
-    <span class="sidebar-link">
-      <span class='object_link'><a class="sidebar-link sidebar-link-depth-4" href="ButtongridBuilder/Buttongrid.html" title="OpenHAB::DSL::Sitemaps::ButtongridBuilder::Buttongrid (module)">Buttongrid</a></span>
-      
-      
-    </span>
-    
-    
-  </li>
-
-  
-
-        
-      </ul>
     
   </li>
 
@@ -3931,12 +4019,12 @@ This element can only exist within a `Buttongrid` element. - Documentation for o
       <pre class="lines">
 
 
-771
-772
-773</pre>
+774
+775
+776</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 771</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 774</span>
 
 <span class="keyword">def</span> <span class="function">click</span>
   <span class="instance-variable">@click</span>
@@ -4001,12 +4089,12 @@ This element can only exist within a `Buttongrid` element. - Documentation for o
       <pre class="lines">
 
 
-767
-768
-769</pre>
+770
+771
+772</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 767</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 770</span>
 
 <span class="keyword">def</span> <span class="function">column</span>
   <span class="instance-variable">@column</span>
@@ -4071,12 +4159,12 @@ This element can only exist within a `Buttongrid` element. - Documentation for o
       <pre class="lines">
 
 
-775
-776
-777</pre>
+778
+779
+780</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 775</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 778</span>
 
 <span class="keyword">def</span> <span class="function">release</span>
   <span class="instance-variable">@release</span>
@@ -4141,12 +4229,12 @@ This element can only exist within a `Buttongrid` element. - Documentation for o
       <pre class="lines">
 
 
-763
-764
-765</pre>
+766
+767
+768</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 763</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 766</span>
 
 <span class="keyword">def</span> <span class="function">row</span>
   <span class="instance-variable">@row</span>
@@ -4211,12 +4299,12 @@ This element can only exist within a `Buttongrid` element. - Documentation for o
       <pre class="lines">
 
 
-779
-780
-781</pre>
+782
+783
+784</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 779</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 782</span>
 
 <span class="keyword">def</span> <span class="function">stateless=</span>(value)
   <span class="instance-variable">@stateless</span> = value
@@ -4286,12 +4374,12 @@ This element can only exist within a `Buttongrid` element. - Documentation for o
       <pre class="lines">
 
 
-813
-814
-815</pre>
+816
+817
+818</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 813</span>
+      <pre class="code"><span class="info file"># File 'lib/openhab/dsl/sitemaps/builder.rb', line 816</span>
 
 <span class="keyword">def</span> <span class="function">stateless?</span>
   <span class="instance-variable">@stateless</span>
@@ -4306,9 +4394,9 @@ This element can only exist within a `Buttongrid` element. - Documentation for o
 </div>
 
         <footer>
-  Generated on Fri Sep 26 19:05:24 2025 by
+  Generated on Tue Jul 28 01:59:27 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.1.4).
+  0.9.37 (ruby-3.4.2).
 </footer>
 
       </main>
