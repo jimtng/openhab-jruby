@@ -8,10 +8,16 @@ module OpenHAB
       #
       # The {AbstractEvent} sent when the system start level changed.
       #
-      # @!attribute [r] startlevel
-      #   @return [Integer] The new start level.
-      #
-      class StartlevelEvent < AbstractEvent; end
+      class StartlevelEvent < AbstractEvent
+        #
+        # The new start level.
+        #
+        # @return [StartLevel] The new start level.
+        #
+        def startlevel
+          StartLevel.new(super)
+        end
+      end
     end
   end
 end

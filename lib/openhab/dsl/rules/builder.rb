@@ -1473,9 +1473,9 @@ module OpenHAB
         #
         # This will only trigger once during openHAB start up. It won't trigger on script reloads.
         #
-        # @param [Integer,:rules,:ruleengine,:ui,:things,:complete] at_level
-        #   Zero or more start levels. Note that Startlevels less than 40 are not available as triggers
-        #   because the rule engine needs to start up first before it can execute any rules
+        # @param [Integer,:rules,:ruleengine,:ui,:things,:complete,Core::StartLevel] at_level
+        #   Zero or more start levels. Note that start levels less than 40 are not available as triggers
+        #   because the rule engine needs to start up first before it can execute any rules.
         #
         #   | Symbol        | Start Level |
         #   | ------------- | ----------- |
@@ -1487,7 +1487,8 @@ module OpenHAB
         #   | `:ui`         | 70          |
         #   | `:things`     | 80          |
         #   | `:complete`   | 100         |
-        # @param [Array<Integer,:rules,:ruleengine,:ui,:things,:complete>] at_levels Fluent alias for `at_level`
+        # @param [Array<Integer,:rules,:ruleengine,:ui,:things,:complete,Core::StartLevel>] at_levels
+        #   Fluent alias for `at_level`
         # @param [Object] attach Object to be attached to the trigger
         # @return [void]
         #
@@ -1512,21 +1513,14 @@ module OpenHAB
         #   end
         #
         # @see https://www.openhab.org/docs/configuration/rules-dsl.html#system-based-triggers System based triggers
+        # @see OpenHAB::Core.startlevel
+        # @see OpenHAB::Core::StartLevel
         #
         def on_start(at_level: nil, at_levels: nil, attach: nil)
           levels = Array.wrap(at_level) | Array.wrap(at_levels)
           levels = [100] if levels.empty?
 
-          levels.map! do |level|
-            next level unless level.is_a?(Symbol)
-
-            begin
-              klass = org.openhab.core.service.StartLevelService.java_class
-              klass.declared_field("STARTLEVEL_#{level.upcase}").get_int(klass)
-            rescue java.lang.NoSuchFieldException
-              raise ArgumentError, "Invalid symbol for at_level: :#{level}"
-            end
-          end
+          levels.map! { |level| Core::StartLevel.new(level).to_i }
 
           @ruby_triggers << [:on_start, levels]
           levels.each do |level|
