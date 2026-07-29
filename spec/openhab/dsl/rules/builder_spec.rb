@@ -124,8 +124,8 @@ RSpec.describe OpenHAB::DSL::Rules::Builder do
         expect(t.configuration.properties["startlevel"].to_i).to eq 100
       end
 
-      # @param [Symbol,Integer,Array<Symbol>,Array<Integer>] level
-      # @param [Integer,Array<Integer>] raw_level
+      # @param [Symbol, Integer, OpenHAB::Core::StartLevel, Array<Symbol, Integer, OpenHAB::Core::StartLevel>] level
+      # @param [Integer, Array<Integer>] raw_level
       def test_on_start(level, raw_level = nil)
         rule = rule do
           if level.is_a?(Array)
@@ -137,7 +137,7 @@ RSpec.describe OpenHAB::DSL::Rules::Builder do
         end
 
         level = Array.wrap(level)
-        raw_level = raw_level ? Array.wrap(raw_level) : level
+        raw_level = raw_level ? Array.wrap(raw_level) : level.map(&:to_i)
 
         rule.triggers.each_with_index do |trigger, i|
           expect(trigger.type_uid).to eql "core.SystemStartlevelTrigger"
@@ -156,12 +156,22 @@ RSpec.describe OpenHAB::DSL::Rules::Builder do
         end
       end
 
+      it "works with StartLevel instance at_level" do
+        level = OpenHAB::Core::StartLevel.new(:things)
+        test_on_start(level, 80)
+      end
+
       it "works with numeric at_levels" do
         test_on_start([40, 50, 70, 80, 100])
       end
 
       it "works with symbolic at_levels" do
         test_on_start(%i[rules ruleengine ui things complete], [40, 50, 70, 80, 100])
+      end
+
+      it "works with StartLevel instances in at_levels" do
+        levels = [OpenHAB::Core::StartLevel.new(:ui), OpenHAB::Core::StartLevel.new(:things)]
+        test_on_start(levels, [70, 80])
       end
 
       it "raises an exception with invalid symbols" do
